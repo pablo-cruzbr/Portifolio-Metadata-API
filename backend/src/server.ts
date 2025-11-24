@@ -1,6 +1,5 @@
 import express from "express";
 import type { Request, Response, NextFunction } from "express";
-import 'express-async-errors';
 import cors from 'cors';
 import path from 'path';
 import { router } from "./routes.js";
@@ -18,7 +17,6 @@ app.use(cors({
 
 app.use(router);
 
-
 app.use(((err: Error, _req: Request, res: Response, _next: NextFunction): void => {
     if (err instanceof Error) {
         res.status(400).json({
@@ -33,5 +31,5 @@ app.use(((err: Error, _req: Request, res: Response, _next: NextFunction): void =
 }) as import('express').ErrorRequestHandler);
 
 app.listen(3334, () => {
-    console.log('Servidor SF2 Online na porta 3334!');
+    console.log('Servidor Metadata API Online na porta 3334!');
 });
