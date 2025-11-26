@@ -1,2 +1,11 @@
-# Auto detect text files and perform LF normalization
+# Define a conversão padrão para o seu código (todos os arquivos de texto)
+# O Git fará checkout como CRLF no Windows e manterá LF no repositório.
 * text=auto
+
+# Regra para Forçar a Limpeza: Todos os arquivos de texto no repositório são LF.
+# Esta linha garante que seu código (fora da node_modules) use a quebra de linha Linux no Git.
+* text eol=lf
+
+# Exceção para Binários e Scripts. ESTA É A LINHA QUE DEVE PARAR O LOOP.
+# Diz ao Git para NUNCA tocar nas quebras de linha dos arquivos de dependência.
+backend/node_modules/ binary
