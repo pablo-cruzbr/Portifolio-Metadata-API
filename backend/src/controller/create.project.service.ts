@@ -14,15 +14,11 @@ class CreateProjectService{
         if (title === ''){
             throw new Error('Name Invalid'); 
         }
-        const equipamentoExistente = await prismaClient.project.findFirst({
+        const produtoExistente = await prismaClient.project.findFirst({
             where:{
                 title: title
             }
         })
-
-        if (equipamentoExistente){
-            throw new Error('Esse patrimonio já existe!')
-        }
         const project = prismaClient.project.create({
             data:{
                  title: title,
