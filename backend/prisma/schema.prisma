@@ -5,8 +5,8 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider = "prisma-client-js"
+  //output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -16,9 +16,9 @@ datasource db {
 
 model Project{
    id String @id @default(uuid())
-   project String
-   Technologies String?
-   Goal String?
+   title String
+   technologies String?
+   goal String?
    features String?
 
   created_at DateTime? @default(now())
