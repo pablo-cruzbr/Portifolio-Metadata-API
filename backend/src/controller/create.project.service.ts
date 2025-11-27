@@ -1,4 +1,3 @@
-import { features } from "node:process";
 import prismaClient from "../prisma/index.js";
 
 interface ProjectRequest{
@@ -6,14 +5,15 @@ interface ProjectRequest{
     technologies: string;
     goal: string;
     features: string;
-    }
+}
 
 class CreateProjectService{
-    async execute(title){
-        if (title === ''){
-            throw new Error('Name Invalid');
-        }
+    async execute(data: ProjectRequest){
+        const { title, technologies, goal, features } = data; 
 
+        if (title === ''){
+            throw new Error('Name Invalid'); 
+        }
         const equipamentoExistente = await prismaClient.project.findFirst({
             where:{
                 title: title
@@ -23,7 +23,6 @@ class CreateProjectService{
         if (equipamentoExistente){
             throw new Error('Esse patrimonio já existe!')
         }
-
         const project = prismaClient.project.create({
             data:{
                  title: title,
