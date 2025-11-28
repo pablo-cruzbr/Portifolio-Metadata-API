@@ -13,5 +13,4 @@ router.put("/projects/:id", projectController.update);
 router.get("/projects", projectController.list);
 router.delete("/projects/:id", projectController.delete);
 
-
 export { router };
