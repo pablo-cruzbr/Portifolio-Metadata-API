@@ -1,7 +1,7 @@
 import prismaClient from "../prisma/index.js";
 
 interface ProjectRequest{
-    id: string;
+    id?: string;
     title: string;
     technologies: string;
     goal: string;
