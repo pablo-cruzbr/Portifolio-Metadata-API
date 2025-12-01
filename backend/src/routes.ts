@@ -1,7 +1,6 @@
 
 import { Router } from "express";
-import { projectController } from "./controller/create.project.controller.js";
-
+import { projectController } from "./controller/create.project.controller";
 const router = Router(); 
 
 router.get('/', (req, res) => {
@@ -12,5 +11,6 @@ router.post("/projects", projectController.create);
 router.put("/projects/:id", projectController.update);
 router.get("/projects", projectController.list);
 router.delete("/projects/:id", projectController.delete);
+
 
 export { router };
