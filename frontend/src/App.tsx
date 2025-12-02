@@ -1,14 +1,15 @@
 import "./App.css";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 function App() {
   return (
     <>
       <header className="header">
-        <a href="#" className="logo">Portifólio.</a>
+        <h1 className="portifolio">Portifólio. </h1>
 
         <nav className="navbar">
           <a href="#home" className="active">Home</a>
-          <a href="#portifolio">Portifólio</a>
+          <a href="#projetos">Portifólio</a>
           <a href="#services">Serviços</a>
           <a href="https://github.com/pablo-cruzbr?tab=repositories" target="_blank">Github</a>
           <a href="#about">Sobre mim</a>
@@ -30,11 +31,19 @@ function App() {
             </div>
 
             <div className="social-media">
-              <a href="https://www.linkedin.com/in/pablo-cruz-5b937525b/" target="_blank"><i className='bx bxl-linkedin'></i></a>
-              <a href="https://www.instagram.com/pablocrzcode/" target="_blank"><i className='bx bxl-instagram'></i></a>
-              <a href="https://github.com/pablo-cruzbr?tab=repositories" target="_blank"><i className='bx bxl-github'></i></a>
-              <a href="#"><i className='bx bxl-facebook'></i></a>
+              <a href="https://www.linkedin.com/in/pablo-cruz-5b937525b/" target="_blank">
+                <FaLinkedin/>
+              </a>
+
+              <a href="https://www.instagram.com/pablocruzdev/" target="_blank">
+                <FaInstagram />
+              </a>
+
+              <a href="https://github.com/pablo-cruzbr" target="_blank">
+                <FaGithub />
+              </a>
             </div>
+
 
             <button className="btn">Download CV</button>
           </div>
@@ -46,6 +55,11 @@ function App() {
           </div>
         </div>
       </section>
+      <section className="projetos" id="projetos">
+      <h2 className="heading">Projetos que Representam Minha Evolução <span> como Desenvolvedor</span></h2>
+
+      </section>
+
     </>
   );
 }
