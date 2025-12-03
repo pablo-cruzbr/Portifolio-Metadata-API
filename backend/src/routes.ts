@@ -9,6 +9,6 @@ router.get("/", (req, res) => {
 
 router.post("/project", projectController.create)
 router.get("/listproject", projectController.list)
-
+router.patch("/project", projectController.update)
 
 export default router;
