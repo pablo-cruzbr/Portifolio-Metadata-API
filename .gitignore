@@ -8,7 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Dependências (Otimizado para Monorepo na Raiz)
-/node_modules                  # node_modules na raiz (se houver)
+\frontend\node_modules 
+/frontend/node_modules
+node_modules                  # node_modules na raiz (se houver)
 backend/node_modules           # node_modules no subdiretório backend
 pootifolio-metadata/node_modules # node_modules no outro subdiretório
 backend/.env                   # ARQUIVO DE AMBIENTE SENSÍVEL
@@ -31,3 +33,4 @@ dist-ssr
 *.sln
 *.sw?
 backend/.env
+frontend/node_modules/zod/v4/mini/schemas.d.ts
