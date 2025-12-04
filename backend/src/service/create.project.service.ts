@@ -3,6 +3,7 @@ import prismaClient from "../prisma";
 interface ProjectRequest{
     id?: string;
     title: string;
+    image_url?: string | null;
     technologies: string;
     goal: string;
     features: string;
@@ -10,25 +11,30 @@ interface ProjectRequest{
 
 interface UpdateProjectRequest{
     id: string;
-    title: string;
-    technologies: string;
-    goal: string;
-    features: string;
+    title?: string; 
+    image_url?: string | null; 
+    technologies?: string; 
+    goal?: string; 
+    features?: string; 
 }
+
 class ProjectService{
     async createProject({
         title,
         technologies,
         goal,
+        image_url,
         features
     }: ProjectRequest){
-        if(!title){
-            throw new Error("É necessário um nome ao projeto !");
+        
+        if (!title || !technologies || !goal || !features) {
+             throw new Error("Todos os campos obrigatórios (title, technologies, goal, features) devem ser fornecidos.");
         }
-
+        
         const project = await prismaClient.project.create({
             data: {
                 title,
+                image_url: image_url || null, 
                 technologies,
                 goal,
                 features
@@ -42,16 +48,24 @@ class ProjectService{
         title,
         technologies,
         goal,
-        features
+        features,
+        image_url
     }:UpdateProjectRequest){
+        const dataToUpdate = {
+            title,
+            technologies,
+            goal,
+            features,
+            image_url: image_url === undefined ? undefined : image_url || null 
+        };
+        
+        const filteredData = Object.fromEntries(
+            Object.entries(dataToUpdate).filter(([_, value]) => value !== undefined)
+        );
+
         const project = await prismaClient.project.update({
             where: {id},
-            data: {
-                title,
-                technologies,
-                goal,
-                features
-            },
+            data: filteredData, 
         });
         return project;
     }
@@ -78,7 +92,6 @@ class ProjectService{
         });
         return {message: "Projeto deletado com sucesso !!"}
     }
-
 }
 
 export {ProjectService}
