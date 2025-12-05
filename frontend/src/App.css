@@ -241,7 +241,9 @@ section.home {
   padding: 1rem 2.5rem;
   background: var(--main-color);
   color: #fff;
+  text-align: center;
   border: none;
+  border-radius: 10px;
 }
 
 .heading {
@@ -325,7 +327,6 @@ section.home {
 
 
 .heading{
-    margin-top: 0px;
     font-size: 3.5rem;
     text-align: center;
     font-weight: 600;

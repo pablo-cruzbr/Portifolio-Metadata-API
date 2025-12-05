@@ -1,0 +1,106 @@
+import "./detalhes.css";
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import { api } from "../services/api";
+
+interface Project {
+  id: string;
+  title: string;
+  technologies: string;
+  goal: string;
+  features: string;
+  image_url: string;
+}
+
+function Detalhes() {
+  const { id } = useParams();
+  const [project, setProject] = useState<Project | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchProject() {
+      try {
+        setLoading(true);
+        const response = await api.get(`/listproject/${id}`);
+
+        setProject(response.data);
+        setError(null);
+      } catch (err) {
+        console.error("Erro ao carregar detalhes:", err);
+        setError("Não foi possível carregar os detalhes do projeto.");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchProject();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="loading">
+        <h2>Carregando detalhes do projeto...</h2>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="loading">
+        <h2>{error}</h2>
+        <Link to="/" className="btn-voltar">Voltar</Link>
+      </div>
+    );
+  }
+
+  if (!project) {
+    return (
+      <div className="loading">
+        <h2>Nenhum projeto encontrado.</h2>
+        <Link to="/" className="btn-voltar">Voltar</Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className="detalhes-container">
+
+     
+
+      <div className="detalhes-card">
+
+        <img
+          src={`http://localhost:3333/files/${project.image_url}`}
+          alt={project.title}
+          className="detalhes-img"
+        />
+
+        <div className="detalhes-info">
+          <h1>{project.title}</h1>
+
+          <p>
+            <strong>Tecnologias:</strong> {project.technologies}
+          </p>
+
+          <p>
+            <strong>Objetivo:</strong> {project.goal}
+          </p>
+
+          <p>
+            <strong>Funcionalidades:</strong>
+          </p>
+
+          <div className="features-box">
+            {project.features}
+          </div>
+
+           <Link to="/" className="btn-voltar">← Voltar</Link>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
+export default Detalhes;

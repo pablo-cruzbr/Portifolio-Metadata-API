@@ -2,6 +2,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { api } from "./services/api";
+import { Link } from "react-router-dom";
 
 
 interface Project {
@@ -117,7 +118,10 @@ function App() {
                                 <p>Tecnologias: **{project.technologies}**</p>
                                 <p>{project.goal}</p>
 
-                                  <button className="btn">Visuaizar Projeto</button>
+
+                                <Link className="btn" to={`/detalhes/${project.id}`}>
+                                Ver Detalhes
+                                </Link>      
                             </div>
                         ))
                     ) : (

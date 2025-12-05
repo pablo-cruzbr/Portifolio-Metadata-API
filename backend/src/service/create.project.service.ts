@@ -70,6 +70,19 @@ class ProjectService{
         return project;
     }
 
+    async getProjectById(id: string) {
+    const project = await prismaClient.project.findUnique({
+        where: { id },
+    });
+
+    if (!project) {
+        throw new Error("Projeto não encontrado");
+    }
+
+    return project;
+}
+
+
     async listProjects({ id, title, technologies, goal, features }: ProjectRequest) {
     const projects = await prismaClient.project.findMany({
         where: {

@@ -26,6 +26,18 @@ class ProjectController {
             return res.status(400).json({ error: err.message });
         }
     }
+
+    async getById(req: Request, res: Response) {
+    const { id } = req.params;
+
+    try {
+        const project = await projectService.getProjectById(id);
+        return res.json(project);
+    } catch (err: any) {
+        return res.status(404).json({ error: err.message });
+    }
+}
+
     
     async update(req: Request, res: Response) {
         const { id } = req.params;
