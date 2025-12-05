@@ -179,7 +179,7 @@ section.home {
     overflow: hidden;
     border-right: 4px solid var(--main-color);
     width: 0ch;
-    animation: typing 5s steps(30) infinite alternate,
+    animation: typing 3s steps(30) infinite alternate,
                blink .7s infinite;
 }
 
@@ -325,7 +325,7 @@ section.home {
 
 
 .heading{
-    margin-top: 30px;
+    margin-top: 0px;
     font-size: 3.5rem;
     text-align: center;
     font-weight: 600;
@@ -336,5 +336,5 @@ section.home {
 }
 
 .projetos {
-  margin-top:0px;
+  margin-top:-60px;
 }

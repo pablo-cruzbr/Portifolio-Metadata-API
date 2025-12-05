@@ -64,7 +64,6 @@ function App() {
 
                 <div className="bx bx-menu" id="menu-icon"></div>
             </header>
-
             <section className="home" id="home">
                 <div className="conteudo-home">
 
@@ -75,6 +74,7 @@ function App() {
                         <div className="typing">
                             <span>Desenvolvedor Full-Stack</span>
                         </div>
+                        <p> Stacks: TypeScript | React | ReactNative | NextJs | NodeJS | PostgreSQL</p>
 
                         <div className="social-media">
                             <a href="https://www.linkedin.com/in/pablo-cruz-5b937525b/" target="_blank">
