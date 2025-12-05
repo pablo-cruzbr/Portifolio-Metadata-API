@@ -34,3 +34,4 @@ dist-ssr
 *.sw?
 backend/.env
 frontend/node_modules/zod/v4/mini/schemas.d.ts
+frontend/.env

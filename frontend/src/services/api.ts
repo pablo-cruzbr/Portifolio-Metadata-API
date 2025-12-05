@@ -1,5 +1,7 @@
+// api.ts
+
 import axios from 'axios'
 
 export const api = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API
-})
+    baseURL: import.meta.env.VITE_PUBLIC_API_URL // Ex: http://localhost:3333
+});
