@@ -38,15 +38,17 @@ body {
 
 /* HEADER */
 .header {
-    display: flex;
     position: fixed;
-    width: 100%;
     top: 0;
-    padding: 2rem 7%;
+    left: 0;
+    width: 100%;
+    padding: 2rem 6%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background: transparent;
-    transition: .4s ease;
+    background: #ffffff;       /* FUNDO SÓLIDO */
     z-index: 100;
+    transition: 0.3s ease;
 }
 
 .header.sticky {
@@ -95,7 +97,7 @@ body {
 /* SECTION BASE */
 section {
     min-height: 100vh;
-    padding: 10rem 7% 2rem;
+    padding: 10rem 0% 2rem;
 }
 
 
@@ -144,9 +146,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
+  background: var(--bg-color); 
   z-index: 100;
+  transition: 0.3s ease;
 }
+
 
 .logo {
   font-size: 2.4rem;
@@ -254,7 +258,7 @@ section.home {
 
 .lista-projetos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     gap: 3rem;
     padding: 0 7%;
     justify-content: center;

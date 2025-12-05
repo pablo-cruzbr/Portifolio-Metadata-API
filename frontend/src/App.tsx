@@ -116,6 +116,8 @@ function App() {
                                  <h3>{project.title}</h3>
                                 <p>Tecnologias: **{project.technologies}**</p>
                                 <p>{project.goal}</p>
+
+                                  <button className="btn">Visuaizar Projeto</button>
                             </div>
                         ))
                     ) : (
