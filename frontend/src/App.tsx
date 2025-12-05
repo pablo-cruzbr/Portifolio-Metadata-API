@@ -109,8 +109,11 @@ function App() {
                     {projects.length > 0 ? (
                         projects.map((project) => (
                             <div key={project.id} className="card-projeto">
-                                <img src={project.image_url} alt={`Imagem do projeto ${project.title}`} />
-                                <h3>{project.title}</h3>
+                                 <img 
+                                src={`http://localhost:3333/files/${project.image_url}`} 
+                                alt={`Imagem do projeto ${project.title}`} 
+                            />
+                                 <h3>{project.title}</h3>
                                 <p>Tecnologias: **{project.technologies}**</p>
                                 <p>{project.goal}</p>
                             </div>
