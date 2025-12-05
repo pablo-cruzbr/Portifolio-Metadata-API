@@ -306,7 +306,7 @@ section.home {
 
 .card-projeto h3 {
     font-size: 2.4rem;
-    color: var(--main-color);
+    color: var(--text-color);
     margin-bottom: 1.5rem;
     font-weight: 700;
 }
