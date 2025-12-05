@@ -3,19 +3,17 @@ import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { api } from "./services/api";
 
-// 📦 Interface para os dados do projeto
+
 interface Project {
-    id: string; // ou number
+    id: string; 
     title: string;
     technologies: string;
     goal: string;
     features: string;
     image_url: string;
-    // Opcional: Adicionar created_at, update_at
 }
 
 function App() {
-    // 1. 🎯 Adição do useState para armazenar a lista de projetos
     const [projects, setProjects] = useState<Project[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -24,13 +22,10 @@ function App() {
         async function fetchData() {
             try {
                 setIsLoading(true);
-                // A instância 'api' já sabe que a base é http://localhost:3333
                 const response = await api.get('/listproject'); 
-                
-                // O console.log deve mostrar os dados no Console do Navegador (F12)
+
                 console.log("Dados da API:", response.data); 
                 
-                // 2. 🎯 Adição do setProjects para armazenar os dados
                 setProjects(response.data); 
                 setError(null);
             } catch (error) {
@@ -45,7 +40,6 @@ function App() {
         
     }, []);
 
-    // Renderização de estado de carregamento/erro
     if (isLoading) {
         return <h2 className="heading">Carregando projetos...</h2>;
     }
@@ -110,8 +104,7 @@ function App() {
             
             <section className="projetos" id="projetos">
                 <h2 className="heading">Projetos que Representam Minha Evolução <span> como Desenvolvedor</span></h2>
-                
-                {/* 3. 🎯 Adição do map para iterar sobre os projetos */}
+
                 <div className="lista-projetos">
                     {projects.length > 0 ? (
                         projects.map((project) => (
