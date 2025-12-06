@@ -339,3 +339,17 @@ section.home {
 .projetos {
   margin-top:-60px;
 }
+
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+}
+
+.about-img img{
+    width: 80%;
+    height: 100%;
+    display: flex;
+}

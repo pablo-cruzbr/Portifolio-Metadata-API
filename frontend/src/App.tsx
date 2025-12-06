@@ -131,6 +131,26 @@ function App() {
 
             </section>
 
+            <section className="home" id="home">
+                <div className="conteudo-home">
+
+                    <div className="conteiner-profissional">
+                        <div className="box-profissional">
+                            <img className="img-home" src="/sobre mim.png" alt="Imagem do profissional" />
+                        </div>
+                    </div>
+
+                    <div className="conteudo-texto">
+                        <h3>Sobre Mim</h3>
+                        <h1>Pablo Cruz</h1>
+                        <p> Desenvolvedor Full Stack, atuando como freelancer, com experiência prática em linguagens e frameworks como JavaScript, TypeScript, React, React Native, Next.js, Node.js, GraphQL e PostgreSQL. Atualmente, trabalho em uma empresa de informática como Help Desk Nível 2, onde atuo com redes de internet, manutenção de racks de infraestrutura, Active Directory, PABX em nuvem 3CX e manutenção de hardware.</p>
+                    </div>
+
+                    
+                </div>
+            </section>
+            
+
         </>
     );
 }
