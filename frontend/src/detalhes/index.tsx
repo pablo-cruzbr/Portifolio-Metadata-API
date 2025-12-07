@@ -2,6 +2,7 @@ import "./detalhes.css";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { api } from "../services/api";
+import Carrossel from "../components/Carrossel"
 
 interface Project {
   id: string;
@@ -65,11 +66,7 @@ function Detalhes() {
 
   return (
     <div className="detalhes-container">
-
-     
-
       <div className="detalhes-card">
-
         <img
           src={`http://localhost:3333/files/${project.image_url}`}
           alt={project.title}
@@ -98,6 +95,9 @@ function Detalhes() {
            <Link to="/" className="btn-voltar">← Voltar</Link>
         </div>
 
+      </div>
+      <div>
+      <Carrossel/>
       </div>
     </div>
   );
