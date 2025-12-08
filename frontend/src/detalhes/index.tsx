@@ -13,6 +13,8 @@ interface Project {
   goal: string;
   features: string;
   imgcapa_url: string;
+  linklivedemo: string;
+  linkgihub: string;
   images?: {
   id: string;
   url: string;
@@ -111,10 +113,23 @@ function Detalhes() {
           <div className="links">
 
             <Link to="/" className="btn-voltar"> <IoArrowBack size={20}/> Voltar</Link>
+            <Link 
+              to={project.linklivedemo} 
+              className="btn-voltar"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaPlayCircle size={20}/> LiveDemo
+            </Link>
 
-            <Link to="/" className="btn-voltar"> <FaPlayCircle  size={20}/> LiveDemo</Link>
-
-             <Link to="/" className="btn-voltar"><FaGithub size={20}/>  Github</Link>
+            <Link 
+              to={project.linkgihub} 
+              className="btn-voltar"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub size={20}/> Github
+            </Link>
           </div>
         </div>
 

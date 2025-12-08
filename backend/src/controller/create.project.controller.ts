@@ -6,7 +6,7 @@ const projectService = new ProjectService();
 class ProjectController {
 
     async create(req: Request, res: Response) {
-        const { title, technologies, goal, features } = req.body;
+        const { title, technologies, goal, features, linkgihub, linklivedemo } = req.body;
 
         const capa = req.files && "imgcapa" in req.files
             ? (req.files.imgcapa as Express.Multer.File[])[0]
@@ -26,7 +26,9 @@ class ProjectController {
                 goal,
                 features,
                 images,
-                imgcapa_url
+                imgcapa_url,
+                linkgihub,
+                linklivedemo
             });
 
             return res.status(201).json(project);
@@ -48,7 +50,7 @@ class ProjectController {
 
     async update(req: Request, res: Response) {
         const { id } = req.params;
-        const { title, technologies, goal, features, imgcapa_url } = req.body;
+        const { title, technologies, goal, features, imgcapa_url, linkgihub, linklivedemo } = req.body;
 
         // Captura múltiplos arquivos enviados no update
         const files = req.files && Array.isArray(req.files)
@@ -65,7 +67,9 @@ class ProjectController {
                 goal,
                 features,
                 images,
-                imgcapa_url
+                imgcapa_url,
+                linkgihub,
+                linklivedemo
             });
 
             return res.json(project);

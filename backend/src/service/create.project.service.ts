@@ -5,6 +5,8 @@ interface CreateProjectRequest {
     technologies: string;
     goal: string;
     features: string;
+    linkgihub?: string;
+    linklivedemo?: string;
     images: string[];
     imgcapa_url: string | null;
 }
@@ -17,11 +19,13 @@ interface UpdateProjectRequest {
     features?: string;
     images?: string[];
     imgcapa_url: string | null; 
+    linkgihub?: string;
+    linklivedemo?: string;
 }
 
 class ProjectService {
 
-    async createProject({ title, technologies, goal, features, images, imgcapa_url }: CreateProjectRequest) {
+    async createProject({ title, technologies, goal, features, images, imgcapa_url, linkgihub, linklivedemo }: CreateProjectRequest) {
 
         if (!title || !technologies || !goal || !features) {
             throw new Error("Todos os campos obrigatórios devem ser fornecidos.");
@@ -34,6 +38,8 @@ class ProjectService {
                 goal,
                 features,
                 imgcapa_url,
+                linkgihub,
+                linklivedemo,
                 images: {
                     create: images.map(img => ({
                         url: img
@@ -46,7 +52,7 @@ class ProjectService {
         return project;
     }
 
-    async updateProject({ id, title, technologies, goal, features, images, imgcapa_url }: UpdateProjectRequest) {
+    async updateProject({ id, title, technologies, goal, features, images, imgcapa_url, linkgihub, linklivedemo }: UpdateProjectRequest) {
 
         const updatedProject = await prismaClient.project.update({
             where: { id },
@@ -56,6 +62,8 @@ class ProjectService {
                 goal,
                 features,
                 imgcapa_url,
+                linkgihub,
+                linklivedemo,
                 ...(images && {
                     images: {
                         create: images.map(img => ({
