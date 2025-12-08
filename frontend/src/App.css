@@ -353,3 +353,128 @@ section.home {
     height: 100%;
     display: flex;
 }
+
+
+@media (max-width: 1200px) {
+    .conteudo-home {
+        gap: 4rem;
+    }
+
+    .conteudo-texto h1 {
+        font-size: 4rem;
+    }
+
+    .conteiner-profissional img {
+        width: 340px;
+        height: auto;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .navbar {
+        display: none; 
+    }
+
+    #menu-icon {
+        display: block;
+        font-size: 4rem;
+    }
+
+    section.home {
+        padding-top: 14rem;
+    }
+
+    .conteudo-home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .conteudo-texto {
+        max-width: 100%;
+    }
+
+    .conteiner-profissional img {
+        width: 300px;
+        height: auto;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem 4%;
+    }
+
+    .typing {
+        font-size: 2.4rem;
+    }
+
+    .conteiner-profissional img {
+        width: 260px;
+    }
+
+    .lista-projetos {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        padding: 0 4%;
+    }
+}
+
+@media (max-width: 576px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .home {
+        padding: 12rem 4% 4rem;
+    }
+
+    .conteudo-home {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .conteudo-texto h1 {
+        font-size: 3.6rem;
+    }
+
+    .conteudo-texto h3 {
+        font-size: 2rem;
+    }
+
+    .typing {
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .img-home {
+        width: 80%;
+        height: auto;
+    }
+
+    .card-projeto {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .header {
+        padding: 1.5rem 4%;
+    }
+
+    .portifolio {
+        font-size: 2rem;
+    }
+
+    .conteiner-profissional img {
+        width: 220px;
+    }
+}
