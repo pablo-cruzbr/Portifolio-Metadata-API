@@ -8,12 +8,10 @@ class ProjectController {
     async create(req: Request, res: Response) {
         const { title, technologies, goal, features } = req.body;
 
-        // Arquivo único (capa)
         const capa = req.files && "imgcapa" in req.files
             ? (req.files.imgcapa as Express.Multer.File[])[0]
             : null;
 
-        // Múltiplos arquivos (galeria)
         const galeria = req.files && "files" in req.files
             ? (req.files.files as Express.Multer.File[])
             : [];
