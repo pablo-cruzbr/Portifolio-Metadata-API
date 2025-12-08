@@ -10,7 +10,7 @@ interface Project {
     technologies: string;
     goal: string;
     features: string;
-    image_url: string;
+    imgcapa_url: string;
 }
 
 function App() {
@@ -110,7 +110,7 @@ function App() {
                         projects.map((project) => (
                             <div key={project.id} className="card-projeto">
                                  <img 
-                                src={`http://localhost:3333/files/${project.image_url}`} 
+                                src={`http://localhost:3333/files/${project.imgcapa_url}`} 
                                 alt={`Imagem do projeto ${project.title}`} 
                             />
                                  <h3>{project.title}</h3>

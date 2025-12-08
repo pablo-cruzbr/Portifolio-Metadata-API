@@ -2,6 +2,8 @@ import "./detalhes.css";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { api } from "../services/api";
+import { FaGithub, FaPlayCircle } from "react-icons/fa";
+import { IoArrowBack } from "react-icons/io5";
 import Carrossel from "../components/Carrossel";
 
 interface Project {
@@ -10,7 +12,7 @@ interface Project {
   technologies: string;
   goal: string;
   features: string;
-  image_url: string;
+  imgcapa_url: string;
   images?: {
   id: string;
   url: string;
@@ -73,14 +75,22 @@ function Detalhes() {
   return (
     <div className="detalhes-container">
       <div className="detalhes-card">
-        <img
-          src={`http://localhost:3333/files/${project.image_url}`}
-          alt={project.title}
-          className="detalhes-img"
-        />
-
+      
         <div className="detalhes-info">
           <h1>{project.title}</h1>
+
+        <div>
+              {project.images && project.images.length > 0 ? (
+          <Carrossel 
+          data={project.images.map((img) => ({
+          src: `http://localhost:3333/files/${img.url}`,   
+          alt: project.title
+          }))}
+            />
+          ) : (
+              <p>Nenhuma imagem enviada para este projeto.</p>
+          )}
+          </div>
 
           <p>
             <strong>Tecnologias:</strong> {project.technologies}
@@ -98,24 +108,19 @@ function Detalhes() {
             {project.features}
           </div>
 
-           <Link to="/" className="btn-voltar">← Voltar</Link>
+          <div className="links">
+
+            <Link to="/" className="btn-voltar"> <IoArrowBack size={20}/> Voltar</Link>
+
+            <Link to="/" className="btn-voltar"> <FaPlayCircle  size={20}/> LiveDemo</Link>
+
+             <Link to="/" className="btn-voltar"><FaGithub size={20}/>  Github</Link>
+          </div>
         </div>
 
       </div>
           
-      <div className="detalhes-info-slide">
-        <h1>Imagens do Projeto</h1>
-       {project.images && project.images.length > 0 ? (
-        <Carrossel 
-          data={project.images.map((img) => ({
-          src: `http://localhost:3333/files/${img.url}`,   
-          alt: project.title
-      }))}
-  />
-    ) : (
-        <p>Nenhuma imagem enviada para este projeto.</p>
-    )}
-      </div>
+    
     </div>
   );
 }
