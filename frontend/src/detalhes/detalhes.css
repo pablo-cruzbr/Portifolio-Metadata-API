@@ -55,3 +55,64 @@
   text-align: center;
   color: #fff;
 }
+
+
+@media (max-width: 1024px) {
+  .detalhes-card {
+    width: 90%;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .detalhes-img {
+    width: 45%;
+  }
+
+  .detalhes-info {
+    width: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  .detalhes-card {
+    flex-direction: column;
+    width: 95%;
+    padding: 25px;
+    gap: 25px;
+  }
+
+  .detalhes-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .detalhes-info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-voltar {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 1.4rem;
+  }
+
+  .detalhes-card {
+    padding: 20px;
+  }
+
+  .detalhes-info h1 {
+    font-size: 2rem;
+  }
+
+  .detalhes-info p {
+    font-size: 1.4rem;
+  }
+
+  .features-box {
+    padding: 12px;
+    font-size: 1.35rem;
+  }
+}
