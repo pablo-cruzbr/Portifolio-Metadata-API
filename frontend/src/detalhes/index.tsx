@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { api } from "../services/api";
 import Carrossel from "../components/Carrossel";
-import slides from "../data/carrossel.json"
 
 interface Project {
   id: string;
@@ -12,6 +11,12 @@ interface Project {
   goal: string;
   features: string;
   image_url: string;
+  images?: {
+  id: string;
+  url: string;
+  projectId: string;
+}[];
+
 }
 
 function Detalhes() {
@@ -100,7 +105,16 @@ function Detalhes() {
           
       <div className="detalhes-info-slide">
         <h1>Imagens do Projeto</h1>
-      <Carrossel data={slides.slides}/>
+       {project.images && project.images.length > 0 ? (
+        <Carrossel 
+          data={project.images.map((img) => ({
+          src: `http://localhost:3333/files/${img.url}`,   
+          alt: project.title
+      }))}
+  />
+    ) : (
+        <p>Nenhuma imagem enviada para este projeto.</p>
+    )}
       </div>
     </div>
   );

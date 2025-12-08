@@ -4,13 +4,22 @@ import { ProjectService } from "../service/create.project.service";
 const projectService = new ProjectService();
 
 class ProjectController {
-    constructor() {
-    }
 
     async create(req: Request, res: Response) {
         const { title, technologies, goal, features } = req.body;
-        
-        const image_url = req.file ? req.file.filename : undefined; 
+
+        // Arquivo único (capa)
+        const capa = req.files && "imgcapa" in req.files
+            ? (req.files.imgcapa as Express.Multer.File[])[0]
+            : null;
+
+        // Múltiplos arquivos (galeria)
+        const galeria = req.files && "files" in req.files
+            ? (req.files.files as Express.Multer.File[])
+            : [];
+
+        const images = galeria.map(file => file.filename);
+        const imgcapa_url = capa ? capa.filename : null;
 
         try {
             const project = await projectService.createProject({
@@ -18,7 +27,8 @@ class ProjectController {
                 technologies,
                 goal,
                 features,
-                image_url, 
+                images,
+                imgcapa_url
             });
 
             return res.status(201).json(project);
@@ -28,30 +38,36 @@ class ProjectController {
     }
 
     async getById(req: Request, res: Response) {
-    const { id } = req.params;
+        const { id } = req.params;
 
-    try {
-        const project = await projectService.getProjectById(id);
-        return res.json(project);
-    } catch (err: any) {
-        return res.status(404).json({ error: err.message });
+        try {
+            const project = await projectService.getProjectById(id);
+            return res.json(project);
+        } catch (err: any) {
+            return res.status(404).json({ error: err.message });
+        }
     }
-}
 
-    
     async update(req: Request, res: Response) {
         const { id } = req.params;
-        const { title, technologies, goal, features } = req.body;
+        const { title, technologies, goal, features, imgcapa_url } = req.body;
 
-        const image_url = req.file ? req.file.filename : undefined; 
+        // Captura múltiplos arquivos enviados no update
+        const files = req.files && Array.isArray(req.files)
+            ? (req.files as Express.Multer.File[])
+            : [];
+
+        const images = files.length > 0 ? files.map(file => file.filename) : [];
+
         try {
             const project = await projectService.updateProject({
-                id: id as string,
-                image_url, 
+                id,
                 title,
                 technologies,
                 goal,
-                features
+                features,
+                images,
+                imgcapa_url
             });
 
             return res.json(project);
@@ -59,19 +75,10 @@ class ProjectController {
             return res.status(400).json({ error: err.message });
         }
     }
-    
+
     async list(req: Request, res: Response) {
-        const { id, title, technologies, goal, features } = req.query;
-
         try {
-            const projects = await projectService.listProjects({
-                id: id as string,
-                title: title as string,
-                technologies: technologies as string,
-                goal: goal as string,
-                features: features as string
-            });
-
+            const projects = await projectService.listProjects();
             return res.json(projects);
         } catch (err: any) {
             return res.status(400).json({ error: err.message });
@@ -83,8 +90,8 @@ class ProjectController {
 
         if (!id) {
             return res.status(400).json({ error: "ID é obrigatório!" });
-        } 
-        
+        }
+
         try {
             const msg = await projectService.deleteProject(id);
             return res.json(msg);
@@ -92,7 +99,6 @@ class ProjectController {
             return res.status(404).json({ error: "Projeto não encontrado para deleção." });
         }
     }
-
 }
 
 export const projectController = new ProjectController();

@@ -1,110 +1,101 @@
 import prismaClient from "../prisma";
 
-interface ProjectRequest{
-    id?: string;
+interface CreateProjectRequest {
     title: string;
-    image_url?: string | null;
     technologies: string;
     goal: string;
     features: string;
+    images: string[];
+    imgcapa_url: string | null;
 }
 
-interface UpdateProjectRequest{
+interface UpdateProjectRequest {
     id: string;
-    title?: string; 
-    image_url?: string | null; 
-    technologies?: string; 
-    goal?: string; 
-    features?: string; 
+    title?: string;
+    technologies?: string;
+    goal?: string;
+    features?: string;
+    images?: string[];
+    imgcapa_url: string | null; 
 }
 
-class ProjectService{
-    async createProject({
-        title,
-        technologies,
-        goal,
-        image_url,
-        features
-    }: ProjectRequest){
-        
+class ProjectService {
+
+    async createProject({ title, technologies, goal, features, images, imgcapa_url }: CreateProjectRequest) {
+
         if (!title || !technologies || !goal || !features) {
-             throw new Error("Todos os campos obrigatórios (title, technologies, goal, features) devem ser fornecidos.");
+            throw new Error("Todos os campos obrigatórios devem ser fornecidos.");
         }
-        
+
         const project = await prismaClient.project.create({
             data: {
                 title,
-                image_url: image_url || null, 
                 technologies,
                 goal,
-                features
+                features,
+                imgcapa_url,
+                images: {
+                    create: images.map(img => ({
+                        url: img
+                    }))
+                }
             },
+            include: { images: true }
         });
-        return project
-    }
 
-    async updateProject ({
-        id,
-        title,
-        technologies,
-        goal,
-        features,
-        image_url
-    }:UpdateProjectRequest){
-        const dataToUpdate = {
-            title,
-            technologies,
-            goal,
-            features,
-            image_url: image_url === undefined ? undefined : image_url || null 
-        };
-        
-        const filteredData = Object.fromEntries(
-            Object.entries(dataToUpdate).filter(([_, value]) => value !== undefined)
-        );
-
-        const project = await prismaClient.project.update({
-            where: {id},
-            data: filteredData, 
-        });
         return project;
     }
 
-    async getProjectById(id: string) {
-    const project = await prismaClient.project.findUnique({
-        where: { id },
-    });
+    async updateProject({ id, title, technologies, goal, features, images, imgcapa_url }: UpdateProjectRequest) {
 
-    if (!project) {
-        throw new Error("Projeto não encontrado");
-    }
-
-    return project;
-}
-
-
-    async listProjects({ id, title, technologies, goal, features }: ProjectRequest) {
-    const projects = await prismaClient.project.findMany({
-        where: {
-            ...(id && { id }),
-            ...(title && { title: { contains: title, mode: "insensitive" } }),
-            ...(technologies && { technologies: { contains: technologies, mode: "insensitive" } }),
-            ...(goal && { goal: { contains: goal, mode: "insensitive" } }),
-            ...(features && { features: { contains: features, mode: "insensitive" } }),
-        },
-        orderBy: {
-            created_at: "desc"
-        }
-    });
-    return projects;
-    }
-
-    async deleteProject (id: string){
-        await prismaClient.project.delete({
-            where: {id},
+        const updatedProject = await prismaClient.project.update({
+            where: { id },
+            data: {
+                title,
+                technologies,
+                goal,
+                features,
+                imgcapa_url,
+                ...(images && {
+                    images: {
+                        create: images.map(img => ({
+                            url: img
+                        }))
+                    }
+                })
+            },
+            include: { images: true }
         });
-        return {message: "Projeto deletado com sucesso !!"}
+
+        return updatedProject;
+    }
+
+    async getProjectById(id: string) {
+        const project = await prismaClient.project.findUnique({
+            where: { id },
+            include: { images: true }
+        });
+
+        if (!project) {
+            throw new Error("Projeto não encontrado");
+        }
+
+        return project;
+    }
+
+    async listProjects() {
+        return await prismaClient.project.findMany({
+            orderBy: { created_at: "desc" },
+            include: { images: true }
+        });
+    }
+
+    async deleteProject(id: string) {
+        await prismaClient.project.delete({
+            where: { id }
+        });
+        return { message: "Projeto deletado com sucesso!" };
     }
 }
 
-export {ProjectService}
+export { ProjectService };

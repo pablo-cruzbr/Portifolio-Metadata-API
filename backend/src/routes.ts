@@ -10,7 +10,14 @@ router.get("/", (req, res) => {
   return res.json({ message: "API funcionando!" });
 });
 
-router.post("/project", upload.single('file'), projectController.create);
+router.post(
+  "/project",
+  upload.fields([
+    { name: "imgcapa", maxCount: 1 },
+    { name: "files", maxCount: 10 }
+  ]),
+  projectController.create
+);
 router.get("/listproject", projectController.list)
 router.get("/listproject/:id", projectController.getById)
 router.patch("/project", projectController.update)
