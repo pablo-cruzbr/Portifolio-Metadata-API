@@ -2,7 +2,8 @@ import "./detalhes.css";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { api } from "../services/api";
-import Carrossel from "../components/Carrossel"
+import Carrossel from "../components/Carrossel";
+import slides from "../data/carrossel.json"
 
 interface Project {
   id: string;
@@ -96,8 +97,10 @@ function Detalhes() {
         </div>
 
       </div>
-      <div>
-      <Carrossel/>
+          
+      <div className="detalhes-info-slide">
+        <h1>Imagens do Projeto</h1>
+      <Carrossel data={slides.slides}/>
       </div>
     </div>
   );

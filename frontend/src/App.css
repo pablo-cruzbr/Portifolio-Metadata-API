@@ -36,7 +36,6 @@ body {
     color: var(--text-color);
 }
 
-/* HEADER */
 .header {
     position: fixed;
     top: 0;
@@ -46,7 +45,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #ffffff;       /* FUNDO SÓLIDO */
+    background: #ffffff;      
     z-index: 100;
     transition: 0.3s ease;
 }
@@ -412,6 +411,7 @@ section.home {
     }
 
     .typing {
+        display: inline-block; 
         font-size: 2.4rem;
     }
 
@@ -438,7 +438,7 @@ section.home {
     .conteudo-home {
         flex-direction: column;
         text-align: center;
-        gap: 3rem;
+        gap: 1rem;
     }
 
     .conteudo-texto h1 {
@@ -450,6 +450,7 @@ section.home {
     }
 
     .typing {
+         display: inline-block; 
         font-size: 2rem;
         width: 100%;
     }

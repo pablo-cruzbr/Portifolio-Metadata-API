@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { api } from "./services/api";
 import { Link } from "react-router-dom";
-
+import slides from "./data/carrossel.json"
 
 interface Project {
     id: string; 
