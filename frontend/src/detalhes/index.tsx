@@ -103,7 +103,7 @@ function Detalhes() {
           </p>
 
           <p>
-            <strong>Funcionalidades:</strong>
+            <strong>Sobre o Software:</strong>
           </p>
 
           <div className="features-box">
