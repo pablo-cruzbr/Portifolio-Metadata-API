@@ -1,3 +1,11 @@
+body {       
+  height: auto;
+  display: flex;
+  justify-content: center;     
+  align-items: center;         
+  font-family: sans-serif;
+}
+
 .detalhes-container {
   width: 100%;
   max-width: 1200px;
@@ -62,14 +70,14 @@
 }
 
 .carrossel-wrapper {
-  width: 100%;
+   width: 100%;
   display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  justify-content: center; /* centraliza horizontal */
+  align-items: center;    
 }
 
 .carrossel-wrapper * {
-  max-width: 600px;
+  max-width: 700px;
   width: 100%;
 }
 

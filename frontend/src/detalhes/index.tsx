@@ -81,7 +81,7 @@ function Detalhes() {
         <div className="detalhes-info">
           <h1>{project.title}</h1>
 
-        <div>
+        <div  className="carrossel-wrapper">
               {project.images && project.images.length > 0 ? (
           <Carrossel 
           data={project.images.map((img) => ({
