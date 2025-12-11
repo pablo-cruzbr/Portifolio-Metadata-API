@@ -21,5 +21,5 @@ router.post(
 router.get("/listproject", projectController.list)
 router.get("/listproject/:id", projectController.getById)
 router.patch("/project", projectController.update)
-
+router.delete("/delete/project/:id", projectController.delete)
 export default router;

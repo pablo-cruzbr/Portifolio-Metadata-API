@@ -99,6 +99,11 @@ class ProjectService {
     }
 
     async deleteProject(id: string) {
+
+         await prismaClient.projectImage.deleteMany({
+        where: { projectId: id }
+    });
+    
         await prismaClient.project.delete({
             where: { id }
         });
