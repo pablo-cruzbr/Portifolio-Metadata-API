@@ -13,6 +13,9 @@ model Project {
   technologies String?
   goal         String?
   features     String?
+  functionalities String?
+  future String?
+
   created_at   DateTime       @default(now())
   update_at    DateTime       @default(now())
   imgcapa_url String?
