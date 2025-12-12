@@ -48,35 +48,40 @@ class ProjectController {
         }
     }
 
-    async update(req: Request, res: Response) {
-        const { id } = req.params;
-        const { title, technologies, goal, features, imgcapa_url, linkgihub, linklivedemo } = req.body;
+  async update(req: Request, res: Response) {
+  const { id } = req.params;
+  const { title, technologies, goal, features, linkgihub, linklivedemo } = req.body;
 
-        // Captura múltiplos arquivos enviados no update
-        const files = req.files && Array.isArray(req.files)
-            ? (req.files as Express.Multer.File[])
-            : [];
+  const filesData = req.files as {
+      imgcapa?: Express.Multer.File[];
+      files?: Express.Multer.File[];
+  };
 
-        const images = files.length > 0 ? files.map(file => file.filename) : [];
+  const imgcapa_url = filesData?.imgcapa?.[0]?.filename || null;
 
-        try {
-            const project = await projectService.updateProject({
-                id,
-                title,
-                technologies,
-                goal,
-                features,
-                images,
-                imgcapa_url,
-                linkgihub,
-                linklivedemo
-            });
+  const images = filesData?.files
+      ? filesData.files.map(file => file.filename)
+      : [];
 
-            return res.json(project);
-        } catch (err: any) {
-            return res.status(400).json({ error: err.message });
-        }
-    }
+  try {
+      const project = await projectService.updateProject({
+          id,
+          title,
+          technologies,
+          goal,
+          features,
+          images,
+          imgcapa_url,
+          linkgihub,
+          linklivedemo
+      });
+
+      return res.json(project);
+
+  } catch (err: any) {
+      return res.status(400).json({ error: err.message });
+  }
+}
 
     async list(req: Request, res: Response) {
         try {

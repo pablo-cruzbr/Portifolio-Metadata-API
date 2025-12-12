@@ -52,31 +52,54 @@ class ProjectService {
         return project;
     }
 
-    async updateProject({ id, title, technologies, goal, features, images, imgcapa_url, linkgihub, linklivedemo }: UpdateProjectRequest) {
+  async updateProject({
+    id,
+    title,
+    technologies,
+    goal,
+    features,
+    images,
+    imgcapa_url,
+    linkgihub,
+    linklivedemo
+}: UpdateProjectRequest) {
 
-        const updatedProject = await prismaClient.project.update({
-            where: { id },
-            data: {
-                title,
-                technologies,
-                goal,
-                features,
-                imgcapa_url,
-                linkgihub,
-                linklivedemo,
-                ...(images && {
-                    images: {
-                        create: images.map(img => ({
-                            url: img
-                        }))
-                    }
-                })
-            },
-            include: { images: true }
-        });
+    // Busca projeto existente
+    const existing = await prismaClient.project.findUnique({
+        where: { id },
+        include: { images: true }
+    });
 
-        return updatedProject;
+    if (!existing) {
+        throw new Error("Projeto não encontrado");
     }
+
+    const updatedProject = await prismaClient.project.update({
+        where: { id },
+        data: {
+            title,
+            technologies,
+            goal,
+            features,
+            linkgihub,
+            linklivedemo,
+            imgcapa_url: imgcapa_url || existing.imgcapa_url,
+
+            ...(images && images.length > 0 && {
+                images: {
+                    create: images.map(img => ({
+                        url: img
+                    }))
+                }
+            })
+        },
+        include: { images: true }
+    });
+
+    return updatedProject;
+}
+
+
 
     async getProjectById(id: string) {
         const project = await prismaClient.project.findUnique({
