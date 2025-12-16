@@ -139,7 +139,7 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="conteudo-texto">
+                    <div className="conteudo-texto" id="about">
                         <h3>Sobre Mim</h3>
                         <h1>Pablo Cruz</h1>
                         <p> Desenvolvedor Full Stack, atuando como freelancer, com experiência prática em linguagens e frameworks como JavaScript, TypeScript, React, React Native, Next.js, Node.js, GraphQL e PostgreSQL. Atualmente, trabalho em uma empresa de informática como Help Desk Nível 2, onde atuo com redes de internet, manutenção de racks de infraestrutura, Active Directory, PABX em nuvem 3CX e manutenção de hardware.</p>
