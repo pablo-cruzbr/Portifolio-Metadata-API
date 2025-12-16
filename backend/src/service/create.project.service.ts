@@ -23,6 +23,11 @@ interface UpdateProjectRequest {
     linklivedemo?: string;
 }
 
+const IDS_PRIORITARIOS: string[] = [
+    "22465f01-246b-4199-a8f8-7ba87b40a017",
+    "8751d66f-4e44-48cc-b497-15e84c49797d",
+]
+
 class ProjectService {
 
     async createProject({ title, technologies, goal, features, images, imgcapa_url, linkgihub, linklivedemo }: CreateProjectRequest) {
@@ -115,10 +120,29 @@ class ProjectService {
     }
 
     async listProjects() {
-        return await prismaClient.project.findMany({
-            orderBy: { created_at: "desc" },
-            include: { images: true }
+
+        const prioritizedProjects = await prismaClient.project.findMany({
+            where: {
+                id:  {
+                    in: IDS_PRIORITARIOS,
+                },
+            },
+            orderBy: {created_at: "desc"},
+            include: {images: true}
         });
+
+        const remainingProjects = await prismaClient.project.findMany({
+           where: {
+             id: {
+                notIn: IDS_PRIORITARIOS,
+            },
+           },
+
+           orderBy: {created_at: "desc"},
+           include: {images: true}
+        });
+
+        return [...prioritizedProjects, ...remainingProjects];
     }
 
     async deleteProject(id: string) {
