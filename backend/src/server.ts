@@ -10,7 +10,9 @@ app.use(cors());
 app.use(express.json());
 app.use(router);
 
-const PORT = 3333;
-app.use('/files', 
-    express.static(path.resolve(__dirname, '..', 'tmp')));
-app.listen(PORT, () => console.log(`🔥 Servidor online na porta ${PORT}`));
+const PORT = process.env.PORT || 3333;
+app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
+
+app.listen(PORT, () => {
+    console.log(`🚀 Servidor rodando na porta ${PORT}`);
+});
