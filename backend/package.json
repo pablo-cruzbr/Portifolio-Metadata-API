@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@prisma/client": "6",
+    "cloudinary": "^2.8.0",
     "cors": "^2.8.5",
     "express": "4",
     "express-async-errors": "^3.1.1",
