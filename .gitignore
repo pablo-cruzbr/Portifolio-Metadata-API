@@ -35,3 +35,8 @@ dist-ssr
 backend/.env
 frontend/node_modules/zod/v4/mini/schemas.d.ts
 frontend/.env
+backend/node_modules/.prisma/client/index.js
+backend/node_modules/.prisma/client/wasm.js
+backend/node_modules/.prisma/client/edge.js
+/backend/node_modules/.prisma/client
+/backend/node_modules/.prisma/client
