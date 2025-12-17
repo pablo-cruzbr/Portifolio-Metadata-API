@@ -17,8 +17,8 @@ class ProjectController {
             : [];
 
        
-        const images = galeria.map(file => file.path); 
-        const imgcapa_url = capa ? capa.path : null; 
+        const images = galeria.map(file => `data:${file.mimetype};base64,${file.buffer.toString('base64')}`);
+        const imgcapa_url = capa ? `data:${capa.mimetype};base64,${capa.buffer.toString('base64')}` : null;
 
         try {
             const project = await projectService.createProject({
@@ -48,42 +48,43 @@ class ProjectController {
         }
     }
 
-    async update(req: Request, res: Response) {
-        const { id } = req.params;
-        const { title, technologies, goal, features, linkgihub, linklivedemo } = req.body;
+  async update(req: Request, res: Response) {
+    const { id } = req.params;
+    const { title, technologies, goal, features, linkgihub, linklivedemo } = req.body;
 
-        const filesData = req.files as {
-            imgcapa?: Express.Multer.File[];
-            files?: Express.Multer.File[];
-        };
+    const filesData = req.files as {
+        imgcapa?: Express.Multer.File[];
+        files?: Express.Multer.File[];
+    };
 
-    
-        const imgcapa_url = filesData?.imgcapa?.[0]?.path || null;
+    const capa = filesData?.imgcapa?.[0];
+    const imgcapa_url = capa 
+        ? `data:${capa.mimetype};base64,${capa.buffer.toString('base64')}` 
+        : null;
 
-        const images = filesData?.files
-            ? filesData.files.map(file => file.path) 
-            : [];
+    const images = filesData?.files
+        ? filesData.files.map(file => `data:${file.mimetype};base64,${file.buffer.toString('base64')}`) 
+        : [];
 
-        try {
-            const project = await projectService.updateProject({
-                id,
-                title,
-                technologies,
-                goal,
-                features,
-                images,
-                imgcapa_url,
-                linkgihub,
-                linklivedemo
-            });
+    try {
+        const project = await projectService.updateProject({
+            id,
+            title,
+            technologies,
+            goal,
+            features,
+            images,
+            imgcapa_url, 
+            linkgihub,
+            linklivedemo
+        });
 
-            return res.json(project);
+        return res.json(project);
 
-        } catch (err: any) {
-            return res.status(400).json({ error: err.message });
-        }
+    } catch (err: any) {
+        return res.status(400).json({ error: err.message });
     }
-
+}
     async list(req: Request, res: Response) {
         try {
             const projects = await projectService.listProjects();
