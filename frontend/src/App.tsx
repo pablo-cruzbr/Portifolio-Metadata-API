@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { api } from "./services/api";
 import { Link } from "react-router-dom";
+import fotoPerfil from '../sobre-mim1.png'; 
 
 interface Project {
     id: string; 
@@ -96,7 +97,7 @@ function App() {
 
                     <div className="conteiner-profissional">
                         <div className="box-profissional">
-                            <img className="img-home" src="/sobre-mim1.png" alt="Imagem do profissional" />
+                           <img className="img-home" src={fotoPerfil} alt="..." />
                         </div>
                     </div>
                 </div>

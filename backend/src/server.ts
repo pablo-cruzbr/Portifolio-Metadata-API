@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(router);
 
 const PORT = process.env.PORT || 3333;
-app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
+//app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
 
 app.listen(PORT, () => {
     console.log(`🚀 Servidor rodando na porta ${PORT}`);
