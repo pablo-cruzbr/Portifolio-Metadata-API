@@ -478,6 +478,6 @@ section.home {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 2rem;
-        padding-inline: 5rem;
+        padding-inline: 3rem;
     }
 }
