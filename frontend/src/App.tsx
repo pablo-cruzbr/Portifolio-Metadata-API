@@ -96,7 +96,7 @@ function App() {
 
                     <div className="conteiner-profissional">
                         <div className="box-profissional">
-                           <img className="img-home" src="/sobre_mim1.png" alt="..." />
+                           <img className="img-home" src="/fotoperfil.svg" alt="..." />
                         </div>
                     </div>
                 </div>
