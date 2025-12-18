@@ -67,8 +67,14 @@ function App() {
             <section className="home" id="home">
                 <div className="conteudo-home">
 
-                    <div className="conteudo-texto">
-                        <h3>Olá, meu nome é</h3>
+                    <div className="conteudo-texto-mobile">
+                        <div className="conteiner-profissional- mobile">
+                        <div className="box-profissional-mobile">
+                           <img className="img-home-mobile" src="/fotoperfil.svg" alt="..." />
+                        </div>
+                    </div>
+                    
+                    <h3>Olá, meu nome é</h3>
                         <h1>Pablo Cruz</h1>
 
                         <div className="typing">
