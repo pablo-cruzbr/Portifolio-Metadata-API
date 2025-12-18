@@ -475,7 +475,9 @@ section.home {
     }
 
      .lista-projetos {
-        grid-template-columns: repeat(auto-fit, minmax(260px,fr));
-        padding: 0rem 16%;
+        display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  padding-inline: 8rem;
     }
 }
