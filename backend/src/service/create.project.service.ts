@@ -30,7 +30,7 @@ interface UpdateProjectRequest {
 }
 
 const IDS_PRIORITARIOS: string[] = [
-    "ce8906fd-7f3f-43ac-823c-ab761d65a99a",
+    "1da2ee9a-ecde-4c0d-87e3-3e6f5c25d752",
     "dfe47091-75a9-49b4-a4ac-ba6d54af9a0b",
 ]
 
