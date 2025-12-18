@@ -30,8 +30,8 @@ interface UpdateProjectRequest {
 }
 
 const IDS_PRIORITARIOS: string[] = [
-    "22465f01-246b-4199-a8f8-7ba87b40a017",
-    "8751d66f-4e44-48cc-b497-15e84c49797d",
+    "ce8906fd-7f3f-43ac-823c-ab761d65a99a",
+    "dfe47091-75a9-49b4-a4ac-ba6d54af9a0b",
 ]
 
 class ProjectService {
