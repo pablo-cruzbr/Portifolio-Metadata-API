@@ -85,7 +85,8 @@ function Detalhes() {
               {project.images && project.images.length > 0 ? (
           <Carrossel 
           data={project.images.map((img) => ({
-          src: `http://localhost:3333/files/${img.url}`,   
+          //src: `http://localhost:3333/files/${img.url}`,    
+          src: img.url, 
           alt: project.title
           }))}
             />
