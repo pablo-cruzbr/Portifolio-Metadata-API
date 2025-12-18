@@ -4,8 +4,8 @@ import { projectController } from "./controller/create.project.controller";
 import uploadConfig from "./config/multer";
 
 const router = Router();
-const upload = multer(uploadConfig.upload("./tmp"));
-
+//const upload = multer(uploadConfig.upload("./tmp"));
+const upload = multer(uploadConfig.upload());
 router.get("/", (req, res) => {
   return res.json({ message: "API funcionando!" });
 });
