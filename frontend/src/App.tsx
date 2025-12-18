@@ -72,9 +72,9 @@ function App() {
                         <div className="box-profissional-mobile">
                            <img className="img-home-mobile" src="/fotoperfil.svg" alt="..." />
                         </div>
-                    </div>
+                     </div>
                     
-                    <h3>Olá, meu nome é</h3>
+                   
                         <h1>Pablo Cruz</h1>
 
                         <div className="typing">
@@ -95,9 +95,6 @@ function App() {
                                 <FaGithub />
                             </a>
                         </div>
-
-
-                        <button className="btn">Download CV</button>
                     </div>
 
                     <div className="conteiner-profissional">
