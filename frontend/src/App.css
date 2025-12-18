@@ -418,7 +418,23 @@ section.home {
     .heading {
         font-size: 20px;
     }
+
     
+    .typing {
+        font-size: 2rem;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 4px solid var(--main-color);
+        width: 0ch;
+        animation: typing 3s steps(30) infinite alternate,
+                blink .7s infinite;
+    }
+
+    @keyframes typing {
+        from { width: 0ch; }
+        to { width: 28ch; }
+    }
 
     .box-profissional-mobile {
         width: 28rem;
