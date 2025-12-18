@@ -380,7 +380,7 @@ section.home {
 
    
     .projetos {
-        margin-top: -100px
+        margin-top: -180px
     }
 
     .conteudo-texto-mobile {
@@ -476,10 +476,6 @@ section.home {
 
      .lista-projetos {
         grid-template-columns: repeat(auto-fit, minmax(260px,fr));
-        padding: 3rem 15%;
-    }
-
-      .conteudo-home {
-        margin-bottom: 0px;
+        padding: 0rem 16%;
     }
 }
