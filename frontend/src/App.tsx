@@ -80,7 +80,8 @@ function App() {
                         <div className="typing">
                             <span>Desenvolvedor Full-Stack</span>
                         </div>
-                        <p> Stacks: TypeScript | React | ReactNative | NextJs | NodeJS | PostgreSQL</p>
+
+                        <p className="stacks"> Stacks: TypeScript | React | ReactNative | NextJs | NodeJS | PostgreSQL</p>
 
                         <div className="social-media">
                             <a href="https://www.linkedin.com/in/pablo-cruz-5b937525b/" target="_blank">

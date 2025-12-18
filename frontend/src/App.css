@@ -432,8 +432,12 @@ section.home {
     }
 
     @keyframes typing {
-        from { width: 0ch; }
-        to { width: 28ch; }
+        from { width: 12ch; }
+        to { width: 23ch; }
+    }
+
+    .stacks {
+        font-size: 13px;
     }
 
     .box-profissional-mobile {
