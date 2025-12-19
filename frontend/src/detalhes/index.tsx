@@ -113,7 +113,7 @@ function Detalhes() {
 
           <div className="links">
 
-            <Link to="/" className="btn-voltar"> <IoArrowBack size={20}/> Voltar</Link>
+      
             <Link 
               to={project.linklivedemo} 
               className="btn-voltar"
@@ -131,6 +131,8 @@ function Detalhes() {
             >
               <FaGithub size={20}/> Github
             </Link>
+
+            <Link to="/" className="btn-voltar"> <IoArrowBack size={20}/> Voltar</Link>
           </div>
         </div>
 
