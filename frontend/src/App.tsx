@@ -109,6 +109,8 @@ function App() {
             <section className="projetos" id="projetos">
                 <h2 className="heading">Projetos que Representam Minha Evolução <span> como Desenvolvedor</span></h2>
 
+                <h3 className="heading">Sistemas de <span>Gestão</span></h3>
+
                 <div className="lista-projetos">
                     {projects.length > 0 ? (
                         projects.map((project) => (
@@ -132,6 +134,8 @@ function App() {
                         <p>Nenhum projeto encontrado.</p>
                     )}
                 </div>
+
+                
 
             </section>
 
