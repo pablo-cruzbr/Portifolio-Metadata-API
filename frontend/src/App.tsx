@@ -135,7 +135,7 @@ function App() {
                     )}
                 </div>
 
-                
+                <h3 className="heading">Landing <span>Pages</span></h3>
 
             </section>
 
