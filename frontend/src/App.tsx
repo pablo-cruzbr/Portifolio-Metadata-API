@@ -135,8 +135,6 @@ function App() {
                     )}
                 </div>
 
-                <h3 className="heading">Landing Pages de Alta Conversão: <span>Onde o Design Impulsiona Resultados.</span></h3>
-
             </section>
 
             <section className="home" id="home">
