@@ -107,9 +107,9 @@ function App() {
             </section>
             
             <section className="projetos" id="projetos">
-                <h2 className="heading">Projetos que Representam Minha Evolução <span> como Desenvolvedor</span></h2>
+                <h2 className="heading">Portfólio de Projetos: Transformando Ideias<span> em Código de Alta Performance.</span></h2>
 
-                <h3 className="heading">Sistemas de <span>Gestão</span></h3>
+                <h3 className="heading">Sistemas SaaS Fullstack:  <span>Performance de Ponta a Ponta (Web & Mobile)</span></h3>
 
                 <div className="lista-projetos">
                     {projects.length > 0 ? (
@@ -135,7 +135,7 @@ function App() {
                     )}
                 </div>
 
-                <h3 className="heading">Landing <span>Pages (Sites)</span></h3>
+                <h3 className="heading">Landing Pages de Alta Conversão: <span>Onde o Design Impulsiona Resultados.</span></h3>
 
             </section>
 
