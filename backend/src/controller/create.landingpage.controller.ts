@@ -3,7 +3,6 @@ import { LandingPageService } from '../service/create.landingpage.service';
 
 class LandingPageController {
   
-  // Criar nova Landing Page
   async handleCreate(req: Request, res: Response) {
     const { title, headline, subheadline, technologies, github_url, live_demo_url, images } = req.body;
 
