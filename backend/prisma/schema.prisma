@@ -48,14 +48,13 @@ model ProjectImage {
 
 model LandingPage {
   id               String   @id @default(uuid())
-  title            String   // Ex: "LP para Nutricionista"
-  headline         String   // O texto principal atrativo
-  subheadline      String?  // O texto de apoio
+  title            String   
+  headline         String   
+  subheadline      String?  
   
-  // Detalhes Técnicos
-  technologies     String?  // Ex: "React, Tailwind, Framer Motion"
+
+  technologies     String?  
   
-  // Links e Social
   github_url       String?
   live_demo_url    String?
   
