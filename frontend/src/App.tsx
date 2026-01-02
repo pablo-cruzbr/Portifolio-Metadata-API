@@ -18,6 +18,8 @@ function App() {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
+   
+
     useEffect(() => {
         async function fetchData() {
             try {
@@ -74,7 +76,6 @@ function App() {
                         </div>
                      </div>
                     
-                   
                         <h1>Pablo Cruz</h1>
 
                         <div className="typing">
@@ -134,6 +135,8 @@ function App() {
                         <p>Nenhum projeto encontrado.</p>
                     )}
                 </div>
+
+                <h3 className="heading">Sistemas SaaS Fullstack:  <span>Performance de Ponta a Ponta (Web & Mobile)</span></h3>
 
             </section>
 

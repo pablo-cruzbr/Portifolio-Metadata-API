@@ -1,88 +1,130 @@
-import { Request, Response } from 'express';
-import { LandingPageService } from '../service/create.landingpage.service';
+import type { Request, Response } from "express";
+import { LandingPageService } from "../service/create.landingpage.service";
+
+const landingPageService = new LandingPageService();
 
 class LandingPageController {
-  
-  async handleCreate(req: Request, res: Response) {
-    const { title, headline, subheadline, technologies, github_url, live_demo_url, images } = req.body;
 
-    const landingPageService = new LandingPageService();
+  async create(req: Request, res: Response) {
+    console.log("BODY:", req.body);
+console.log("FILES:", req.files);
+
+    const { title, headline, subheadline, technologies, linkgithub, linklivedemo } = req.body;
+
+    const capa =
+      req.files && "imgcapa" in req.files
+        ? (req.files.imgcapa as Express.Multer.File[])[0]
+        : null;
+
+    const galeria =
+      req.files && "files" in req.files
+        ? (req.files.files as Express.Multer.File[])
+        : [];
+
+    const images: string[] = galeria.map(
+      file => `data:${file.mimetype};base64,${file.buffer.toString("base64")}`
+    );
+
+    const imgcapa_url = capa
+      ? `data:${capa.mimetype};base64,${capa.buffer.toString("base64")}`
+      : null;
 
     try {
-      const lp = await landingPageService.createLP({
+      const landingPage = await landingPageService.create({
         title,
         headline,
         subheadline,
         technologies,
-        github_url,
-        live_demo_url,
-        images
+        github_url: linkgithub,
+        live_demo_url: linklivedemo,
+        images,
+        imgcapa_url
       });
 
-      return res.status(201).json(lp);
-    } catch (error: any) {
-      return res.status(400).json({ error: error.message });
+      return res.status(201).json(landingPage);
+
+    } catch (err: any) {
+      return res.status(400).json({ error: err.message });
     }
   }
 
-  async handleList(req: Request, res: Response) {
-    const landingPageService = new LandingPageService();
-
-    try {
-      const lps = await landingPageService.listLPs();
-      return res.json(lps);
-    } catch (error: any) {
-      return res.status(400).json({ error: error.message });
-    }
-  }
-
-  async handleGetById(req: Request, res: Response) {
+  async update(req: Request, res: Response) {
     const { id } = req.params;
-    const landingPageService = new LandingPageService();
+    const { title, headline, subheadline, technologies, linkgithub, linklivedemo } = req.body;
 
-    try {
-      const lp = await landingPageService.getLPById(id);
-      return res.json(lp);
-    } catch (error: any) {
-      return res.status(404).json({ error: error.message });
+    const capa =
+      req.files && "imgcapa" in req.files
+        ? (req.files.imgcapa as Express.Multer.File[])[0]
+        : null;
+
+    const galeria =
+      req.files && "files" in req.files
+        ? (req.files.files as Express.Multer.File[])
+        : [];
+
+    let images;
+
+    if (galeria.length > 0) {
+      images = galeria.map(file => ({
+        url: `data:${file.mimetype};base64,${file.buffer.toString("base64")}`,
+        public_id: ""
+      }));
     }
-  }
 
-  async handleUpdate(req: Request, res: Response) {
-    const { id } = req.params;
-    const { title, headline, subheadline, technologies, github_url, live_demo_url, images } = req.body;
-
-    const landingPageService = new LandingPageService();
+    const imgcapa_url = capa
+      ? `data:${capa.mimetype};base64,${capa.buffer.toString("base64")}`
+      : undefined;
 
     try {
-      const updatedLp = await landingPageService.updateLP({
+      const landingPage = await landingPageService.update({
         id,
         title,
         headline,
         subheadline,
         technologies,
-        github_url,
-        live_demo_url,
+        github_url: linkgithub,
+        live_demo_url: linklivedemo,
+        imgcapa_url,
         images
       });
 
-      return res.json(updatedLp);
-    } catch (error: any) {
-      return res.status(400).json({ error: error.message });
+      return res.json(landingPage);
+
+    } catch (err: any) {
+      return res.status(400).json({ error: err.message });
     }
   }
 
-  async handleDelete(req: Request, res: Response) {
+  async list(req: Request, res: Response) {
+    try {
+      const landings = await landingPageService.list();
+      return res.json(landings);
+    } catch (err: any) {
+      return res.status(400).json({ error: err.message });
+    }
+  }
+
+  async getById(req: Request, res: Response) {
     const { id } = req.params;
-    const landingPageService = new LandingPageService();
 
     try {
-      const result = await landingPageService.deleteLP(id);
+      const landing = await landingPageService.getById(id);
+      return res.json(landing);
+    } catch (err: any) {
+      return res.status(404).json({ error: err.message });
+    }
+  }
+
+  async delete(req: Request, res: Response) {
+    const { id } = req.params;
+
+    try {
+      const result = await landingPageService.delete(id);
       return res.json(result);
-    } catch (error: any) {
-      return res.status(400).json({ error: error.message });
+    } catch (err: any) {
+      return res.status(404).json({ error: err.message });
     }
   }
 }
 
-export { LandingPageController };
+export const landingPageController = new LandingPageController();

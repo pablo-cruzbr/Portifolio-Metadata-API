@@ -1,147 +1,178 @@
 import prismaClient from "../prisma";
 import cloudinary from "../config/cloudnary";
 
-interface LandingPageImagePayload {
-    url: string;
-    public_id: string;
+interface LandingImagePayload {
+  url: string;
+  public_id: string;
 }
 
 interface CreateLandingPageRequest {
-    title: string;
-    headline: string;
-    subheadline?: string;
-    technologies?: string;
-    github_url?: string;
-    live_demo_url?: string;
-    images: string[]; // Base64 ou caminhos
+  title: string;
+  headline: string;
+  subheadline?: string;
+  technologies?: string;
+  github_url?: string;
+  live_demo_url?: string;
+  images: string[];
+  imgcapa_url: string | null;
+  
 }
 
 interface UpdateLandingPageRequest {
-    id: string;
-    title?: string;
-    headline?: string;
-    subheadline?: string;
-    technologies?: string;
-    github_url?: string;
-    live_demo_url?: string;
-    images?: string[];
+  id: string;
+  title?: string;
+  headline?: string;
+  subheadline?: string;
+  technologies?: string;
+  github_url?: string;
+  live_demo_url?: string;
+  imgcapa_url?: string | null;
+  imgcapa_public_id?: string | null;
+
+  images?: {
+    id?: string;
+    url: string;
+    public_id: string;
+  }[];
 }
+
+
 
 class LandingPageService {
-    async createLP({ 
-        title, headline, subheadline, technologies, 
-        github_url, live_demo_url, images 
-    }: CreateLandingPageRequest) {
 
-        if (!title || !headline) {
-            throw new Error("Título e Headline são obrigatórios.");
-        }
+  async create({
+    title,
+    headline,
+    subheadline,
+    technologies,
+    github_url,
+    live_demo_url,
+    images,
+    imgcapa_url
+  }: CreateLandingPageRequest) {
 
-        const uploadedImagePayloads: LandingPageImagePayload[] = [];
-
-        // Upload das imagens para o Cloudinary (Pasta específica para LPs)
-        if (images && images.length > 0) {
-            try {
-                const uploadPromises = images.map(img =>
-                    cloudinary.uploader.upload(img, {
-                        folder: "portfolio_lp_gallery"
-                    })
-                );
-
-                const results = await Promise.all(uploadPromises);
-
-                results.forEach(result => {
-                    uploadedImagePayloads.push({
-                        url: result.secure_url,
-                        public_id: result.public_id,
-                    });
-                });
-            } catch (error) {
-                console.error("Erro no upload Cloudinary:", error);
-                throw new Error("Falha ao processar imagens da Landing Page.");
-            }
-        }
-
-        const landingPage = await prismaClient.landingPage.create({
-            data: {
-                title,
-                headline,
-                subheadline,
-                technologies,
-                github_url,
-                live_demo_url,
-                images: {
-                    create: uploadedImagePayloads,
-                }
-            },
-            include: { images: true }
-        });
-
-        return landingPage;
+    if (!title || !headline) {
+      throw new Error("Título e Headline são obrigatórios.");
     }
 
-    async listLPs() {
-        return await prismaClient.landingPage.findMany({
-            orderBy: { created_at: "desc" },
-            include: { images: true }
-        });
+    let coverUrl: string | null = null;
+    let coverPublicId: string | null = null;
+    const uploadedImages: LandingImagePayload[] = [];
+
+    // Upload capa
+    if (imgcapa_url) {
+      const result = await cloudinary.uploader.upload(imgcapa_url, {
+        folder: "landingpage_covers"
+      });
+
+      coverUrl = result.secure_url;
+      coverPublicId = result.public_id;
     }
 
-    async getLPById(id: string) {
-        const lp = await prismaClient.landingPage.findUnique({
-            where: { id },
-            include: { images: true }
-        });
-
-        if (!lp) throw new Error("Landing Page não encontrada.");
-        return lp;
-    }
-
-   async updateLP({ id, images, ...rest }: UpdateLandingPageRequest) {
-    const existing = await prismaClient.landingPage.findUnique({ 
-        where: { id },
-        include: { images: true } 
-    });
-
-    if (!existing) throw new Error("Landing Page não encontrada.");
-
-    const updateData: any = { ...rest };
-
+    // Upload galeria
     if (images && images.length > 0) {
-        try {
-            const uploadPromises = images.map(img =>
-                cloudinary.uploader.upload(img, {
-                    folder: "portfolio_lp_gallery"
-                })
-            );
+      const uploads = await Promise.all(
+        images.map(img =>
+          cloudinary.uploader.upload(img, {
+            folder: "landingpage_gallery"
+          })
+        )
+      );
 
-            const results = await Promise.all(uploadPromises);
-
-            updateData.images = {
-                deleteMany: {}, 
-                create: results.map(result => ({
-                    url: result.secure_url,
-                    public_id: result.public_id,
-                }))
-            };
-        } catch (error) {
-            console.error("Erro no upload das novas imagens:", error);
-            throw new Error("Falha ao atualizar imagens.");
-        }
-    }
-
-    return await prismaClient.landingPage.update({
-        where: { id },
-        data: updateData,
-        include: { images: true }
-    });
-}
-    async deleteLP(id: string) {
-        await prismaClient.landingPage.delete({
-            where: { id }
+      uploads.forEach(result => {
+        uploadedImages.push({
+          url: result.secure_url,
+          public_id: result.public_id
         });
-        return { message: "Landing Page removida com sucesso!" };
+      });
     }
+
+    return prismaClient.landingPage.create({
+      data: {
+        title,
+        headline,
+        subheadline,
+        technologies,
+        github_url,
+        live_demo_url,
+        imgcapa_url,
+        imgcapa_public_id: coverPublicId,
+        images: {
+          create: uploadedImages
+        }
+      },
+      include: { images: true }
+    });
+  }
+
+  async update({ id, images, ...data }: UpdateLandingPageRequest) {
+  const exists = await prismaClient.landingPage.findUnique({
+    where: { id },
+    include: { images: true },
+  });
+
+  if (!exists) {
+    throw new Error("Landing Page não encontrada.");
+  }
+
+  // 🔹 Atualiza apenas campos simples
+  const landingPage = await prismaClient.landingPage.update({
+    where: { id },
+    data,
+  });
+
+  if (images && images.length > 0) {
+    await prismaClient.projectImage.deleteMany({
+      where: { landingpageId: id },
+    });
+
+    await prismaClient.projectImage.createMany({
+      data: images.map((img) => ({
+        url: img.url,
+        public_id: img.public_id,
+        landingpageId: id,
+      })),
+    });
+  }
+
+  return prismaClient.landingPage.findUnique({
+    where: { id },
+    include: { images: true },
+  });
+}
+
+
+  async list() {
+    return prismaClient.landingPage.findMany({
+      orderBy: { created_at: "desc" },
+      include: { images: true }
+    });
+  }
+
+  async getById(id: string) {
+    const landing = await prismaClient.landingPage.findUnique({
+      where: { id },
+      include: { images: true }
+    });
+
+    if (!landing) {
+      throw new Error("Landing Page não encontrada.");
+    }
+
+    return landing;
+  }
+
+  async delete(id: string) {
+    await prismaClient.projectImage.deleteMany({
+      where: { landingpageId: id }
+    });
+
+    await prismaClient.landingPage.delete({
+      where: { id }
+    });
+
+    return { message: "Landing Page deletada com sucesso!" };
+  }
 }
 
 export { LandingPageService };

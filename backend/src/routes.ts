@@ -1,7 +1,8 @@
 import { Router } from "express";
 import multer from "multer";
 import { projectController } from "./controller/create.project.controller";
-import { LandingPageController } from "./controller/create.landingpage.controller";
+import { landingPageController } from "./controller/create.landingpage.controller";
+
 import uploadConfig from "./config/multer";
 
 const router = Router();
@@ -24,13 +25,43 @@ router.get("/listproject/:id", projectController.getById)
 router.patch("/project/:id", upload.fields([{ name: "imgcapa", maxCount: 1 }, { name: "files", maxCount: 10 }]), projectController.update);
 router.delete("/delete/project/:id", projectController.delete)
 
-const landingPageController = new LandingPageController();
 
 // Rotas de Landing Page
-router.post('/landingpages', landingPageController.handleCreate);
-router.get('/landingpages', landingPageController.handleList);
-router.get('/landingpages/:id', landingPageController.handleGetById);
-router.put('/landingpages/:id', landingPageController.handleUpdate);
-router.delete('/landingpages/:id', landingPageController.handleDelete);
+
+router.post(
+  "/landingpages",
+  upload.fields([
+     { name: "imgcapa", maxCount: 1 },
+    { name: "files", maxCount: 10 }
+  ]),
+  landingPageController.create
+);
+
+router.patch(
+  "/landingpages/:id",
+  upload.fields([
+    { name: "imgcapa", maxCount: 1 },
+    { name: "files", maxCount: 10 }
+  ]),
+  landingPageController.update
+);
+
+// LIST
+router.get(
+  "/landingpages",
+  landingPageController.list
+);
+
+// GET BY ID
+router.get(
+  "/landingpages/:id",
+  landingPageController.getById
+);
+
+// DELETE
+router.delete(
+  "/landingpages/:id",
+  landingPageController.delete
+);
 
 export default router;

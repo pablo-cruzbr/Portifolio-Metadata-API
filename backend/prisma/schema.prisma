@@ -57,6 +57,10 @@ model LandingPage {
   
   github_url       String?
   live_demo_url    String?
+
+  
+  imgcapa_url        String?
+  imgcapa_public_id  String?
   
   created_at       DateTime @default(now())
   updated_at       DateTime @updatedAt
