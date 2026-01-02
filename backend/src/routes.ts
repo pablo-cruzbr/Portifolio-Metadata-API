@@ -26,8 +26,6 @@ router.patch("/project/:id", upload.fields([{ name: "imgcapa", maxCount: 1 }, { 
 router.delete("/delete/project/:id", projectController.delete)
 
 
-// Rotas de Landing Page
-
 router.post(
   "/landingpages",
   upload.fields([
@@ -46,19 +44,16 @@ router.patch(
   landingPageController.update
 );
 
-// LIST
 router.get(
   "/landingpages",
   landingPageController.list
 );
 
-// GET BY ID
 router.get(
   "/landingpages/:id",
   landingPageController.getById
 );
 
-// DELETE
 router.delete(
   "/landingpages/:id",
   landingPageController.delete

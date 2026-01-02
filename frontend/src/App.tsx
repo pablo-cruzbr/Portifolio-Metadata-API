@@ -13,12 +13,22 @@ interface Project {
     imgcapa_url: string;
 }
 
+interface LandingPage {
+    id: string,
+    title: string,
+    headline: string,
+    subheadline: string,
+    technologies: string,
+    imgcapa_url: string;
+}
+
 function App() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-   
+    const [landingPages, setLandingPages] = useState<LandingPage[]>([]);
+    
 
     useEffect(() => {
         async function fetchData() {
@@ -33,6 +43,28 @@ function App() {
             } catch (error) {
                 console.error('Falha ao obter a lista de projetos:', error);
                 setError("Falha ao carregar os projetos.");
+            } finally {
+                setIsLoading(false);
+            }
+        }
+        
+        fetchData(); 
+        
+    }, []);
+
+      useEffect(() => {
+        async function fetchData() {
+            try {
+                setIsLoading(true);
+                const response = await api.get('/landingpages'); 
+
+                console.log("Dados da API:", response.data); 
+                
+               setLandingPages(response.data); 
+                setError(null);
+            } catch (error) {
+                console.error('Falha ao obter a lista de Landing Pages:', error);
+                setError("Falha ao carregar os Landing Pages.");
             } finally {
                 setIsLoading(false);
             }
@@ -136,7 +168,7 @@ function App() {
                     )}
                 </div>
 
-                <h3 className="heading">Sistemas SaaS Fullstack:  <span>Performance de Ponta a Ponta (Web & Mobile)</span></h3>
+                <h3 className="heading">Do Design ao Código: <span>Landing Pages Prontas para o Mercado</span></h3>
 
             </section>
 
