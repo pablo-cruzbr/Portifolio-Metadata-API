@@ -169,7 +169,29 @@ function App() {
                 </div>
 
                 <h3 className="heading">Do Design ao Código: <span>Landing Pages Prontas para o Mercado</span></h3>
+                    <div className="lista-projetos">
+                    {landingPages.length > 0 ? (
+                        landingPages.map((landingPage) => (
+                            <div key={landingPage.id} className="card-projeto">
+                                 <img 
+                                //src={`http://localhost:3333/files/${project.imgcapa_url}`} 
+                                src={landingPage.imgcapa_url} 
+                                alt={`Imagem do projeto ${landingPage.title}`}
+                            />
+                                 <h3>{landingPage.title}</h3>
+                                <p>Tecnologias: **{landingPage.technologies}**</p>
+                                <p>{landingPage.subheadline}</p>
 
+
+                                <Link className="btn" to={`/detalhes/${landingPage.id}`}>
+                                Ver Detalhes
+                                </Link>      
+                            </div>
+                        ))
+                    ) : (
+                        <p>Nenhum projeto encontrado.</p>
+                    )}
+                </div>
             </section>
 
             <section className="home" id="home">
