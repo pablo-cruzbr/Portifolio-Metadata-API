@@ -44,19 +44,8 @@ router.patch(
   landingPageController.update
 );
 
-router.get(
-  "/landingpages",
-  landingPageController.list
-);
-
-router.get(
-  "/landingpages/:id",
-  landingPageController.getById
-);
-
-router.delete(
-  "/landingpages/:id",
-  landingPageController.delete
-);
+router.get("/landingpages",landingPageController.list);
+router.get("/landingpages/:id",landingPageController.getById);
+router.delete("/landingpages/:id",landingPageController.delete);
 
 export default router;

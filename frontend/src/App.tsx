@@ -159,7 +159,7 @@ function App() {
 
 
                                 <Link className="btn" to={`/detalhes/${project.id}`}>
-                                Ver Detalhes
+                                    Ver Detalhes
                                 </Link>      
                             </div>
                         ))
@@ -182,10 +182,11 @@ function App() {
                                 <p>Tecnologias: **{landingPage.technologies}**</p>
                                 <p>{landingPage.subheadline}</p>
 
-
-                                <Link className="btn" to={`/detalhes/${landingPage.id}`}>
-                                Ver Detalhes
-                                </Link>      
+                               <Link
+                                    className="btn"
+                                    to={`/detalhesLandingPage/${landingPage.id}`}> Ver Detalhes Landing Page
+                                </Link>
+                                    
                             </div>
                         ))
                     ) : (
