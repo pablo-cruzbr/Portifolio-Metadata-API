@@ -1,4 +1,4 @@
-import "./detalhes.css";
+import "../detalhes/detalhes.css";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { api } from "../services/api";
