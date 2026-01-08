@@ -83,13 +83,10 @@ function DetalhesLandingPage() {
 
           <div className="carrossel-wrapper">
             <Carrossel
-              data={[
-                { src: landingPage.imgcapa_url, alt: landingPage.title },
-                ...landingPage.images.map(img => ({
-                  src: img.url,
-                  alt: landingPage.title
-                }))
-              ]}
+              data={landingPage.images.map(img => ({
+                src: img.url,
+                alt: landingPage.title
+              }))}
             />
           </div>
 
