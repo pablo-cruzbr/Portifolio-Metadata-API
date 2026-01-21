@@ -4,6 +4,8 @@ body {
   justify-content: center;     
   align-items: center;         
   font-family: sans-serif;
+  margin: 0;
+  background-color: #ffff;
 }
 
 .detalhes-container {
@@ -16,10 +18,11 @@ body {
   gap: 50px;
   align-items: center; 
   color: #fff;
+  box-sizing: border-box;
 }
 
-.links{
- display: flex;
+.links {
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -30,7 +33,6 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-
   padding: 10px 20px;
   background-color: #1e1e1e;
   color: #fff;
@@ -38,7 +40,7 @@ body {
   text-decoration: none;
   transition: 0.3s;
   font-weight: 500;
-
+  box-sizing: border-box;
 }
 
 .btn-voltar:hover {
@@ -49,12 +51,11 @@ body {
   width: 100%;
   background: #121212;
   padding: 40px;
-  align-items: center; 
-  flex-direction: center;
   border-radius: 20px;
   display: flex;
   gap: 40px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
 }
 
 .detalhes-info {
@@ -70,15 +71,15 @@ body {
 }
 
 .carrossel-wrapper {
-   width: 100%;
+  width: 100%;
   display: flex;
   justify-content: center; 
   align-items: center;    
 }
 
-.carrossel-wrapper * {
-  max-width: 700px;
+.carrossel-wrapper > div {
   width: 100%;
+  max-width: 700px;
 }
 
 .features-box {
@@ -110,17 +111,22 @@ body {
     gap: 25px;
   }
 
-  .carrossel-wrapper * {
+  .carrossel-wrapper > div {
     max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .btn-voltar {
+  .links {
+    flex-direction: column; 
     width: 100%;
-    text-align: center;
+  }
+
+  .btn-voltar {
+    width: 100%; 
+    justify-content: center;
     padding: 14px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .detalhes-card {
@@ -128,11 +134,12 @@ body {
   }
 
   .detalhes-info h1 {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
+    text-align: center;
   }
 
   .features-box {
     padding: 14px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
