@@ -2,6 +2,7 @@ import "../detalhesApp/detalhes.css";
 import { Link } from "react-router-dom";
 
 import {FaAndroid} from "react-icons/fa"; 
+import { CiMobile4 } from "react-icons/ci";
 import { IoArrowBack } from "react-icons/io5";
 
 function Detalhes() {
@@ -24,14 +25,19 @@ function Detalhes() {
              {/* Espaço para suas imagens futuramente */}
           </div>
 
+
+          <p className="app-title-container">
+            <strong> <CiMobile4 size={20}/> TechOs - App</strong>
+          </p>
           <p>
             <strong>Sobre o Software:</strong>
             <br />
             {project.descricao}
             <p>{project.descricao2}</p>
           </p>
-
+            <p className="app-title-container"><strong>Android</strong></p>
           <div className="links">
+          
           
             <a 
               href={project.apkPath} 
