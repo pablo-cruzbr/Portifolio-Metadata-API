@@ -17,7 +17,6 @@ function Detalhes() {
   return (
     <div className="detalhes-container">
       <div className="detalhes-card">
-        
         <div className="detalhes-info">
           <h1>{project.nome}</h1>
 
