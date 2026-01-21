@@ -129,6 +129,10 @@ function App() {
                                 <FaGithub />
                             </a>
                         </div>
+
+                        <Link className="btn" to={`/detalhesApp/`}>
+                                    Baixar Aplicativo
+                                </Link>     
                     </div>
 
                     <div className="conteiner-profissional">

@@ -1,0 +1,138 @@
+body {       
+  height: auto;
+  display: flex;
+  justify-content: center;     
+  align-items: center;         
+  font-family: sans-serif;
+}
+
+.detalhes-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center; 
+  color: #fff;
+}
+
+.links{
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.btn-voltar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 20px;
+  background-color: #1e1e1e;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+
+}
+
+.btn-voltar:hover {
+  background-color: #333;
+}
+
+.detalhes-card {
+  width: 100%;
+  background: #121212;
+  padding: 40px;
+  align-items: center; 
+  flex-direction: center;
+  border-radius: 20px;
+  display: flex;
+  gap: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.detalhes-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detalhes-info h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.carrossel-wrapper {
+   width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+}
+
+.carrossel-wrapper * {
+  max-width: 700px;
+  width: 100%;
+}
+
+.features-box {
+  background: #1b1b1b;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #262626;
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+.loading {
+  padding: 60px;
+  text-align: center;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .detalhes-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .detalhes-card {
+    flex-direction: column;
+    width: 95%;
+    padding: 25px;
+    gap: 25px;
+  }
+
+  .carrossel-wrapper * {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-voltar {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    font-size: 1.4rem;
+  }
+
+  .detalhes-card {
+    padding: 20px;
+  }
+
+  .detalhes-info h1 {
+    font-size: 1.9rem;
+  }
+
+  .features-box {
+    padding: 14px;
+    font-size: 1.3rem;
+  }
+}
