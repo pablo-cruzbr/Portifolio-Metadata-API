@@ -1,4 +1,4 @@
-import "../detalhes/detalhes.css";
+import "../detalhesApp/detalhes.css";
 import { Link } from "react-router-dom";
 
 import { FaGithub, FaPlayCircle, FaAndroid } from "react-icons/fa"; 
