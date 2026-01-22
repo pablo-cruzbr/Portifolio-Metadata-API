@@ -21,9 +21,13 @@ function Detalhes() {
         <div className="detalhes-info">
           <h1>{project.nome}</h1>
 
-          <div className="carrossel-wrapper">
-             {/* Espaço para suas imagens futuramente */}
-          </div>
+            <div className="conteiner-profissional">
+              <div className="box-profissional">
+                  <img className=".img-sobre-mim" src="/tech_os.svg" alt="Imagem do profissional" />
+              </div>
+            </div>
+
+        
 
 
           <p className="app-title-container">
