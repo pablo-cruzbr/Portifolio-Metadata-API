@@ -383,6 +383,10 @@ section.home {
         margin-top: -180px
     }
 
+    .img-home{
+        display: none !important;
+    }
+
     .conteudo-texto-mobile {
         display: flex !important;
         flex-direction: column;
