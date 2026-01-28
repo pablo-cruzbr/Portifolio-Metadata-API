@@ -7,7 +7,7 @@
   ],
   "headers": [
     {
-      "source": "/(.*).apk",
+      "source": "/techos.apk",
       "headers": [
         {
           "key": "Content-Type",
