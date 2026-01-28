@@ -46,7 +46,7 @@ function Detalhes() {
               download="application-a70c8250-6956-4d2d-a122-9375d37489e2.apk"
               style={{ backgroundColor: '#3DDC84', color: '#000' }} 
             >
-              <FaAndroid size={20}/> Download APK V2
+              <FaAndroid size={20}/> Download APK
             </a>
 
             <Link to="/" className="btn-voltar"> 
