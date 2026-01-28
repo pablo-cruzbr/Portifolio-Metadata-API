@@ -43,7 +43,7 @@ function Detalhes() {
             <a 
               href={project.apkPath} 
               className="btn-voltar" 
-              download="TechOS-App.apk"
+              download="application-a70c8250-6956-4d2d-a122-9375d37489e2.apk"
               style={{ backgroundColor: '#3DDC84', color: '#000' }} 
             >
               <FaAndroid size={20}/> Download APK
