@@ -41,24 +41,22 @@ function Detalhes() {
           
           
           <a 
-              href="https://link-direto-google-drive.pablo.workers.dev/?id=1J5WRWivC2cG9eL9r_aMQ0E3PdAcOI9u-" 
-              className="btn-voltar" 
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ 
-                backgroundColor: '#3DDC84', 
-                color: '#000', 
-                textDecoration: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '10px 20px',
-                borderRadius: '8px',
-                fontWeight: 'bold'
-              }} 
-            >
-              <FaAndroid size={20}/> Download APK Oficial
-            </a>
+            href="https://drive.google.com/uc?export=download&id=1J5WRWivC2cG9eL9r_aMQ0E3PdAcOI9u-" 
+            className="btn-voltar" 
+            style={{ 
+              backgroundColor: '#3DDC84', 
+              color: '#000', 
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: '10px 20px',
+              borderRadius: '8px',
+              fontWeight: 'bold',
+              gap: '8px'
+            }}
+          >
+            <FaAndroid size={20}/> Download APK Oficial
+          </a>
             <Link to="/" className="btn-voltar"> 
               <IoArrowBack size={20}/> Voltar
             </Link>
