@@ -41,7 +41,7 @@ function Detalhes() {
           
           
             <a 
-              href={project.apkPath} 
+              href={"/application-a70c8250-6956-4d2d-a122-9375d37489e2.apk"} 
               className="btn-voltar" 
               download="application-a70c8250-6956-4d2d-a122-9375d37489e2.apk"
               style={{ backgroundColor: '#3DDC84', color: '#000' }} 
