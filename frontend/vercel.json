@@ -11,7 +11,7 @@
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/vnd.android.package-archive"
+          "value": "application/octet-stream"
         },
         {
           "key": "Content-Disposition",

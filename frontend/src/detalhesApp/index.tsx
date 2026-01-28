@@ -40,11 +40,11 @@ function Detalhes() {
           <div className="links">
           
           
-            <a 
-              href={"/techos.apk"} 
+           <a 
+              href="/techos.apk?update=1.0.2" 
               className="btn-voltar" 
               download="techos.apk"
-              style={{ backgroundColor: '#3DDC84', color: '#000' }} 
+              style={{ backgroundColor: '#3DDC84', color: '#000', textDecoration: 'none' }} 
             >
               <FaAndroid size={20}/> Download APK teste
             </a>
