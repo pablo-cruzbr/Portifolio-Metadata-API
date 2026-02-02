@@ -8,7 +8,7 @@ import { IoArrowBack } from "react-icons/io5";
 function Detalhes() {
   const project = {
     nome: "Meu Apps - Pablo Cruz",
-    descricao: "Tech-OS desenvolvido com React Native versão 1.0.2.",
+    descricao: "Allti-Control desenvolvido com React Native versão 1.0.2.",
     descricao2: " Aplicativo feito para técnicos de Informática para atendimentos em campo",
     linkgihub: "https://github.com/seu-usuario",
     linklivedemo: "#", 
@@ -23,7 +23,7 @@ function Detalhes() {
 
             <div className="conteiner-profissional">
               <div className="box-profissional">
-                  <img className=".img-sobre-mim" src="/tech_os.svg" alt="Imagem do profissional" />
+                  <img className=".img-sobre-mim" src="/allti_control.svg" alt="Imagem do profissional" />
               </div>
             </div>
 
