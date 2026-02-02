@@ -1,4 +1,4 @@
-import "../detalhesApp/detalhes.css";
+import "./detalhes.css";
 import { Link } from "react-router-dom";
 
 import {FaAndroid} from "react-icons/fa"; 

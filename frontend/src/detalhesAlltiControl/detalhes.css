@@ -70,7 +70,7 @@ body {
 
 .detalhes-card {
   width: 100%;
-  background: #121212;
+  background: #4E3182;
   padding: 40px;
   border-radius: 20px;
   display: flex;
@@ -104,7 +104,7 @@ body {
 }
 
 .features-box {
-  background: #1b1b1b;
+  background: #4E3182;
   padding: 18px;
   border-radius: 12px;
   border: 1px solid #262626;
