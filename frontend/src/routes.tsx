@@ -3,6 +3,7 @@ import App from "./App";
 import Detalhes from "./detalhes";
 import DetalhesLandingPage from "./detalhesLandingPage"
 import DetalhesApp from "./detalhesApp"
+import DetalhesAlltiControl from "./detalhesAlltiControl"
 
 export default function AppRoutes() {
   return (
@@ -11,6 +12,7 @@ export default function AppRoutes() {
       <Route path="/detalhes/:id" element={<Detalhes />} />
       <Route path="/detalhesApp" element={<DetalhesApp/>} />
       <Route path="/detalhesLandingPage/:id" element={<DetalhesLandingPage/>}/>
+      <Route path="/detalhesAlltiControl" element={<DetalhesAlltiControl/>}/>
     </Routes>
   );
 }
