@@ -1,4 +1,4 @@
-import "./detalhes.css";
+import "./detalhesallticontrol.css";
 import { Link } from "react-router-dom";
 
 import {FaAndroid} from "react-icons/fa"; 
