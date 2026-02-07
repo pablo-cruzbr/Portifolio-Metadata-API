@@ -41,7 +41,7 @@ function Detalhes() {
           
           
           <a 
-            href="https://drive.google.com/uc?export=download&id=1J5WRWivC2cG9eL9r_aMQ0E3PdAcOI9u-" 
+            href="https://drive.google.com/file/d/1Ozg5RSg7pUhuejKVmSl4nFOowQQQHZZx/view?usp=sharing" 
             className="btn-voltar" 
             style={{ 
               backgroundColor: '#3DDC84', 
