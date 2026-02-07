@@ -1,4 +1,3 @@
-import "./detalhesallticontrol.css";
 import { Link } from "react-router-dom";
 
 import {FaAndroid} from "react-icons/fa"; 
@@ -44,8 +43,8 @@ function Detalhes() {
             href="https://drive.google.com/file/d/1Ozg5RSg7pUhuejKVmSl4nFOowQQQHZZx/view?usp=sharing" 
             className="btn-voltar" 
             style={{ 
-              backgroundColor: '#3DDC84', 
-              color: '#000', 
+              backgroundColor: '#ffffff', 
+              color: '#4E3182', 
               textDecoration: 'none',
               display: 'inline-flex',
               alignItems: 'center',
