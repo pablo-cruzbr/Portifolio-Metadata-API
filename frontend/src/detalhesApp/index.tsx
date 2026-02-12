@@ -94,8 +94,7 @@ function Detalhes() {
           </p>
             <p className="app-title-container"><strong>Android</strong></p>
           <div className="links">
-          
-          
+              
           <a 
             href="https://drive.google.com/uc?export=download&id=1J5WRWivC2cG9eL9r_aMQ0E3PdAcOI9u-" 
             className="btn-voltar" 
@@ -118,7 +117,6 @@ function Detalhes() {
             </Link>
           </div>
         </div>
-
       </div>
     </div>
   );
