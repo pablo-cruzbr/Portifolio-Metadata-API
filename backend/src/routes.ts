@@ -23,6 +23,7 @@ router.post(
 );
 
 router.get("/listfreelancer", freelancerController.list)
+router.get("/listfeelancer/:id", freelancerController.getById)
 
 router.post(
   "/project",
