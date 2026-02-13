@@ -2,6 +2,7 @@ import { Router } from "express";
 import multer from "multer";
 import { projectController } from "./controller/create.project.controller";
 import { landingPageController } from "./controller/create.landingpage.controller";
+import { freelancerController } from "./controller/create.freelancer.controller";
 
 import uploadConfig from "./config/multer";
 
@@ -11,6 +12,15 @@ const upload = multer(uploadConfig.upload());
 router.get("/", (req, res) => {
   return res.json({ message: "API funcionando!" });
 });
+
+router.post(
+  "/freelancer",
+  upload.fields([
+    { name: "imgcapa", maxCount: 1 },
+    { name: "files", maxCount: 10 }
+  ]),
+  freelancerController.create
+);
 
 router.post(
   "/project",
