@@ -22,6 +22,8 @@ router.post(
   freelancerController.create
 );
 
+router.get("/listfreelancer", freelancerController.list)
+
 router.post(
   "/project",
   upload.fields([
