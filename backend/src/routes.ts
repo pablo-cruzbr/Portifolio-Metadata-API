@@ -21,7 +21,6 @@ router.post(
   ]),
   freelancerController.create
 );
-
 router.get("/listfreelancer", freelancerController.list)
 router.get("/listfeelancer/:id", freelancerController.getById)
 router.patch("/freelancer/:id", upload.fields([{ name: "imgcapa", maxCount: 1 }, { name: "files", maxCount: 10 }]), freelancerController.update);
