@@ -146,6 +146,8 @@ function App() {
             <section className="projetos" id="projetos">
                 <h2 className="heading">Portifólio de Projetos: Transformando Ideias<span> em Código de Alta Performance.</span></h2>
 
+                <h3 className="heading">Projetos Freelancer: <span>Transformando Desafios em Soluções Digitais</span></h3>
+
                 <h3 className="heading">Sistemas SaaS Fullstack:  <span>Eficiência de Ponta a Ponta (Web & Mobile)</span></h3>
 
                 <div className="lista-projetos">
