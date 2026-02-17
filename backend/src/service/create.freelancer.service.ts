@@ -140,7 +140,6 @@ class FreelancerService {
   });
 }
 
-
   async list() {
     return prismaClient.freelancer.findMany({
       orderBy: { created_at: "desc" },
