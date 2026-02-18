@@ -115,7 +115,7 @@ class FreelancerService {
   });
 
   if (!exists) {
-    throw new Error("Landing Page não encontrada.");
+    throw new Error("Freelancer não encontrada.");
   }
 
   const freelancer = await prismaClient.freelancer.update({

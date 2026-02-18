@@ -190,7 +190,7 @@ function App() {
                                  <h3>{freelancer.title}</h3>
                                 <p>Tecnologias: **{freelancer.technologies}**</p>
 
-                                <Link className="btn" to={`/detalhes/${freelancer.id}`}>
+                                <Link className="btn" to={`/detalhesFreelancerr/${freelancer.id}`}>
                                     Ver Detalhes
                                 </Link>      
                             </div>
