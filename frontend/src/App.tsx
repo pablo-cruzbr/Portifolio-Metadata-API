@@ -22,6 +22,15 @@ interface LandingPage {
     imgcapa_url: string;
 }
 
+interface Freelancer {
+    id: string,
+    title: string,
+    headline: string,
+    subheadline: string,
+    technologies: string,
+    imgcapa_url: string;
+}
+
 function App() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [isLoading, setIsLoading] = useState(true);
