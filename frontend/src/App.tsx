@@ -37,8 +37,29 @@ function App() {
     const [error, setError] = useState<string | null>(null);
 
     const [landingPages, setLandingPages] = useState<LandingPage[]>([]);
-    
+    const [freelancer, setFreelancer] = useState<Freelancer[]>([])
 
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                setIsLoading(true);
+                const response = await api.get('/listfreelancer'); 
+
+                console.log("Dados da API:", response.data); 
+                
+                setFreelancer(response.data); 
+                setError(null);
+            } catch (error) {
+                console.error('Falha ao obter a lista de Freelancer:', error);
+                setError("Falha ao carregar os Freelancer.");
+            } finally {
+                setIsLoading(false);
+            }
+        }
+        
+        fetchData();     
+    }, []);
+    
     useEffect(() => {
         async function fetchData() {
             try {
