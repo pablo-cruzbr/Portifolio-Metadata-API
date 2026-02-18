@@ -36,7 +36,10 @@ interface UpdateFreelancerRequest {
   }[];
 }
 
-
+const IDS_PRIORITARIOS: string[] = [
+    "ae6eaf20-2eff-482e-9517-03d91a77875e",
+    "3c2635c7-6fbf-4544-bd5f-192cc2cc0b0e",
+]
 
 class FreelancerService {
 
@@ -140,12 +143,25 @@ class FreelancerService {
   });
 }
 
-  async list() {
-    return prismaClient.freelancer.findMany({
-      orderBy: { created_at: "desc" },
-      include: { images: true }
-    });
-  }
+async list() {
+  const prioritized = await prismaClient.freelancer.findMany({
+    where: {
+      id: { in: IDS_PRIORITARIOS },
+    },
+    include: { images: true },
+    orderBy: { created_at: "desc" },
+  });
+
+  const others = await prismaClient.freelancer.findMany({
+    where: {
+      id: { notIn: IDS_PRIORITARIOS },
+    },
+    include: { images: true },
+    orderBy: { created_at: "desc" },
+  });
+
+  return [...prioritized, ...others];
+}
 
   async getById(id: string) {
     const landing = await prismaClient.landingPage.findUnique({
