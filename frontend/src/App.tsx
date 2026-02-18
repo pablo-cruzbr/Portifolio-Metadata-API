@@ -37,7 +37,7 @@ function App() {
     const [error, setError] = useState<string | null>(null);
 
     const [landingPages, setLandingPages] = useState<LandingPage[]>([]);
-    const [freelancer, setFreelancer] = useState<Freelancer[]>([])
+    const [freelancers, setFreelancer] = useState<Freelancer[]>([])
 
     useEffect(() => {
         async function fetchData() {
@@ -177,6 +177,28 @@ function App() {
                 <h2 className="heading">Portifólio de Projetos: Transformando Ideias<span> em Código de Alta Performance.</span></h2>
 
                 <h3 className="heading">Projetos Freelancer: <span>Transformando Desafios em Soluções Digitais</span></h3>
+
+                  <div className="lista-projetos">
+                    {freelancers.length > 0 ? (
+                        freelancers.map((freelancer) => (
+                            <div key={freelancer.id} className="card-projeto">
+                                 <img 
+                                //src={`http://localhost:3333/files/${freelancer.imgcapa_url}`} 
+                                src={freelancer.imgcapa_url} 
+                                alt={`Imagem do projeto ${freelancer.title}`}
+                            />
+                                 <h3>{freelancer.title}</h3>
+                                <p>Tecnologias: **{freelancer.technologies}**</p>
+
+                                <Link className="btn" to={`/detalhes/${freelancer.id}`}>
+                                    Ver Detalhes
+                                </Link>      
+                            </div>
+                        ))
+                    ) : (
+                        <p>Nenhum projeto encontrado.</p>
+                    )}
+                </div>
 
                 <h3 className="heading">Sistemas SaaS Fullstack:  <span>Eficiência de Ponta a Ponta (Web & Mobile)</span></h3>
 
