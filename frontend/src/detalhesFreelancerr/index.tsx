@@ -31,7 +31,7 @@ interface Freelancer {
 
 function DetalhesFreelancerr() {
   const { id } = useParams();
-  const [landingPage, setLandingPage] = useState<Freelancer | null>(null);
+  const [freelancer, setFreelancer] = useState<Freelancer | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -39,18 +39,19 @@ function DetalhesFreelancerr() {
     if (!id) return;
 
     async function fetchData() {
-      try {
-        setLoading(true);
-        const response = await api.get(`/freelancer/${id}`);
-        setLandingPage(response.data);
-        setError(null);
-      } catch (err) {
-        console.error(err);
-        setError("Falha ao carregar a Landing Page.");
-      } finally {
-        setLoading(false);
-      }
-    }
+        try {
+            setLoading(true);
+            const response = await api.get(`/listfeelancer/${id}`); 
+            
+            setFreelancer(response.data);
+            setError(null);
+        } catch (err) {
+            console.error(err);
+            setError("Falha ao carregar a Freelancer.");
+        } finally {
+            setLoading(false);
+        }
+}
 
     fetchData();
   }, [id]);
@@ -63,7 +64,7 @@ function DetalhesFreelancerr() {
     );
   }
 
-  if (error || !landingPage) {
+  if (error || !freelancer) {
     return (
       <div className="loading">
         <h2>{error ?? "Landing Page não encontrada."}</h2>
@@ -77,27 +78,27 @@ function DetalhesFreelancerr() {
       <div className="detalhes-card">
         <div className="detalhes-info">
 
-          <h1>{landingPage.title}</h1>
-          <h3 className="lp-headline">{landingPage.headline}</h3>
-          <p className="lp-subheadline">{landingPage.subheadline}</p>
+          <h1>{freelancer.title}</h1>
+          <h3 className="lp-headline">{freelancer.headline}</h3>
+          <p className="lp-subheadline">{freelancer.subheadline}</p>
 
           <div className="carrossel-wrapper">
             <Carrossel
-              data={landingPage.images.map(img => ({
+              data={freelancer.images.map(img => ({
                 src: img.url,
-                alt: landingPage.title
+                alt: freelancer.title
               }))}
             />
           </div>
 
           <p>
-            <strong>Tecnologias:</strong> {landingPage.technologies}
+            <strong>Tecnologias:</strong> {freelancer.technologies}
           </p>
 
           <div className="links">
-            {landingPage.live_demo_url && (
+            {freelancer.live_demo_url && (
               <a
-                href={landingPage.live_demo_url}
+                href={freelancer.live_demo_url}
                 className="btn-voltar"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -106,9 +107,9 @@ function DetalhesFreelancerr() {
               </a>
             )}
 
-            {landingPage.github_url && (
+            {freelancer.github_url && (
               <a
-                href={landingPage.github_url}
+                href={freelancer.github_url}
                 className="btn-voltar"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -121,7 +122,6 @@ function DetalhesFreelancerr() {
               <IoArrowBack size={20} /> Voltar
             </Link>
           </div>
-
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ export default function AppRoutes() {
       <Route path="/detalhesApp" element={<DetalhesApp/>} />
       <Route path="/detalhesLandingPage/:id" element={<DetalhesLandingPage/>}/>
       <Route path="/detalhesAlltiControl" element={<DetalhesAlltiControl/>}/>
-      <Route path="/detalhesFreelancerr" element={<DetalhesFreelancerr/>}/>
+      <Route path="/detalhesFreelancerr/:id" element={<DetalhesFreelancerr/>}/>
     </Routes>
   );
 }
