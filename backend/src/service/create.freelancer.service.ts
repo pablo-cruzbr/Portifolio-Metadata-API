@@ -164,13 +164,13 @@ async list() {
 }
 
   async getById(id: string) {
-    const landing = await prismaClient.landingPage.findUnique({
+    const landing = await prismaClient.freelancer.findUnique({
       where: { id },
       include: { images: true }
     });
 
     if (!landing) {
-      throw new Error("Landing Page não encontrada.");
+      throw new Error("Freelancer não encontrada.");
     }
 
     return landing;
