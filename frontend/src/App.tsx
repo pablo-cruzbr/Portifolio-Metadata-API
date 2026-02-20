@@ -22,14 +22,44 @@ interface LandingPage {
     imgcapa_url: string;
 }
 
+interface Freelancer {
+    id: string,
+    title: string,
+    headline: string,
+    subheadline: string,
+    technologies: string,
+    imgcapa_url: string;
+}
+
 function App() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
     const [landingPages, setLandingPages] = useState<LandingPage[]>([]);
-    
+    const [freelancers, setFreelancer] = useState<Freelancer[]>([])
 
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                setIsLoading(true);
+                const response = await api.get('/listfreelancer'); 
+
+                console.log("Dados da API:", response.data); 
+                
+                setFreelancer(response.data); 
+                setError(null);
+            } catch (error) {
+                console.error('Falha ao obter a lista de Freelancer:', error);
+                setError("Falha ao carregar os Freelancer.");
+            } finally {
+                setIsLoading(false);
+            }
+        }
+        
+        fetchData();     
+    }, []);
+    
     useEffect(() => {
         async function fetchData() {
             try {
@@ -146,6 +176,30 @@ function App() {
             <section className="projetos" id="projetos">
                 <h2 className="heading">Portifólio de Projetos: Transformando Ideias<span> em Código de Alta Performance.</span></h2>
 
+                <h3 className="heading">Projetos Freelancer: <span>Transformando Desafios em Soluções Digitais</span></h3>
+
+                  <div className="lista-projetos">
+                    {freelancers.length > 0 ? (
+                        freelancers.map((freelancer) => (
+                            <div key={freelancer.id} className="card-projeto">
+                                 <img 
+                                //src={`http://localhost:3333/files/${freelancer.imgcapa_url}`} 
+                                src={freelancer.imgcapa_url} 
+                                alt={`Imagem do projeto ${freelancer.title}`}
+                            />
+                                 <h3>{freelancer.title}</h3>
+                                <p>Tecnologias: **{freelancer.technologies}**</p>
+
+                                <Link className="btn" to={`/detalhesFreelancerr/${freelancer.id}`}>
+                                    Ver Detalhes
+                                </Link>      
+                            </div>
+                        ))
+                    ) : (
+                        <p>Nenhum projeto encontrado.</p>
+                    )}
+                </div>
+
                 <h3 className="heading">Sistemas SaaS Fullstack:  <span>Eficiência de Ponta a Ponta (Web & Mobile)</span></h3>
 
                 <div className="lista-projetos">
@@ -212,13 +266,9 @@ function App() {
                         <h3>Sobre Mim</h3>
                         <h1>Pablo Cruz</h1>
                         <p> Desenvolvedor Full Stack, atuando como freelancer, com experiência prática em linguagens e frameworks como JavaScript, TypeScript, React, React Native, Next.js, Node.js, GraphQL e PostgreSQL. Atualmente, trabalho em uma empresa de informática como Help Desk Nível 2, onde atuo com redes de internet, manutenção de racks de infraestrutura, Active Directory, PABX em nuvem 3CX e manutenção de hardware.</p>
-                    </div>
-
-                    
+                    </div>                  
                 </div>
             </section>
-            
-
         </>
     );
 }

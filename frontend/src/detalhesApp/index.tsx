@@ -75,11 +75,9 @@ function Detalhes() {
 
       <div className="detalhes-card">
         <div className="detalhes-info">
-          <h1>{project2.nome}</h1>
-
             <div className="conteiner-profissional">
               <div className="box-profissional">
-                  <img className=".img-sobre-mim" src="/tech_os.svg" alt="Imagem do profissional" />
+                  <img className=".img-sobre-mim" src="/mestre-das-comandas.svg" alt="Imagem do profissional" />
               </div>
             </div>
 
