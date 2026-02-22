@@ -121,7 +121,7 @@ function App() {
                     <a href="#home" className="active">Home</a>
                     <a href="#projetos">Portifólio</a>
                     <a href="#services">Serviços</a>
-                    <a href="https://github.com/pablo-cruzbr?tab=repositories" target="_blank">Github</a>
+                    <a href="https://github.com/pablo-cruzbr" target="_blank">Github</a>
                     <a href="#about">Sobre mim</a>
                     <a href="#contato">Contato</a>
                 </nav>
