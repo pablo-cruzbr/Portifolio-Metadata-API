@@ -18,7 +18,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@prisma/client": "6",
+    "@prisma/client": "^6.19.2",
     "cloudinary": "^2.8.0",
     "cors": "^2.8.5",
     "express": "4",
