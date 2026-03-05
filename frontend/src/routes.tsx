@@ -5,6 +5,7 @@ import DetalhesLandingPage from "./detalhesLandingPage";
 import DetalhesApp from "./detalhesApp";
 import DetalhesAlltiControl from "./detalhesAlltiControl";
 import DetalhesFreelancer from "./detalhesFreelancer"; 
+import DetalhesFreelancerr from "./detalhesFreelancerr";
 
 export default function AppRoutes() {
   return (
@@ -15,6 +16,7 @@ export default function AppRoutes() {
       <Route path="/detalhesLandingPage/:id" element={<DetalhesLandingPage/>}/>
       <Route path="/detalhesAlltiControl" element={<DetalhesAlltiControl/>}/>
       <Route path="/detalhesFreelancer/:id" element={<DetalhesFreelancer/>}/>
+      <Route path="/detalhesFreelancerr/:id" element={<DetalhesFreelancerr/>}/>
     </Routes>
   );
 }
