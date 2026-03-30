@@ -15,18 +15,20 @@ const Home = () => {
   useEffect(() => {
     const initAOS = async () => {
       const AOS = (await import("aos")).default;
-      await import("aos");
+      
       AOS.init({
         duration: 1000,
         easing: "ease",
         once: true,
-        anchorPlacement:"top-bottom",
       });
-      AOS.refresh();
+
+      setTimeout(() => {
+        AOS.refresh();
+      }, 500);
     };
 
     initAOS();
-  }, [])
+  }, []);
   
   return (
     <div className="overflow-hidden">
