@@ -14,7 +14,7 @@ import "aos/dist/aos.css"
 const Home = () => {
   useEffect(() => {
     const initAOS = async () => {
-      const AOS = (await import("aos")).default;
+    const AOS = (await import("aos")).default;
       
       AOS.init({
         duration: 1000,
