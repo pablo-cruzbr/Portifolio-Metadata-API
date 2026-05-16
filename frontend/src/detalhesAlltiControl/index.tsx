@@ -27,7 +27,7 @@ function Detalhes() {
             </div>
 
           <p className="app-title-container">
-            <strong> <CiMobile4 size={20}/> TechOs - App</strong>
+            <strong> <CiMobile4 size={20}/> Allti-Control - App</strong>
           </p>
           <p>
             <strong>Sobre o Software:</strong>
