@@ -40,7 +40,7 @@ function Detalhes() {
           
           
           <a 
-            href="https://drive.google.com/file/d/1V-4Suyf64Mv-UeZ38clNL1OHlQ0dyZY4/view?usp=sharing" 
+            href="https://drive.google.com/file/d/1jmNc_dSwwdaSOhGRks-Jhthtv9njuP9K/view?usp=sharing" 
             className="btn-voltar" 
             style={{ 
               backgroundColor: '#ffffff', 
