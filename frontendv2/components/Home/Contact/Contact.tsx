@@ -8,8 +8,7 @@ const Contact = () => {
   return (
     <div id='contact' className="pt-16 pb-16 bg-[#050709]">
       <div className="grid grid-cols-1 lg:grid-cols-2 w-[90%] md:w-[80%] lg:w-[70%] mx-auto gap-12 items-start">
-        
-        {/* Informações de Contato */}
+  
         <div data-aos="fade-right">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-200 leading-tight">
             Pronto para escalar seu <span className="text-cyan-400">próximo projeto?</span>
