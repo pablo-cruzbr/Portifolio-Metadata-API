@@ -37,8 +37,7 @@ function Detalhes() {
           </p>
             <p className="app-title-container"><strong>Android</strong></p>
           <div className="links">
-          
-          
+
           <a 
             href="https://drive.google.com/file/d/1jmNc_dSwwdaSOhGRks-Jhthtv9njuP9K/view?usp=sharing" 
             className="btn-voltar" 
@@ -54,7 +53,7 @@ function Detalhes() {
               gap: '8px'
             }}
           >
-            <FaAndroid size={20}/> Download APK Oficial
+            <FaAndroid size={20}/> Download APK Oficial 09/06/2024
           </a>
             <Link to="/" className="btn-voltar"> 
               <IoArrowBack size={20}/> Voltar
