@@ -53,7 +53,7 @@ function Detalhes() {
               gap: '8px'
             }}
           >
-            <FaAndroid size={20}/> Download APK Oficial 09/06/2024
+            <FaAndroid size={20}/> Download APK Oficial 09/06/2026
           </a>
             <Link to="/" className="btn-voltar"> 
               <IoArrowBack size={20}/> Voltar
