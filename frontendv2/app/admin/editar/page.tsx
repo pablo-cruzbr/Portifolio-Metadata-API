@@ -150,7 +150,7 @@ export default function AdminEditar() {
   const activeFields = editing?.type === "project" ? PROJECT_FIELDS : FREELANCER_FIELDS;
 
   return (
-    <div className="min-h-screen bg-[#050709] text-white pt-24 pb-16 px-4">
+    <div className="min-h-screen bg-[#050709] text-white pt-32 pb-16 px-4">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold mb-1">Painel de Edição</h1>
         <p className="text-gray-500 text-sm mb-8">Selecione um projeto para editar os dados.</p>
