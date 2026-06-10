@@ -27,6 +27,7 @@ interface FreelancerFull extends BaseItem {
 
 type EditType = "project" | "freelancer";
 type Mode = "editar" | "criar";
+type CreateType = "project" | "freelancer" | "landingpage";
 
 interface EditState {
   type: EditType;
@@ -74,6 +75,7 @@ function flattenToForm(type: EditType, data: any): Record<string, string> {
 
 export default function AdminEditar() {
   const [mode, setMode] = useState<Mode>("editar");
+  const [createType, setCreateType] = useState<CreateType>("project");
   const [activeTab, setActiveTab] = useState<"projects" | "freelancers">("projects");
   const [projects, setProjects] = useState<BaseItem[]>([]);
   const [freelancers, setFreelancers] = useState<BaseItem[]>([]);
@@ -177,8 +179,29 @@ export default function AdminEditar() {
         </div>
 
         {mode === "criar" && (
-          <div className="flex items-center justify-center h-64 border border-white/10 rounded-2xl">
-            <p className="text-gray-500 text-sm">Em breve...</p>
+          <div>
+            <div className="flex gap-1 mb-8 border-b border-white/10">
+              {([
+                { key: "project", label: "Plataforma / Dashboard" },
+                { key: "freelancer", label: "Freelancer" },
+                { key: "landingpage", label: "Landing Page" },
+              ] as { key: CreateType; label: string }[]).map(({ key, label }) => (
+                <button
+                  key={key}
+                  onClick={() => setCreateType(key)}
+                  className={`pb-3 px-5 text-sm font-semibold transition-colors border-b-2 -mb-px ${
+                    createType === key
+                      ? "border-cyan-500 text-cyan-400"
+                      : "border-transparent text-gray-400 hover:text-white"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+            <div className="flex items-center justify-center h-48 border border-white/10 rounded-2xl">
+              <p className="text-gray-500 text-sm">Formulário em construção...</p>
+            </div>
           </div>
         )}
 
