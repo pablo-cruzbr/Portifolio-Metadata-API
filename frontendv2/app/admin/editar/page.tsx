@@ -104,6 +104,8 @@ export default function AdminEditar() {
   const [form, setForm] = useState<Record<string, string>>({});
   const capaRef = useRef<HTMLInputElement>(null);
   const galleryRef = useRef<HTMLInputElement>(null);
+  const createCapaRef = useRef<HTMLInputElement>(null);
+  const createGalleryRef = useRef<HTMLInputElement>(null);
 
   async function fetchLists() {
     try {
@@ -218,6 +220,29 @@ export default function AdminEditar() {
             </div>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-5">
               <h2 className="text-base font-bold text-cyan-400">Novo registro</h2>
+              <div>
+                <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                  Imagem Capa <span className="text-red-400">*</span>
+                </label>
+                <input
+                  ref={createCapaRef}
+                  type="file"
+                  accept="image/*"
+                  className="text-sm text-gray-400 file:mr-3 file:py-1.5 file:px-4 file:rounded-lg file:border-0 file:bg-cyan-600 file:text-white file:text-xs file:font-semibold file:cursor-pointer hover:file:bg-cyan-500 transition-all"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                  Galeria de Imagens <span className="text-gray-500 font-normal">(opcional)</span>
+                </label>
+                <input
+                  ref={createGalleryRef}
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  className="text-sm text-gray-400 file:mr-3 file:py-1.5 file:px-4 file:rounded-lg file:border-0 file:bg-white/10 file:text-white file:text-xs file:font-semibold file:cursor-pointer hover:file:bg-white/20 transition-all"
+                />
+              </div>
               {CREATE_FIELDS[createType].map(field => (
                 <div key={field.key}>
                   <label className="block text-xs font-semibold text-gray-300 mb-1.5">
