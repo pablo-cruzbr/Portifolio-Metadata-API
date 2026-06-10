@@ -1,16 +1,17 @@
 "use client"
+import type { NavLink } from '@/constant/constant'
 import { NavLinks } from '@/constant/constant'
-import Link from 'next/link'
-import React, {useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { BiCloudDownload } from 'react-icons/bi'
-import {FaCode} from "react-icons/fa"
+import { FaCode } from "react-icons/fa"
 import { HiBars3BottomRight } from 'react-icons/hi2'
 
 type Props = {
     openNav: () => void;
 }
 
-const Nav = ({openNav}: Props) => {
+const Nav = ({ openNav }: Props) => {
     const [navBg, setNavBg] = useState(false)
 
     useEffect(() => {
@@ -21,12 +22,12 @@ const Nav = ({openNav}: Props) => {
 
         window.addEventListener("scroll", handler);
 
-        return () => window. removeEventListener("scroll", handler);
+        return () => window.removeEventListener("scroll", handler);
     }, []);
 
   return (
-    <nav className={`fixed w-full transition-all duration-200 h-[12vh] z-[100] flex items-center 
-            ${navBg ? "bg-[#0C0D1F] shadow-lg" : "bg-transparent"} 
+    <nav className={`fixed w-full transition-all duration-200 h-[12vh] z-[100] flex items-center
+            ${navBg ? "bg-[#0C0D1F] shadow-lg" : "bg-transparent"}
             ${!navBg && "backdrop-blur-sm bg-[#0C0D1F]/50"}`}>
         <div className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
             <div className="flex items-center space-x-2">
@@ -39,10 +40,10 @@ const Nav = ({openNav}: Props) => {
             </div>
 
             <div className="hidden lg:flex items-center space-x-10">
-                {NavLinks.map((link) => (
-                    <Link 
-                      key={link.id} 
-                      href={link.url} 
+                {NavLinks.map((link: NavLink) => (
+                    <Link
+                      key={link.id}
+                      to={link.url}
                       className="text-base hover:text-cyan-300 text-white font-medium transition-all duration-200"
                     >
                       {link.label}
@@ -56,7 +57,7 @@ const Nav = ({openNav}: Props) => {
                   <span className="font-semibold">Download CV</span>
               </button>
 
-              <HiBars3BottomRight onClick={openNav} className="w-8 h-8 cursor-pointer text-whit lg:hidden" />
+              <HiBars3BottomRight onClick={openNav} className="w-8 h-8 cursor-pointer text-white lg:hidden" />
             </div>
         </div>
     </nav>

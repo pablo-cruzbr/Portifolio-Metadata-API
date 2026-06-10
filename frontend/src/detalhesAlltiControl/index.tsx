@@ -27,7 +27,7 @@ function Detalhes() {
             </div>
 
           <p className="app-title-container">
-            <strong> <CiMobile4 size={20}/> TechOs - App</strong>
+            <strong> <CiMobile4 size={20}/> Allti-Control - App</strong>
           </p>
           <p>
             <strong>Sobre o Software:</strong>
@@ -37,10 +37,9 @@ function Detalhes() {
           </p>
             <p className="app-title-container"><strong>Android</strong></p>
           <div className="links">
-          
-          
+
           <a 
-            href="https://drive.google.com/file/d/1Ozg5RSg7pUhuejKVmSl4nFOowQQQHZZx/view?usp=sharing" 
+            href="https://drive.google.com/file/d/1jmNc_dSwwdaSOhGRks-Jhthtv9njuP9K/view?usp=sharing" 
             className="btn-voltar" 
             style={{ 
               backgroundColor: '#ffffff', 
@@ -54,7 +53,7 @@ function Detalhes() {
               gap: '8px'
             }}
           >
-            <FaAndroid size={20}/> Download APK Oficial
+            <FaAndroid size={20}/> Download APK Oficial 09/06/2026
           </a>
             <Link to="/" className="btn-voltar"> 
               <IoArrowBack size={20}/> Voltar
