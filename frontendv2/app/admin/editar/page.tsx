@@ -216,8 +216,30 @@ export default function AdminEditar() {
                 </button>
               ))}
             </div>
-            <div className="flex items-center justify-center h-48 border border-white/10 rounded-2xl">
-              <p className="text-gray-500 text-sm">Formulário em construção...</p>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-5">
+              <h2 className="text-base font-bold text-cyan-400">Novo registro</h2>
+              {CREATE_FIELDS[createType].map(field => (
+                <div key={field.key}>
+                  <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                    {field.label}
+                  </label>
+                  {field.type === "textarea" ? (
+                    <textarea
+                      value={createForm[field.key] ?? ""}
+                      onChange={e => setCreateForm(f => ({ ...f, [field.key]: e.target.value }))}
+                      rows={4}
+                      className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-cyan-500 resize-y transition-colors"
+                    />
+                  ) : (
+                    <input
+                      type="text"
+                      value={createForm[field.key] ?? ""}
+                      onChange={e => setCreateForm(f => ({ ...f, [field.key]: e.target.value }))}
+                      className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                    />
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         )}
