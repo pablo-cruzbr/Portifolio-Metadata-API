@@ -93,6 +93,8 @@ export default function AdminEditar() {
   const [mode, setMode] = useState<Mode>("editar");
   const [createType, setCreateType] = useState<CreateType>("project");
   const [createForm, setCreateForm] = useState<Record<string, string>>({ ...EMPTY_PROJECT_FORM });
+  const [creating, setCreating] = useState(false);
+  const [createFeedback, setCreateFeedback] = useState<{ ok: boolean; msg: string } | null>(null);
   const [activeTab, setActiveTab] = useState<"projects" | "freelancers">("projects");
   const [projects, setProjects] = useState<BaseItem[]>([]);
   const [freelancers, setFreelancers] = useState<BaseItem[]>([]);
@@ -168,6 +170,39 @@ export default function AdminEditar() {
     }
   }
 
+  async function handleCreate(e: FormEvent) {
+    e.preventDefault();
+    setCreating(true);
+    setCreateFeedback(null);
+
+    const fd = new FormData();
+    Object.entries(createForm).forEach(([k, v]) => fd.append(k, v));
+    if (createCapaRef.current?.files?.[0]) fd.append("imgcapa", createCapaRef.current.files[0]);
+    if (createGalleryRef.current?.files) {
+      Array.from(createGalleryRef.current.files).forEach(f => fd.append("files", f));
+    }
+
+    const base = process.env.NEXT_PUBLIC_API_URL;
+    const endpoints: Record<CreateType, string> = {
+      project: `${base}/project`,
+      freelancer: `${base}/freelancer`,
+      landingpage: `${base}/landingpages`,
+    };
+
+    try {
+      await axios.post(endpoints[createType], fd);
+      setCreateFeedback({ ok: true, msg: "Criado com sucesso!" });
+      setCreateForm(createType === "project" ? { ...EMPTY_PROJECT_FORM } : { ...EMPTY_SHARED_FORM });
+      if (createCapaRef.current) createCapaRef.current.value = "";
+      if (createGalleryRef.current) createGalleryRef.current.value = "";
+      await fetchLists();
+    } catch (err: any) {
+      setCreateFeedback({ ok: false, msg: err?.response?.data?.error ?? "Erro ao criar." });
+    } finally {
+      setCreating(false);
+    }
+  }
+
   const activeList = activeTab === "projects" ? projects : freelancers;
   const activeType: EditType = activeTab === "projects" ? "project" : "freelancer";
   const activeFields = editing?.type === "project" ? PROJECT_FIELDS : FREELANCER_FIELDS;
@@ -218,7 +253,7 @@ export default function AdminEditar() {
                 </button>
               ))}
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-5">
+            <form onSubmit={handleCreate} className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-5">
               <h2 className="text-base font-bold text-cyan-400">Novo registro</h2>
               <div>
                 <label className="block text-xs font-semibold text-gray-300 mb-1.5">
@@ -265,7 +300,35 @@ export default function AdminEditar() {
                   )}
                 </div>
               ))}
-            </div>
+
+              {createFeedback && (
+                <p className={`text-sm font-semibold ${createFeedback.ok ? "text-green-400" : "text-red-400"}`}>
+                  {createFeedback.ok ? "✓ " : "✗ "}{createFeedback.msg}
+                </p>
+              )}
+
+              <div className="flex gap-3 pt-1">
+                <button
+                  type="submit"
+                  disabled={creating}
+                  className="px-6 py-2.5 bg-cyan-600 hover:bg-cyan-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-xl text-sm font-bold transition-all"
+                >
+                  {creating ? "Criando..." : "Criar Projeto"}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setCreateForm(createType === "project" ? { ...EMPTY_PROJECT_FORM } : { ...EMPTY_SHARED_FORM });
+                    setCreateFeedback(null);
+                    if (createCapaRef.current) createCapaRef.current.value = "";
+                    if (createGalleryRef.current) createGalleryRef.current.value = "";
+                  }}
+                  className="px-6 py-2.5 bg-white/10 hover:bg-white/20 rounded-xl text-sm font-bold transition-all"
+                >
+                  Limpar
+                </button>
+              </div>
+            </form>
           </div>
         )}
 
