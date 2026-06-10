@@ -26,6 +26,7 @@ interface FreelancerFull extends BaseItem {
 }
 
 type EditType = "project" | "freelancer";
+type Mode = "editar" | "criar";
 
 interface EditState {
   type: EditType;
@@ -72,6 +73,7 @@ function flattenToForm(type: EditType, data: any): Record<string, string> {
 }
 
 export default function AdminEditar() {
+  const [mode, setMode] = useState<Mode>("editar");
   const [activeTab, setActiveTab] = useState<"projects" | "freelancers">("projects");
   const [projects, setProjects] = useState<BaseItem[]>([]);
   const [freelancers, setFreelancers] = useState<BaseItem[]>([]);
@@ -152,10 +154,35 @@ export default function AdminEditar() {
   return (
     <div className="min-h-screen bg-[#050709] text-white pt-32 pb-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-1">Painel de Edição</h1>
-        <p className="text-gray-500 text-sm mb-8">Selecione um projeto para editar os dados.</p>
+        <div className="flex items-start justify-between mb-8">
+          <div>
+            <h1 className="text-3xl font-bold mb-1">Painel de Administração</h1>
+            <p className="text-gray-500 text-sm">Gerencie os projetos do portfólio.</p>
+          </div>
+          <div className="flex gap-2 mt-1">
+            {(["editar", "criar"] as Mode[]).map(m => (
+              <button
+                key={m}
+                onClick={() => setMode(m)}
+                className={`px-5 py-2 rounded-xl text-sm font-bold transition-all capitalize ${
+                  mode === m
+                    ? "bg-cyan-600 text-white"
+                    : "bg-white/10 text-gray-400 hover:bg-white/20 hover:text-white"
+                }`}
+              >
+                {m}
+              </button>
+            ))}
+          </div>
+        </div>
 
-        <div className="flex gap-1 mb-8 border-b border-white/10">
+        {mode === "criar" && (
+          <div className="flex items-center justify-center h-64 border border-white/10 rounded-2xl">
+            <p className="text-gray-500 text-sm">Em breve...</p>
+          </div>
+        )}
+
+        {mode === "editar" && <div className="flex gap-1 mb-8 border-b border-white/10">
           {(["projects", "freelancers"] as const).map(tab => (
             <button
               key={tab}
@@ -293,7 +320,7 @@ export default function AdminEditar() {
               </form>
             )}
           </main>
-        </div>
+        </div>}
       </div>
     </div>
   );
