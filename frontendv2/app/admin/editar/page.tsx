@@ -52,6 +52,22 @@ const FREELANCER_FIELDS = [
   { key: "linklivedemo", label: "Link Live Demo", type: "text" },
 ] as const;
 
+const LANDING_PAGE_FIELDS = FREELANCER_FIELDS;
+
+const EMPTY_PROJECT_FORM: Record<string, string> = {
+  title: "", technologies: "", goal: "", features: "", linkgihub: "", linklivedemo: "",
+};
+
+const EMPTY_SHARED_FORM: Record<string, string> = {
+  title: "", headline: "", subheadline: "", technologies: "", linkgithub: "", linklivedemo: "",
+};
+
+const CREATE_FIELDS = {
+  project: PROJECT_FIELDS,
+  freelancer: FREELANCER_FIELDS,
+  landingpage: LANDING_PAGE_FIELDS,
+} as const;
+
 function flattenToForm(type: EditType, data: any): Record<string, string> {
   if (type === "project") {
     return {
@@ -76,6 +92,7 @@ function flattenToForm(type: EditType, data: any): Record<string, string> {
 export default function AdminEditar() {
   const [mode, setMode] = useState<Mode>("editar");
   const [createType, setCreateType] = useState<CreateType>("project");
+  const [createForm, setCreateForm] = useState<Record<string, string>>({ ...EMPTY_PROJECT_FORM });
   const [activeTab, setActiveTab] = useState<"projects" | "freelancers">("projects");
   const [projects, setProjects] = useState<BaseItem[]>([]);
   const [freelancers, setFreelancers] = useState<BaseItem[]>([]);
