@@ -332,7 +332,8 @@ export default function AdminEditar() {
           </div>
         )}
 
-        {mode === "editar" && <div className="flex gap-1 mb-8 border-b border-white/10">
+        {mode === "editar" && (<>
+          <div className="flex gap-1 mb-8 border-b border-white/10">
           {(["projects", "freelancers"] as const).map(tab => (
             <button
               key={tab}
@@ -346,7 +347,7 @@ export default function AdminEditar() {
               {tab === "projects" ? "Plataformas & Dashboards" : "Freelancer"}
             </button>
           ))}
-        </div>
+          </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
           <aside className="lg:w-72 flex-shrink-0">
@@ -470,7 +471,8 @@ export default function AdminEditar() {
               </form>
             )}
           </main>
-        </div>}
+        </div>
+        </>)}
       </div>
     </div>
   );
