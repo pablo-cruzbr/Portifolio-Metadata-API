@@ -1,68 +1,97 @@
 "use client"
 import React from 'react'
-import { SiJavascript, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiTailwindcss, SiTypescript } from 'react-icons/si';
+import { SiJavascript, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiTypescript } from 'react-icons/si';
 import Tilt from "react-parallax-tilt";
 
 const skills = [
   {
-    name: "Javasript",
-    icon: <SiJavascript/>,
-    percentage: 89,
+    name: "JavaScript",
+    icon: <SiJavascript />,
+    color: "#F7DF1E",
+    label: "ES2024+",
   },
-  
   {
     name: "TypeScript",
-    icon: <SiTypescript/>,
-    percentage: 89,
+    icon: <SiTypescript />,
+    color: "#3178C6",
+    label: "v5",
   },
-
   {
     name: "React.js",
-    icon: <SiReact/>,
-    percentage: 89,
+    icon: <SiReact />,
+    color: "#61DAFB",
+    label: "v19",
   },
-
   {
     name: "Next.js",
-    icon: <SiNextdotjs/>,
-    percentage: 89,
+    icon: <SiNextdotjs />,
+    color: "#ffffff",
+    label: "v16",
   },
-
   {
     name: "Node.js",
-    icon: <SiNodedotjs/>,
-    percentage: 89,
+    icon: <SiNodedotjs />,
+    color: "#339933",
+    label: "v22",
   },
-
   {
-    name: "Postgresql",
-    icon: <SiPostgresql/>,
-    percentage: 89,
+    name: "PostgreSQL",
+    icon: <SiPostgresql />,
+    color: "#4169E1",
+    label: "v16",
   },
-
-
 ]
+
 const Skills = () => {
   return (
-    <div id='skills' className="text-white pt-16 pb-16">
+    <div id="skills" className="pt-16 pb-16 text-white">
+      <div className="text-center mb-3">
+        <span className="text-xs font-mono text-cyan-600 tracking-widest">&lt;skills /&gt;</span>
+      </div>
       <h1 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white">
-        My <span className="text-cyan-300"> Skills</span>
+        My <span className="text-cyan-300">Skills</span>
       </h1>
 
       <div className="flex flex-wrap justify-center gap-6 mt-16">
-        {skills.map((skil, i) => {
-          return (
-            <Tilt key={skil.name} scale={1.20}  transitionSpeed={400}>
-              <div data-aos="flip-right" 
-  data-aos-delay={i * 100}
-              className="bg-[#14134145] text-center w-40 h-48 rounded-3xl flex flex-col items-center justify-center shadow-lg transition hover:scale-105">
-                <div className="text-5xl mb-4 text-gray-300">{skil.icon}</div>
-           
-                <p className="text-cyan-300 mt-1">{skil.name}</p>
+        {skills.map((skil, i) => (
+          <Tilt key={skil.name} scale={1.12} transitionSpeed={400} glareEnable glareMaxOpacity={0.08} glareColor={skil.color}>
+            <div
+              data-aos="flip-right"
+              data-aos-delay={i * 100}
+              className="relative text-center w-40 h-48 rounded-3xl flex flex-col items-center justify-center shadow-lg transition-all duration-300 overflow-hidden cursor-default"
+              style={{
+                background: `linear-gradient(145deg, ${skil.color}10, #090d1a)`,
+                border: `1px solid ${skil.color}25`,
+                boxShadow: `0 4px 30px ${skil.color}10`,
+              }}
+            >
+              <div
+                className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500"
+                style={{ boxShadow: `inset 0 0 40px ${skil.color}08` }}
+              />
+
+              <div
+                className="text-5xl mb-3 transition-transform duration-300 hover:scale-110"
+                style={{ color: skil.color, filter: `drop-shadow(0 0 8px ${skil.color}60)` }}
+              >
+                {skil.icon}
               </div>
-            </Tilt>
-          );
-        })}
+
+              <p className="font-bold text-sm text-gray-200">{skil.name}</p>
+
+              <span
+                className="mt-2 text-[10px] font-mono px-2 py-0.5 rounded-full"
+                style={{
+                  color: skil.color,
+                  background: `${skil.color}15`,
+                  border: `1px solid ${skil.color}30`,
+                }}
+              >
+                {skil.label}
+              </span>
+            </div>
+          </Tilt>
+        ))}
       </div>
     </div>
   );
