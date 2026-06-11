@@ -32,7 +32,7 @@ const Contact = () => {
                 <BiEnvelope className="w-6 h-6 text-cyan-300" />
               </div>
               <p className="text-lg font-medium text-gray-400">
-                pablocruz.dev@gmail.com
+                pablocruzdev@gmail.com
               </p>
             </div>
           </div>
