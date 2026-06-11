@@ -1,9 +1,10 @@
 "use client";
-import React from 'react';
 import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 import { BsArrowRight } from 'react-icons/bs';
 import ParticlesHero from './ParticleBackground';
+
+const techBadges = ["React", "Node.js", "TypeScript", "Next.js", "PostgreSQL"];
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -16,49 +17,91 @@ const Hero = () => {
   return (
     <div id="home" className="relative h-screen flex items-center justify-center text-white overflow-hidden flex-col">
       <ParticlesHero />
-      <div className="relative z-10 flex-col items-center"></div>
-      <Image
-        src="/img/2.svg"
-        alt='heroimage'
-        width={200}
-        height={200}
-        className='rounded-full border-8 border-[#0c0c48aa]'
-        data-aos="fade-up"
-      />
-      <h1 data-aos="fade-up" data-aos-delay="200" className="text-2xl sm:text-2xl md:text-5xl lg:text-6xl mt-6 text-center font-bold tracking-wide">
-        Transformando Visões em<br /> 
-        <span className="text-cyan-200">produtos web de alta performance.</span>
-      </h1>
 
-      <h2 data-aos="fade-up" data-aos-delay="400" className="mt-5 text-base px-2 text-center sm:text-2xl font-medium flex flex-wrap justify-center items-center">
-        Olá, Me chamo Pablo
-        <span className="text-cyan-200 font-bold ml-2">
-          <Typewriter
-            options={{
-              strings: [
-                "Desenvolvedor Fullstack",
-              ],
-              autoStart: true,
-              loop: true,
-              delay: 75,
-              deleteSpeed: 50,
-              wrapperClassName: "pl-1"
-            }}
-          />
+      <div className="relative z-10 flex flex-col items-center">
+        {/* Code comment decorator */}
+        <span
+          data-aos="fade-down"
+          className="text-xs font-mono text-cyan-700/80 mb-4 tracking-wider"
+        >
+          // hello world &mdash; available for hire
         </span>
-      </h2>
 
-      <button
-        onClick={scrollToProjects}
-        data-aos="fade-up"
-        data-aos-delay="600"
-        className="mt-6 px-4 py-2 bg-blue-800 hover:bg-blue-900 transition-all duration-300 cursor-pointer rounded-full text-lg font-medium flex items-center group text-white outline-none"
-      >
-        <span>Veja meus Trabalhos</span>
-        <BsArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-      </button>
+        {/* Profile image with glow ring */}
+        <div
+          data-aos="fade-up"
+          className="relative"
+          style={{ filter: "drop-shadow(0 0 24px rgba(34,211,238,0.25))" }}
+        >
+          <div className="absolute inset-0 rounded-full bg-cyan-500/10 blur-xl scale-110" />
+          <Image
+            src="/img/2.svg"
+            alt="heroimage"
+            width={200}
+            height={200}
+            className="relative rounded-full border-4 border-cyan-500/30"
+          />
+          {/* Online indicator */}
+          <span className="absolute bottom-3 right-3 w-4 h-4 rounded-full bg-green-400 border-2 border-[#0C0D1F] shadow-lg shadow-green-500/50" />
+        </div>
+
+        {/* Floating tech badges */}
+        <div
+          data-aos="fade-up"
+          data-aos-delay="150"
+          className="flex flex-wrap justify-center gap-2 mt-5"
+        >
+          {techBadges.map((tech) => (
+            <span
+              key={tech}
+              className="text-[11px] px-3 py-1 rounded-full font-mono text-cyan-400 border border-cyan-500/20 bg-cyan-500/5 backdrop-blur-sm"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        <h1
+          data-aos="fade-up"
+          data-aos-delay="200"
+          className="text-2xl sm:text-2xl md:text-5xl lg:text-6xl mt-6 text-center font-bold tracking-wide"
+        >
+          Transformando Visões em<br />
+          <span className="text-cyan-200">produtos web de alta performance.</span>
+        </h1>
+
+        <h2
+          data-aos="fade-up"
+          data-aos-delay="400"
+          className="mt-5 text-base px-2 text-center sm:text-2xl font-medium flex flex-wrap justify-center items-center text-gray-300"
+        >
+          Olá, Me chamo Pablo&nbsp;&mdash;
+          <span className="text-cyan-200 font-bold ml-2">
+            <Typewriter
+              options={{
+                strings: ["Desenvolvedor Fullstack"],
+                autoStart: true,
+                loop: true,
+                delay: 75,
+                deleteSpeed: 50,
+                wrapperClassName: "pl-1",
+              }}
+            />
+          </span>
+        </h2>
+
+        <button
+          onClick={scrollToProjects}
+          data-aos="fade-up"
+          data-aos-delay="600"
+          className="mt-8 px-6 py-3 bg-gradient-to-r from-blue-700 to-cyan-600 hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 cursor-pointer rounded-full text-base font-semibold flex items-center group text-white outline-none shadow-lg shadow-cyan-900/30 hover:shadow-cyan-700/40"
+        >
+          <span>Veja meus Trabalhos</span>
+          <BsArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
