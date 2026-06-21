@@ -70,7 +70,16 @@ const FeaturedProject = () => {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://github.com/pablocruz/bugless"
+                href="https://bugless-psi.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 bg-cyan-600 rounded-xl hover:bg-cyan-500 transition-all font-semibold text-white shadow-lg shadow-cyan-900/20"
+              >
+                <FaExternalLinkAlt className="w-4 h-4" />
+                Live Demo
+              </a>
+              <a
+                href="https://github.com/ProgramadoresSemPatria/HB03-2025_bugless"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3 bg-white/5 rounded-xl hover:bg-white/10 transition-all border border-white/10 font-semibold text-white"
