@@ -1,0 +1,14 @@
+# Treat binary files correctly
+*.webm binary
+*.mp4 binary
+*.webp binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.ico binary
