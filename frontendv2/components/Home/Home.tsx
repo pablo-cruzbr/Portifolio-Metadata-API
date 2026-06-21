@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import Hero from './Hero/Hero'
 import Services from './Service/Services'
 import Resume from './Resume/Resume'
+import FeaturedProject from './FeaturedProject/FeaturedProject'
 import Projects from './Projects/Projects'
 import Skills from './Skills/Skills'
 import ClientReview from './ClientRaview/ClientReview'
@@ -34,6 +35,7 @@ const Home = () => {
     <div className="overflow-hidden">
       <Hero/>
       <Services/>
+      <FeaturedProject/>
       <Projects/>
       <Skills/>
       <Contact/>
