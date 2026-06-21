@@ -6,6 +6,23 @@
 # Esta linha garante que seu código (fora da node_modules) use a quebra de linha Linux no Git.
 * text eol=lf
 
-# Exceção para Binários e Scripts. ESTA É A LINHA QUE DEVE PARAR O LOOP.
-# Diz ao Git para NUNCA tocar nas quebras de linha dos arquivos de dependência.
+# Binary files — never touch line endings
+*.webm binary
+*.mp4 binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.svg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.exe binary
+*.dll binary
+*.node binary
+*.wasm binary
+
 backend/node_modules/ binary
