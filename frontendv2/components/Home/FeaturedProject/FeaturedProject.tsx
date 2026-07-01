@@ -46,13 +46,13 @@ const accentClasses: Record<string, { badge: string; glow: string; button: strin
   cyan: {
     badge: "text-cyan-400 bg-cyan-400/10 border-cyan-400/20",
     glow: "from-cyan-500/20 to-blue-500/20",
-    button: "bg-cyan-600 hover:bg-cyan-500 shadow-cyan-900/20",
+    button: "bg-[#01A7C0] hover:bg-[#019ab1] shadow-cyan-900/20",
     border: "border-cyan-400",
   },
   orange: {
     badge: "text-orange-400 bg-orange-400/10 border-orange-400/20",
     glow: "from-orange-500/20 to-red-500/20",
-    button: "bg-orange-600 hover:bg-orange-500 shadow-orange-900/20",
+    button: "bg-[#01A7C0] hover:bg-[#019ab1] shadow-cyan-900/20",
     border: "border-orange-400",
   },
 };
