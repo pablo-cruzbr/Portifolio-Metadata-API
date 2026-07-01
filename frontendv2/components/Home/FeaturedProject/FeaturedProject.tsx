@@ -18,7 +18,7 @@ const projects: FeaturedProjectData[] = [
     label: "Featured Project",
     title: "Bugless",
     description:
-      "AI-powered code review tool built during a one-week hackathon with the Borderless Coding mentorship program. Provides instant feedback on bugs, security vulnerabilities and performance issues via a CLI for local reviews and a GitHub App for automated Pull Request analysis.",
+      "Ferramenta de revisão de código com inteligência artificial, criada em uma semana de hackathon com o programa de mentoria Borderless Coding. Fornece feedback instantâneo sobre bugs, vulnerabilidades de segurança e problemas de performance via CLI para revisões locais e GitHub App para análise automática de Pull Requests.",
     techs: ["Next.js", "Node.js", "TypeScript", "AI", "GitHub API"],
     video: { src: "/videos/bugless-demo.webm", type: "video/webm" },
     accentColor: "cyan",
