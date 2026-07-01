@@ -94,16 +94,6 @@ const Projects = () => {
     return (
         <div id="projects" className="pt-16 pb-16 bg-[#050709]">
             <div className="w-[80%] mx-auto">
-                <h1 className="text-center text-3xl sm:text-4xl font-bold text-white">
-                    Minha Galeria de <span className="text-cyan-400">Projetos</span>
-                </h1>
-
-                <h2 className="mt-20 text-2xl font-bold text-white border-l-4 border-cyan-500 pl-4">
-                   Freelancer: Soluções Customizadas
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-                    {freelancers.map((item, index) => renderCard(item, 'freelancer', index * 100))}
-                </div>
 
                 <h2 className="mt-24 text-2xl font-bold text-white border-l-4 border-purple-500 pl-4">
                     Plataformas & Dashboards
