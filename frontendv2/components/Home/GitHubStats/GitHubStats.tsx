@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import GitHubCalendar from "react-github-calendar";
+import { GitHubCalendar } from "react-github-calendar";
 import { FaGithub } from "react-icons/fa";
 
 const USERNAME = "pablo-cruzbr";
