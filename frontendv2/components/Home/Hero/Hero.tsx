@@ -15,7 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <div id="home" className="relative h-screen flex items-center justify-center pt-[14vh] text-white overflow-hidden flex-col">
+    <div id="home" className="relative h-screen flex items-center justify-center pt-[14vh] text-white flex-col">
       <ParticlesHero />
 
       <div className="relative z-10 flex flex-col items-center">
