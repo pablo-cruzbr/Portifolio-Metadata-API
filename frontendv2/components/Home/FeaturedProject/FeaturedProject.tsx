@@ -100,7 +100,7 @@ const ProjectRow = ({ project, index }: { project: FeaturedProjectData; index: n
 
 const FeaturedProject = () => {
   return (
-    <section className="bg-[#050709] py-24">
+    <section id="featured-projects" className="bg-[#050709] py-24">
       <div className="w-[95%] xl:w-[88%] mx-auto">
         <h2
           data-aos="fade-up"
