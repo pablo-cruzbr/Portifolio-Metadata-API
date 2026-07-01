@@ -18,6 +18,12 @@ const accentClasses: Record<string, { badge: string; glow: string; button: strin
     button: "bg-[#01A7C0] hover:bg-[#019ab1] shadow-cyan-900/20",
     label: "text-orange-400",
   },
+  purple: {
+    badge: "text-purple-400 bg-purple-400/10 border-purple-400/20",
+    glow: "from-purple-500/20 to-indigo-500/20",
+    button: "bg-[#01A7C0] hover:bg-[#019ab1] shadow-cyan-900/20",
+    label: "text-purple-400",
+  },
 };
 
 const ProjectRow = ({ project, index }: { project: FeaturedProjectData; index: number }) => {

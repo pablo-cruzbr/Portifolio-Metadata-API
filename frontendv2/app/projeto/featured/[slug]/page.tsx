@@ -22,6 +22,13 @@ const accentClasses: Record<string, { badge: string; button: string; border: str
     text: "text-orange-400",
     metric: "bg-orange-400/10 border-orange-400/20",
   },
+  purple: {
+    badge: "text-purple-400 bg-purple-400/10 border-purple-400/20",
+    button: "bg-[#01A7C0] hover:bg-[#019ab1] shadow-purple-900/20",
+    border: "border-l-purple-400",
+    text: "text-purple-400",
+    metric: "bg-purple-400/10 border-purple-400/20",
+  },
 };
 
 export default function FeaturedProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
@@ -46,7 +53,11 @@ export default function FeaturedProjectDetail({ params }: { params: Promise<{ sl
 
         {/* Hero — video full width */}
         <div data-aos="fade-up" className="relative group mb-14">
-          <div className={`absolute -inset-2 bg-gradient-to-r ${project.accentColor === "cyan" ? "from-cyan-500/15 to-blue-500/15" : "from-orange-500/15 to-red-500/15"} rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+          <div className={`absolute -inset-2 bg-gradient-to-r ${
+            project.accentColor === "cyan" ? "from-cyan-500/15 to-blue-500/15"
+            : project.accentColor === "purple" ? "from-purple-500/15 to-indigo-500/15"
+            : "from-orange-500/15 to-red-500/15"
+          } rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
           <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
             <video autoPlay loop muted playsInline className="w-full h-auto block">
               <source src={project.video.src} type={project.video.type} />

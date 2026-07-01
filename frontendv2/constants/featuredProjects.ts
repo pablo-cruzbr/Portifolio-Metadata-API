@@ -21,6 +21,37 @@ export interface FeaturedProjectData {
 
 const featuredProjects: FeaturedProjectData[] = [
   {
+    slug: "hone",
+    label: "🥈 2º Lugar — Hackathon",
+    title: "Hone AI",
+    shortDescription:
+      "Plataforma de entrevistas técnicas simuladas com IA, desenvolvida em hackathon com o programa Borderless Coding. O candidato faz upload do currículo e a IA conduz uma entrevista personalizada com base na sua experiência real, gerando feedback automático ao final da sessão.",
+    fullDescription:
+      "Hone nasceu da necessidade de tornar a preparação para entrevistas técnicas mais realista e acessível. Em vez de perguntas genéricas, a plataforma lê o currículo do candidato e conduz uma entrevista personalizada, adaptando o nível de dificuldade e os tópicos à experiência real de cada pessoa.\n\nAs respostas da IA são transmitidas em tempo real via Server-Sent Events, criando uma experiência de conversa natural. Ao final de cada sessão, o sistema gera feedback automático e um backlog de tópicos para estudo, ajudando o candidato a identificar lacunas e evoluir de forma contínua.",
+    techs: ["Next.js", "TypeScript", "OpenAI", "LangChain", "LangGraph", "Bun", "Express", "Prisma", "PostgreSQL", "Redis", "BullMQ"],
+    video: { src: "/videos/hone-demo.mp4", type: "video/mp4" },
+    accentColor: "purple",
+    links: [
+      { label: "Live Demo", href: "https://frontend-five-virid-83.vercel.app/", primary: true },
+      { label: "GitHub", href: "https://github.com/ProgramadoresSemPatria/HB01-2026-ai-mock-interview" },
+    ],
+    metrics: [
+      { value: "🥈 2º", label: "lugar no hackathon" },
+      { value: "3 níveis", label: "de dificuldade" },
+      { value: "Real-time", label: "SSE streaming" },
+    ],
+    features: [
+      "Entrevistas personalizadas baseadas no currículo do candidato (PDF)",
+      "Três níveis de dificuldade: iniciante, intermediário e sênior",
+      "Respostas em tempo real via Server-Sent Events",
+      "Feedback automático ao final de cada sessão",
+      "Backlog de tópicos para estudo gerado pela IA",
+      "Histórico completo de sessões por usuário",
+      "Autenticação JWT com refresh token automático",
+    ],
+    team: ["Pablo Cruz", "Nathan Vinicius", "Guilherme Resende"],
+  },
+  {
     slug: "bugless",
     label: "Featured Project",
     title: "Bugless",
