@@ -16,6 +16,7 @@ export interface FeaturedProjectData {
   links: FeaturedLink[];
   metrics: { label: string; value: string }[];
   features: string[];
+  team?: string[];
 }
 
 const featuredProjects: FeaturedProjectData[] = [
@@ -24,9 +25,9 @@ const featuredProjects: FeaturedProjectData[] = [
     label: "Featured Project",
     title: "Bugless",
     shortDescription:
-      "Ferramenta de revisão de código com inteligência artificial, criada em uma semana de hackathon com o programa de mentoria Borderless Coding. Fornece feedback instantâneo sobre bugs, vulnerabilidades de segurança e problemas de performance via CLI para revisões locais e GitHub App para análise automática de Pull Requests.",
+      "Ferramenta de revisão de código com inteligência artificial, criada em uma semana de hackathon com o programa de mentoria Borderless Coding — Time 4. Fornece feedback instantâneo sobre bugs, vulnerabilidades de segurança e problemas de performance via CLI para revisões locais e GitHub App para análise automática de Pull Requests.",
     fullDescription:
-      "Bugless nasceu de um desafio real: revisões de código manuais são lentas, inconsistentes e deixam passar problemas críticos quando o time está sobrecarregado. Em uma semana de hackathon com o programa Borderless Coding, construímos uma solução completa que usa IA para automatizar esse processo.\n\nA ferramenta oferece dois modos de uso: uma CLI para revisões locais diretamente no terminal e um GitHub App que analisa Pull Requests automaticamente ao abrir. Em ambos os casos, o feedback é entregue em streaming em tempo real, com contexto específico para cada projeto via presets personalizáveis.",
+      "Bugless nasceu de um desafio real: revisões de código manuais são lentas, inconsistentes e deixam passar problemas críticos quando o time está sobrecarregado. Em uma semana de hackathon com o programa Borderless Coding, o Time 4 construiu uma solução completa que usa IA para automatizar esse processo.\n\nA ferramenta oferece dois modos de uso: uma CLI para revisões locais diretamente no terminal e um GitHub App que analisa Pull Requests automaticamente ao abrir. Em ambos os casos, o feedback é entregue em streaming em tempo real, com contexto específico para cada projeto via presets personalizáveis.",
     techs: ["Next.js", "Node.js", "TypeScript", "AI", "GitHub API"],
     video: { src: "/videos/bugless-demo.webm", type: "video/webm" },
     accentColor: "cyan",
@@ -47,6 +48,7 @@ const featuredProjects: FeaturedProjectData[] = [
       "Presets personalizáveis por projeto",
       "Construído em hackathon de 1 semana — Borderless Coding",
     ],
+    team: ["Mario Yuri", "Felipe Torres", "Levy Rodrigues", "Francisco Alexandro", "Pablo Cruz"],
   },
   {
     slug: "fire-os",
