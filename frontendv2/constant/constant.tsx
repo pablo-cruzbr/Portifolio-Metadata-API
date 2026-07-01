@@ -7,7 +7,7 @@ export const NavLinks = [
 
     {
         id: 4,
-        url: "#projects",
+        url: "#featured-projects",
         label: "Projetos"
     },
     {
