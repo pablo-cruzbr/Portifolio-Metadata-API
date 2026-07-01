@@ -4,6 +4,7 @@ import Hero from './Hero/Hero'
 import Services from './Service/Services'
 import Resume from './Resume/Resume'
 import FeaturedProject from './FeaturedProject/FeaturedProject'
+import GitHubStats from './GitHubStats/GitHubStats'
 import Projects from './Projects/Projects'
 import Skills from './Skills/Skills'
 import ClientReview from './ClientRaview/ClientReview'
@@ -38,6 +39,7 @@ const Home = () => {
       <FeaturedProject/>
       <Projects/>
       <Skills/>
+      <GitHubStats/>
       <Contact/>
     </div>
   )
