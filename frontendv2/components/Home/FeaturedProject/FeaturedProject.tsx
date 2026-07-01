@@ -31,7 +31,7 @@ const projects: FeaturedProjectData[] = [
     label: "Featured Project",
     title: "Fire OS",
     description:
-      "SaaS platform that streamlines service order management for IT companies serving public institutions. Replaces bureaucratic legacy systems by reducing a 5–6 screen workflow down to just 2. Validated in production with 47 real service orders over 2 months — 83% reduction in data entry effort.",
+      "Plataforma SaaS que moderniza o gerenciamento de ordens de serviço para empresas de TI que atendem instituições públicas. Substitui sistemas burocráticos reduzindo um fluxo de 5 a 6 telas para apenas 2. Validado em produção com 47 ordens de serviço reais em 2 meses — 83% de redução no esforço de preenchimento.",
     techs: ["Next.js", "React Native", "Expo", "Node.js", "TypeScript", "PostgreSQL", "Prisma", "Cloudinary"],
     video: { src: "/videos/fire-os-demo.mp4", type: "video/mp4" },
     accentColor: "orange",
