@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { SiJavascript, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiTypescript } from 'react-icons/si';
+import { SiJavascript, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiTypescript, SiPrisma, SiOpenai, SiVercel, SiExpo, SiRedis, SiTailwindcss } from 'react-icons/si';
 import Tilt from "react-parallax-tilt";
 
 const skills = [
@@ -39,6 +39,42 @@ const skills = [
     icon: <SiPostgresql />,
     color: "#4169E1",
     label: "v16",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss />,
+    color: "#06B6D4",
+    label: "v4",
+  },
+  {
+    name: "Prisma",
+    icon: <SiPrisma />,
+    color: "#5a67d8",
+    label: "ORM",
+  },
+  {
+    name: "OpenAI",
+    icon: <SiOpenai />,
+    color: "#ffffff",
+    label: "GPT & API",
+  },
+  {
+    name: "Vercel AI SDK",
+    icon: <SiVercel />,
+    color: "#ffffff",
+    label: "LLM SDK",
+  },
+  {
+    name: "Expo",
+    icon: <SiExpo />,
+    color: "#ffffff",
+    label: "React Native",
+  },
+  {
+    name: "Redis",
+    icon: <SiRedis />,
+    color: "#DC382D",
+    label: "Cache & Queue",
   },
 ]
 
