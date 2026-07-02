@@ -14,61 +14,59 @@ const streakUrl =
 
 const GitHubStats = () => {
   return (
-    <section className="bg-[#050709] py-20 border-t border-white/5">
+    <section className="bg-[#050709] py-14 border-t border-white/5">
       <div className="w-[90%] xl:w-[80%] mx-auto">
 
         {/* Header */}
-        <div data-aos="fade-up" className="flex flex-col items-center mb-12">
-          <div className="flex items-center gap-3 mb-2">
-            <FaGithub className="w-6 h-6 text-white" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+        <div data-aos="fade-up" className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-2">
+            <FaGithub className="w-5 h-5 text-white" />
+            <h2 className="text-xl font-bold text-white">
               GitHub <span className="text-cyan-400">Stats</span>
             </h2>
+            <a
+              href={`https://github.com/${USERNAME}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-gray-500 hover:text-cyan-400 transition font-mono ml-2"
+            >
+              @{USERNAME}
+            </a>
           </div>
-          <a
-            href={`https://github.com/${USERNAME}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-cyan-400 hover:text-cyan-300 transition font-mono mt-1"
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 items-start">
+          {/* Contribution Calendar */}
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="bg-[#0d1117] rounded-xl border border-white/10 p-4 overflow-x-auto"
           >
-            @{USERNAME}
-          </a>
-        </div>
+            <GitHubCalendar
+              username={USERNAME}
+              colorScheme="dark"
+              theme={{
+                dark: ["#0d1117", "#013a4a", "#015e77", "#0189ae", "#01A7C0"],
+              }}
+              fontSize={11}
+              blockSize={11}
+              blockMargin={3}
+              blockRadius={2}
+              hideColorLegend={false}
+              hideTotalCount={false}
+            />
+          </div>
 
-        {/* Streak */}
-        <div
-          data-aos="fade-up"
-          data-aos-delay="100"
-          className="flex justify-center mb-6"
-        >
-          <img
-            src={streakUrl}
-            alt="GitHub Streak"
-            className="w-full max-w-2xl rounded-2xl border border-white/10"
-            loading="lazy"
-          />
-        </div>
-
-        {/* Contribution Calendar */}
-        <div
-          data-aos="fade-up"
-          data-aos-delay="200"
-          className="bg-[#0d1117] rounded-2xl border border-white/10 p-6 overflow-x-auto"
-        >
-          <p className="text-xs text-gray-500 font-mono mb-4 uppercase tracking-widest">
-            Contribution Graph
-          </p>
-          <GitHubCalendar
-            username={USERNAME}
-            colorScheme="dark"
-            theme={{
-              dark: ["#0d1117", "#013a4a", "#015e77", "#0189ae", "#01A7C0"],
-            }}
-            fontSize={12}
-            blockSize={13}
-            blockMargin={4}
-            blockRadius={3}
-          />
+          {/* Streak */}
+          <div data-aos="fade-up" data-aos-delay="150">
+            <img
+              src={streakUrl}
+              alt="GitHub Streak"
+              className="rounded-xl border border-white/10 h-full object-cover"
+              style={{ maxWidth: "340px" }}
+              loading="lazy"
+            />
+          </div>
         </div>
 
       </div>

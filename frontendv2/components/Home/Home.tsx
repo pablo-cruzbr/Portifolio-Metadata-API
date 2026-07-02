@@ -38,8 +38,8 @@ const Home = () => {
       <Services/>
       <FeaturedProject/>
       <Projects/>
-      <Skills/>
       <GitHubStats/>
+      <Skills/>
       <Contact/>
     </div>
   )
