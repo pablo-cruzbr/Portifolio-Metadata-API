@@ -69,7 +69,7 @@ const Hero = () => {
         <h2
           data-aos="fade-up"
           data-aos-delay="400"
-          className="mt-4 text-sm px-2 text-center sm:text-lg font-medium flex flex-wrap justify-center items-center gap-2 text-gray-400"
+          className="mt-4 text-base px-2 text-center sm:text-xl font-medium flex flex-wrap justify-center items-center gap-2 text-gray-400"
         >
           <span>Pablo Cruz</span>
           <span className="text-white/20">·</span>
