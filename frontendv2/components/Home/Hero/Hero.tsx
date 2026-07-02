@@ -19,7 +19,6 @@ const Hero = () => {
       <ParticlesHero />
 
       <div className="relative z-10 flex flex-col items-center">
-        {/* Code comment decorator */}
         <span
           data-aos="fade-down"
           className="text-xs font-mono text-cyan-700/80 mb-4 tracking-wider"
@@ -27,7 +26,6 @@ const Hero = () => {
           // hello world &mdash; available for hire
         </span>
 
-        {/* Profile image with glow ring */}
         <div
           data-aos="fade-up"
           className="relative"
@@ -41,11 +39,9 @@ const Hero = () => {
             height={200}
             className="relative rounded-full border-4 border-cyan-500/30"
           />
-          {/* Online indicator */}
           <span className="absolute bottom-3 right-3 w-4 h-4 rounded-full bg-green-400 border-2 border-[#0C0D1F] shadow-lg shadow-green-500/50" />
         </div>
 
-        {/* Floating tech badges */}
         <div
           data-aos="fade-up"
           data-aos-delay="150"
@@ -82,9 +78,9 @@ const Hero = () => {
               options={{
                 strings: [
                   "Fullstack Developer",
-                  "React & Node.js",
+                  "Typescript & Node.js",
                   "SaaS Builder",
-                  "UI/UX Enthusiast",
+                  "AI & LLM Developer",
                 ],
                 autoStart: true,
                 loop: true,
