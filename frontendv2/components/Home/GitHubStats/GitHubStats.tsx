@@ -47,8 +47,8 @@ const GitHubStats = () => {
               blockSize={13}
               blockMargin={4}
               blockRadius={2}
-              hideColorLegend={false}
-              hideTotalCount={false}
+              showColorLegend={true}
+              showTotalCount={true}
             />
           </div>
 
