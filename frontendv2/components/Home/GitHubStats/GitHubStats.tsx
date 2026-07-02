@@ -35,11 +35,21 @@ const GitHubStats = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 items-start">
+        <div className="flex flex-col gap-4">
+          {/* Streak */}
+          <div data-aos="fade-up" data-aos-delay="100">
+            <img
+              src={streakUrl}
+              alt="GitHub Streak"
+              className="w-full rounded-xl border border-white/10"
+              loading="lazy"
+            />
+          </div>
+
           {/* Contribution Calendar */}
           <div
             data-aos="fade-up"
-            data-aos-delay="100"
+            data-aos-delay="150"
             className="bg-[#0d1117] rounded-xl border border-white/10 p-4 overflow-x-auto"
           >
             <GitHubCalendar
@@ -54,17 +64,6 @@ const GitHubStats = () => {
               blockRadius={2}
               hideColorLegend={false}
               hideTotalCount={false}
-            />
-          </div>
-
-          {/* Streak */}
-          <div data-aos="fade-up" data-aos-delay="150">
-            <img
-              src={streakUrl}
-              alt="GitHub Streak"
-              className="rounded-xl border border-white/10 h-full object-cover"
-              style={{ maxWidth: "340px" }}
-              loading="lazy"
             />
           </div>
         </div>
