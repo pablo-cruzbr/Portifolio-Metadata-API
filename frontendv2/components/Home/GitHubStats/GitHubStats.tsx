@@ -43,11 +43,11 @@ const GitHubStats = () => {
               theme={{
                 dark: ["#0a0f1a", "#013a4a", "#015e77", "#0189ae", "#01A7C0"],
               }}
-              fontSize={10}
-              blockSize={10}
-              blockMargin={3}
+              fontSize={12}
+              blockSize={13}
+              blockMargin={4}
               blockRadius={2}
-              hideColorLegend
+              hideColorLegend={false}
               hideTotalCount={false}
             />
           </div>
@@ -57,7 +57,7 @@ const GitHubStats = () => {
             <img
               src={streakUrl}
               alt="GitHub Streak"
-              className="rounded-xl border border-white/[0.06] w-full lg:w-[280px]"
+              className="rounded-xl border border-white/[0.06] w-full lg:w-[320px]"
               loading="lazy"
             />
           </div>
