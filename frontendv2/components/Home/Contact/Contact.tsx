@@ -1,9 +1,20 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import { BiEnvelope, BiMap, BiPhone } from 'react-icons/bi'
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { FiCopy, FiCheck } from 'react-icons/fi'
+
+const EMAIL = "pablocruzdev@gmail.com"
 
 const Contact = () => {
+  const [copied, setCopied] = useState(false)
   const whatsappUrl = "https://api.whatsapp.com/send/?phone=5511972523448&text=Ol%C3%A1+Pablo%2C+vi+seu+portifolio+e+me+interessei+pelo+seu+servi%C3%A7o%2C+vamos+conversar+%21%3F&type=phone_number&app_absent=0";
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(EMAIL)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
 
   return (
     <div id='contact' className="pt-16 pb-16 bg-[#050709]">
@@ -28,12 +39,19 @@ const Contact = () => {
             </div>
 
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center border border-white/5">
+              <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center border border-white/5 shrink-0">
                 <BiEnvelope className="w-6 h-6 text-cyan-300" />
               </div>
-              <p className="text-lg font-medium text-gray-400">
-                pablocruzdev@gmail.com
-              </p>
+              <button
+                onClick={handleCopy}
+                className="flex items-center gap-2 text-lg font-medium text-gray-400 hover:text-white transition-colors group"
+              >
+                <span>{EMAIL}</span>
+                {copied
+                  ? <FiCheck className="w-4 h-4 text-cyan-400 shrink-0" />
+                  : <FiCopy className="w-4 h-4 opacity-0 group-hover:opacity-60 shrink-0 transition-opacity" />
+                }
+              </button>
             </div>
           </div>
 
