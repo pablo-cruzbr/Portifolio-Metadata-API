@@ -73,17 +73,23 @@ const Hero = () => {
         <h2
           data-aos="fade-up"
           data-aos-delay="400"
-          className="mt-5 text-base px-2 text-center sm:text-2xl font-medium flex flex-wrap justify-center items-center text-gray-300"
+          className="mt-4 text-sm px-2 text-center sm:text-lg font-medium flex flex-wrap justify-center items-center gap-2 text-gray-400"
         >
-          Olá, Me chamo Pablo&nbsp;&mdash;
-          <span className="text-cyan-200 font-bold ml-2">
+          <span>Pablo Cruz</span>
+          <span className="text-white/20">·</span>
+          <span className="text-[#01A7C0] font-semibold">
             <Typewriter
               options={{
-                strings: ["Desenvolvedor Fullstack"],
+                strings: [
+                  "Fullstack Developer",
+                  "React & Node.js",
+                  "SaaS Builder",
+                  "UI/UX Enthusiast",
+                ],
                 autoStart: true,
                 loop: true,
-                delay: 75,
-                deleteSpeed: 50,
+                delay: 60,
+                deleteSpeed: 40,
                 wrapperClassName: "pl-1",
               }}
             />
