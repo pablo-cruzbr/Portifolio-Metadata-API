@@ -8,7 +8,7 @@ const techBadges = ["React", "Node.js", "TypeScript", "Next.js", "PostgreSQL"];
 
 const Hero = () => {
   const scrollToProjects = () => {
-    const section = document.getElementById('projects');
+    const section = document.getElementById('featured-projects');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
@@ -96,7 +96,7 @@ const Hero = () => {
           data-aos-delay="600"
           className="mt-8 px-6 py-3 bg-gradient-to-r from-blue-700 to-cyan-600 hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 cursor-pointer rounded-full text-base font-semibold flex items-center group text-white outline-none shadow-lg shadow-cyan-900/30 hover:shadow-cyan-700/40"
         >
-          <span>Veja meus Trabalhos</span>
+          <span>Veja meus Projetos</span>
           <BsArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
