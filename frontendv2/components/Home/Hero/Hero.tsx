@@ -64,7 +64,7 @@ const Hero = () => {
         <h1
           data-aos="fade-up"
           data-aos-delay="200"
-          className="text-2xl sm:text-2xl md:text-5xl lg:text-6xl mt-6 text-center font-bold tracking-wide"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-6 text-center font-bold tracking-wide"
         >
           Transformando Visões em<br />
           <span className="text-cyan-200">produtos web de alta performance.</span>
