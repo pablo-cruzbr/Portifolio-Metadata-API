@@ -53,7 +53,7 @@ const featuredProjects: FeaturedProjectData[] = [
   },
   {
     slug: "bugless",
-    label: "Featured Project",
+    label: "Hackathon — Borderless Coding",
     title: "Bugless",
     shortDescription:
       "Ferramenta de revisão de código com inteligência artificial, criada em uma semana de hackathon com o programa de mentoria Borderless Coding — Time 4. Fornece feedback instantâneo sobre bugs, vulnerabilidades de segurança e problemas de performance via CLI para revisões locais e GitHub App para análise automática de Pull Requests.",
