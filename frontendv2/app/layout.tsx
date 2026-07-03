@@ -11,8 +11,8 @@ const font = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Portifolio",
-  description: "API de metadados - Pablo Cruz",
+  title: "Pablo Cruz — Fullstack Developer",
+  description: "Portfólio de Pablo Cruz — Desenvolvedor Fullstack especializado em TypeScript, Next.js, Node.js e AI.",
 };
 
 export default function RootLayout({

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="50" fill="#01A7C0"/>
+  <text
+    x="50"
+    y="63"
+    font-family="ui-monospace, SFMono-Regular, monospace"
+    font-size="34"
+    font-weight="700"
+    text-anchor="middle"
+    fill="white"
+  >&lt;/&gt;</text>
+</svg>
