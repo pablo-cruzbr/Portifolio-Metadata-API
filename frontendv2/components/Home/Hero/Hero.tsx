@@ -49,12 +49,12 @@ const Hero = () => {
               // hello world &mdash; available for hire
             </span>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide leading-tight">
               Transformando Visões em{" "}
               <span className="text-cyan-200">produtos web de alta performance.</span>
             </h1>
 
-            <h2 className="mt-5 text-base sm:text-xl font-medium flex flex-wrap items-center gap-2 text-gray-400">
+            <h2 className="mt-5 text-lg sm:text-2xl font-medium flex flex-wrap items-center gap-2 text-gray-400">
               <span>Pablo Cruz</span>
               <span className="text-white/20">·</span>
               <span className="text-[#01A7C0] font-semibold">
