@@ -29,6 +29,13 @@ const accentClasses: Record<string, { badge: string; button: string; border: str
     text: "text-purple-400",
     metric: "bg-purple-400/10 border-purple-400/20",
   },
+  green: {
+    badge: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
+    button: "bg-[#01A7C0] hover:bg-[#019ab1] shadow-cyan-900/20",
+    border: "border-l-emerald-400",
+    text: "text-emerald-400",
+    metric: "bg-emerald-400/10 border-emerald-400/20",
+  },
 };
 
 export default function FeaturedProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
@@ -56,6 +63,7 @@ export default function FeaturedProjectDetail({ params }: { params: Promise<{ sl
           <div className={`absolute -inset-2 bg-gradient-to-r ${
             project.accentColor === "cyan" ? "from-cyan-500/15 to-blue-500/15"
             : project.accentColor === "purple" ? "from-purple-500/15 to-indigo-500/15"
+            : project.accentColor === "green" ? "from-emerald-500/15 to-teal-500/15"
             : "from-orange-500/15 to-red-500/15"
           } rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
           <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
