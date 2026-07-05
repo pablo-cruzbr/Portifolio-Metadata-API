@@ -112,6 +112,37 @@ const featuredProjects: FeaturedProjectData[] = [
       "Exportação de relatórios em Excel com filtros",
     ],
   },
+  {
+    slug: "mestre-comanda",
+    label: "Featured Project",
+    title: "Mestre da Comanda",
+    shortDescription:
+      "Sistema SaaS fullstack de gerenciamento de comandas para restaurantes. Sincronização em tempo real entre o app mobile dos garçons e o painel web da cozinha, com controle completo de mesas, pedidos e itens do cardápio.",
+    fullDescription:
+      "Mestre da Comanda surgiu para resolver um problema concreto no dia a dia de restaurantes: a comunicação entre salão e cozinha é lenta, propensa a erros e ainda depende de papel em muitos estabelecimentos. A solução une um app mobile para os garçons e um painel web para a cozinha, sincronizados em tempo real.\n\nO app mobile permite abrir mesas, navegar pelo cardápio por categorias, adicionar itens com quantidade e enviar pedidos instantaneamente. O painel web exibe todos os pedidos em aberto, permite gerenciar produtos e categorias, acompanhar o status de cada mesa e concluir atendimentos. Toda a comunicação passa por uma API REST em Node.js com autenticação JWT.",
+    techs: ["Next.js", "React Native", "Node.js", "TypeScript", "PostgreSQL", "Prisma", "Express", "JWT"],
+    video: { src: "/videos/mestre-comanda-demo.mp4", type: "video/mp4" },
+    accentColor: "green",
+    links: [
+      { label: "Live Demo", href: "https://mestre-da-comanda-saas-y5m2.vercel.app/", primary: true },
+      { label: "GitHub", href: "https://github.com/pablo-cruzbr/Mestre_da_Comanda_Saas" },
+    ],
+    metrics: [
+      { value: "2", label: "plataformas integradas" },
+      { value: "Real-time", label: "sincronização web-mobile" },
+      { value: "REST API", label: "com autenticação JWT" },
+    ],
+    features: [
+      "Painel web com autenticação JWT e proteção de rotas",
+      "Gerenciamento completo de categorias e produtos do cardápio",
+      "Criação e gerenciamento de mesas e comandas",
+      "Adição e remoção de itens nos pedidos em tempo real",
+      "Envio e acompanhamento do status de cada pedido",
+      "App mobile para garçons abrirem mesas e enviarem pedidos",
+      "Seleção de produtos por categoria no app mobile",
+      "Sincronização em tempo real entre web e mobile",
+    ],
+  },
 ];
 
 export default featuredProjects;
