@@ -344,7 +344,7 @@ export default function AdminEditar() {
                   : "border-transparent text-gray-400 hover:text-white"
               }`}
             >
-              {tab === "projects" ? "Plataformas & Dashboards" : "Freelancer"}
+              {tab === "projects" ? "Sistemas em Desenvolvimento" : "Freelancer"}
             </button>
           ))}
           </div>

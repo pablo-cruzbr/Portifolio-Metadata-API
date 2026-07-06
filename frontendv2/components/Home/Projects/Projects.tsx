@@ -96,7 +96,7 @@ const Projects = () => {
             <div className="w-[80%] mx-auto">
 
                 <h2 className="mt-24 text-2xl font-bold text-white border-l-4 border-purple-500 pl-4">
-                    Plataformas & Dashboards
+                    Sistemas em Desenvolvimento
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
                     {projects.map((item, index) => renderCard(item, 'detalhes', index * 100))}
