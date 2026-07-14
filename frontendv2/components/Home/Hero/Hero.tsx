@@ -49,9 +49,9 @@ const Hero = () => {
               // hello world &mdash; available for hire
             </span>
 
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide leading-tight">
-              Transformando Visões em{" "}
-              <span className="text-cyan-200">produtos web de <span className="whitespace-nowrap">alta performance.</span></span>
+            <h1 className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide leading-tight">
+              Transformando Visões em<br />
+              <span className="text-cyan-200 whitespace-nowrap">produtos web de alta performance.</span>
             </h1>
 
             <h2 className="mt-5 text-lg sm:text-2xl font-medium flex flex-wrap items-center gap-2 text-gray-400">
