@@ -3,11 +3,15 @@ import React, { useState } from 'react'
 import { BiEnvelope, BiMap, BiPhone } from 'react-icons/bi'
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import { FiCopy, FiCheck } from 'react-icons/fi'
+import { useLang } from '@/context/LanguageContext'
+import { translations } from '@/translations'
 
 const EMAIL = "pablocruzdev@gmail.com"
 
 const Contact = () => {
   const [copied, setCopied] = useState(false)
+  const { lang } = useLang()
+  const t = translations[lang].contact
   const whatsappUrl = "https://api.whatsapp.com/send/?phone=5511972523448&text=Ol%C3%A1+Pablo%2C+vi+seu+portifolio+e+me+interessei+pelo+seu+servi%C3%A7o%2C+vamos+conversar+%21%3F&type=phone_number&app_absent=0";
 
   const handleCopy = () => {
@@ -22,10 +26,10 @@ const Contact = () => {
   
         <div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-200 leading-tight">
-            Pronto para escalar seu <span className="text-cyan-400">próximo projeto?</span>
+            {t.title} <span className="text-cyan-400">{t.titleSpan}</span>
           </h1>
           <p className="text-gray-400 mt-6 text-base sm:text-lg">
-            Estou disponível para novos desafios e parcerias. Seja para um sistema complexo ou uma landing page estratégica, vamos conversar sobre como posso ajudar o seu negócio a crescer.
+            {t.description}
           </p>
           
           <div className="mt-10 space-y-6">
@@ -34,7 +38,7 @@ const Contact = () => {
                 <BiMap className="w-6 h-6 text-cyan-300" />
               </div>
               <p className="text-lg font-medium text-gray-400">
-                Mogi das Cruzes, São Paulo
+                {t.location}
               </p>
             </div>
 

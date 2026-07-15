@@ -1,11 +1,15 @@
 "use client"
 import React, { useState } from 'react'
 import { FiCopy, FiCheck } from 'react-icons/fi'
+import { useLang } from '@/context/LanguageContext'
+import { translations } from '@/translations'
 
 const EMAIL = "pablocruzdev@gmail.com"
 
 const Footer = () => {
   const [copied, setCopied] = useState(false)
+  const { lang } = useLang()
+  const t = translations[lang].footer
 
   const handleCopy = () => {
     navigator.clipboard.writeText(EMAIL)
@@ -17,7 +21,7 @@ const Footer = () => {
     <div className="bg-[#050709] border-t border-white/5 py-6 px-4">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 w-[90%] xl:w-[80%] mx-auto">
         <p className="text-white/40 text-sm">
-          Pablo Cruz — Portfólio Pessoal
+          {t.text}
         </p>
 
         <button
