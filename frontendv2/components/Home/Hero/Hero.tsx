@@ -3,10 +3,15 @@ import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 import { BsArrowRight } from 'react-icons/bs';
 import ParticlesHero from './ParticleBackground';
+import { useLang } from '@/context/LanguageContext';
+import { translations } from '@/translations';
 
 const techBadges = ["React", "Node.js", "TypeScript", "Next.js", "PostgreSQL"];
 
 const Hero = () => {
+  const { lang } = useLang()
+  const t = translations[lang].hero
+
   const scrollToProjects = () => {
     const section = document.getElementById('featured-projects');
     if (section) {
@@ -46,12 +51,14 @@ const Hero = () => {
           {/* Text content — forced to left column on desktop */}
           <div data-aos="fade-right" className="flex flex-col items-start lg:order-first">
             <span className="text-xs font-mono text-cyan-700/80 mb-5 tracking-wider">
-              // hello world &mdash; available for hire
+              {t.comment}
             </span>
 
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide leading-tight">
-              Transformando Visões em{" "}
-              <span className="text-cyan-200">produtos web de <span className="whitespace-nowrap">alta performance.</span></span>
+              {t.headline1}{" "}
+              <span className="text-cyan-200">
+                {t.headline2}
+              </span>
             </h1>
 
             <h2 className="mt-5 text-lg sm:text-2xl font-medium flex flex-wrap items-center gap-2 text-gray-400">
@@ -59,13 +66,9 @@ const Hero = () => {
               <span className="text-white/20">·</span>
               <span className="text-[#01A7C0] font-semibold">
                 <Typewriter
+                  key={lang}
                   options={{
-                    strings: [
-                      "Fullstack Developer",
-                      "Typescript & Node.js",
-                      "SaaS Builder",
-                      "AI & LLM Developer",
-                    ],
+                    strings: t.typewriter as string[],
                     autoStart: true,
                     loop: true,
                     delay: 60,
@@ -91,7 +94,7 @@ const Hero = () => {
               onClick={scrollToProjects}
               className="mt-8 px-6 py-3 bg-gradient-to-r from-blue-700 to-cyan-600 hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 cursor-pointer rounded-full text-base font-semibold flex items-center group text-white outline-none shadow-lg shadow-cyan-900/30 hover:shadow-cyan-700/40"
             >
-              <span>Veja meus Projetos</span>
+              <span>{t.cta}</span>
               <BsArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
