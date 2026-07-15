@@ -2,6 +2,8 @@
 import React from 'react'
 import { SiJavascript, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiTypescript, SiPrisma, SiOpenai, SiVercel, SiExpo, SiRedis, SiTailwindcss } from 'react-icons/si';
 import Tilt from "react-parallax-tilt";
+import { useLang } from '@/context/LanguageContext';
+import { translations } from '@/translations';
 
 const skills = [
   {
@@ -79,13 +81,16 @@ const skills = [
 ]
 
 const Skills = () => {
+  const { lang } = useLang()
+  const t = translations[lang].skills
+
   return (
     <div id="skills" className="pt-16 pb-16 text-white">
       <div className="text-center mb-3">
-        <span className="text-xs font-mono text-cyan-600 tracking-widest">&lt;skills /&gt;</span>
+        <span className="text-xs font-mono text-cyan-600 tracking-widest">{t.tag}</span>
       </div>
       <h1 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white">
-        My <span className="text-cyan-300">Skills</span>
+        {t.title} <span className="text-cyan-300">{t.titleSpan}</span>
       </h1>
 
       <div className="flex flex-wrap justify-center gap-6 mt-16">
