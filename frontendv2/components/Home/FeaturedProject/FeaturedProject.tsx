@@ -4,6 +4,8 @@ import React from "react";
 import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
 import featuredProjects, { FeaturedProjectData } from "@/constants/featuredProjects";
+import { useLang } from "@/context/LanguageContext";
+import { translations } from "@/translations";
 
 const accentClasses: Record<string, { badge: string; glow: string; button: string; label: string }> = {
   cyan: {
@@ -32,7 +34,7 @@ const accentClasses: Record<string, { badge: string; glow: string; button: strin
   },
 };
 
-const ProjectRow = ({ project, index }: { project: FeaturedProjectData; index: number }) => {
+const ProjectRow = ({ project, index, viewDetails }: { project: FeaturedProjectData; index: number; viewDetails: string }) => {
   const accent = accentClasses[project.accentColor];
   const reversed = index % 2 !== 0;
 
@@ -101,7 +103,7 @@ const ProjectRow = ({ project, index }: { project: FeaturedProjectData; index: n
             href={`/projeto/featured/${project.slug}`}
             className="flex items-center gap-2 px-5 py-2.5 rounded-xl transition-all font-semibold text-sm text-gray-300 hover:text-white border border-white/10 hover:border-white/30 group"
           >
-            Ver Detalhes
+            {viewDetails}
             <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -111,6 +113,9 @@ const ProjectRow = ({ project, index }: { project: FeaturedProjectData; index: n
 };
 
 const FeaturedProject = () => {
+  const { lang } = useLang()
+  const t = translations[lang].featured
+
   return (
     <section id="featured-projects" className="bg-[#050709] py-24">
       <div className="w-[95%] xl:w-[88%] mx-auto">
@@ -118,18 +123,18 @@ const FeaturedProject = () => {
           data-aos="fade-up"
           className="text-center text-3xl sm:text-4xl font-bold text-white mb-4"
         >
-          Projetos em <span className="text-cyan-400">Destaque</span>
+          {t.sectionTitle} <span className="text-cyan-400">{t.sectionTitleSpan}</span>
         </h2>
         <p
           data-aos="fade-up"
           data-aos-delay="100"
           className="text-center text-gray-400 mb-16 max-w-2xl mx-auto"
         >
-          Um olhar mais detalhado sobre meus trabalhos mais recentes.
+          {t.subtitle}
         </p>
 
         {featuredProjects.map((project, index) => (
-          <ProjectRow key={project.slug} project={project} index={index} />
+          <ProjectRow key={project.slug} project={project} index={index} viewDetails={t.viewDetails} />
         ))}
       </div>
     </section>
