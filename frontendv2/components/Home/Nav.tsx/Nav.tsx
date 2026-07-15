@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { BiCloudDownload } from 'react-icons/bi'
 import { FaCode, FaGithub } from "react-icons/fa"
-import { HiBars3BottomRight } from 'react-icons/hi2'
+import { HiBars3BottomRight, HiLanguage } from 'react-icons/hi2'
 import { useLang } from '@/context/LanguageContext'
 import { translations } from '@/translations'
 
@@ -64,8 +64,9 @@ const Nav = ({ openNav }: Props) => {
 
           <button
             onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')}
-            className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-200"
+            className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-200 text-white"
           >
+            <HiLanguage className="w-4 h-4 text-cyan-400 shrink-0" />
             <span className={lang === 'pt' ? 'text-white' : 'text-white/35'}>PT</span>
             <span className="text-white/20">/</span>
             <span className={lang === 'en' ? 'text-white' : 'text-white/35'}>EN</span>

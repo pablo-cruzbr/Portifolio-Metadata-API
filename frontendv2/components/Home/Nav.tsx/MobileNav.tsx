@@ -3,6 +3,7 @@ import React from 'react'
 import { NavLinks } from '@/constant/constant'
 import Link from 'next/link'
 import { CgClose } from 'react-icons/cg'
+import { HiLanguage } from 'react-icons/hi2'
 import { useLang } from '@/context/LanguageContext'
 import { translations } from '@/translations'
 
@@ -37,6 +38,7 @@ const MobileNav = ({ closeNav, showNav }: Props) => {
           onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')}
           className="ml-12 w-fit flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold border border-white/20 bg-white/10 hover:bg-white/20 transition-all"
         >
+          <HiLanguage className="w-4 h-4 text-cyan-400 shrink-0" />
           <span className={lang === 'pt' ? 'text-white' : 'text-white/40'}>PT</span>
           <span className="text-white/30">/</span>
           <span className={lang === 'en' ? 'text-white' : 'text-white/40'}>EN</span>
