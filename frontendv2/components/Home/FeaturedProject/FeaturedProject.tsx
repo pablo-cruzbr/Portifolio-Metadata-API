@@ -34,9 +34,10 @@ const accentClasses: Record<string, { badge: string; glow: string; button: strin
   },
 };
 
-const ProjectRow = ({ project, index, viewDetails }: { project: FeaturedProjectData; index: number; viewDetails: string }) => {
+const ProjectRow = ({ project, index, viewDetails, lang }: { project: FeaturedProjectData; index: number; viewDetails: string; lang: 'pt' | 'en' }) => {
   const accent = accentClasses[project.accentColor];
   const reversed = index % 2 !== 0;
+  const locale = lang === 'en' && project.en ? project.en : null;
 
   return (
     <div className={`grid grid-cols-1 gap-10 items-center ${reversed ? "lg:grid-cols-[2fr_3fr]" : "lg:grid-cols-[3fr_2fr]"} ${index > 0 ? "mt-32" : ""}`}>
@@ -54,14 +55,14 @@ const ProjectRow = ({ project, index, viewDetails }: { project: FeaturedProjectD
 
       <div data-aos={reversed ? "fade-right" : "fade-left"} className={reversed ? "lg:order-1" : ""}>
         <span className={`text-xs font-mono tracking-widest uppercase ${accent.label}`}>
-          {project.label}
+          {locale?.label ?? project.label}
         </span>
         <h3 className="text-3xl sm:text-4xl font-bold text-white mt-3 mb-4">
           {project.title}
         </h3>
 
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 mb-5">
-          <p className="text-gray-300 leading-relaxed text-sm">{project.shortDescription}</p>
+          <p className="text-gray-300 leading-relaxed text-sm">{locale?.shortDescription ?? project.shortDescription}</p>
         </div>
 
         <div className="flex flex-wrap gap-2 mb-6">
@@ -134,7 +135,7 @@ const FeaturedProject = () => {
         </p>
 
         {featuredProjects.map((project, index) => (
-          <ProjectRow key={project.slug} project={project} index={index} viewDetails={t.viewDetails} />
+          <ProjectRow key={project.slug} project={project} index={index} viewDetails={t.viewDetails} lang={lang} />
         ))}
       </div>
     </section>
