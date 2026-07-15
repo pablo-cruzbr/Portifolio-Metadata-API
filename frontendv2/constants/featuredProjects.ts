@@ -4,6 +4,14 @@ export interface FeaturedLink {
   primary?: boolean;
 }
 
+export interface ProjectLocale {
+  label?: string;
+  shortDescription?: string;
+  fullDescription?: string;
+  features?: string[];
+  metrics?: { label: string; value: string }[];
+}
+
 export interface FeaturedProjectData {
   slug: string;
   label: string;
@@ -17,6 +25,7 @@ export interface FeaturedProjectData {
   metrics: { label: string; value: string }[];
   features: string[];
   team?: string[];
+  en?: ProjectLocale;
 }
 
 const featuredProjects: FeaturedProjectData[] = [
@@ -36,8 +45,8 @@ const featuredProjects: FeaturedProjectData[] = [
       { label: "GitHub", href: "https://github.com/ProgramadoresSemPatria/HB01-2026-ai-mock-interview" },
     ],
     metrics: [
-      { value: "🥈 2º", label: "lugar no hackathon" },
-      { value: "3 níveis", label: "de dificuldade" },
+      { value: "🥈 2nd", label: "place at the hackathon" },
+      { value: "3 levels", label: "of difficulty" },
       { value: "Real-time", label: "SSE streaming" },
     ],
     features: [
@@ -50,6 +59,27 @@ const featuredProjects: FeaturedProjectData[] = [
       "Autenticação JWT com refresh token automático",
     ],
     team: ["Pablo Cruz", "Nathan Vinicius", "Guilherme Resende"],
+    en: {
+      label: "🥈 2nd Place — Hackathon",
+      shortDescription:
+        "AI-powered mock technical interview platform built at a hackathon with the Borderless Coding program. The candidate uploads their resume and the AI conducts a personalized interview based on their real experience, generating automatic feedback at the end of each session.",
+      fullDescription:
+        "Hone was born from the need to make technical interview preparation more realistic and accessible. Instead of generic questions, the platform reads the candidate's resume and conducts a personalized interview, adapting the difficulty level and topics to each person's real experience.\n\nAI responses are streamed in real time via Server-Sent Events, creating a natural conversation experience. At the end of each session, the system generates automatic feedback and a study topic backlog, helping the candidate identify gaps and continuously improve.",
+      features: [
+        "Personalized interviews based on the candidate's resume (PDF)",
+        "Three difficulty levels: beginner, intermediate, and senior",
+        "Real-time responses via Server-Sent Events",
+        "Automatic feedback at the end of each session",
+        "AI-generated study topic backlog",
+        "Complete session history per user",
+        "JWT authentication with automatic refresh token",
+      ],
+      metrics: [
+        { value: "🥈 2nd", label: "place at the hackathon" },
+        { value: "3 levels", label: "of difficulty" },
+        { value: "Real-time", label: "SSE streaming" },
+      ],
+    },
   },
   {
     slug: "bugless",
@@ -80,6 +110,26 @@ const featuredProjects: FeaturedProjectData[] = [
       "Construído em hackathon de 1 semana — Borderless Coding",
     ],
     team: ["Mario Yuri", "Felipe Torres", "Levy Rodrigues", "Francisco Alexandro", "Pablo Cruz"],
+    en: {
+      label: "Hackathon — Borderless Coding",
+      shortDescription:
+        "AI-powered code review tool built in one week at the Borderless Coding mentorship hackathon — Team 4. Provides instant feedback on bugs, security vulnerabilities, and performance issues via CLI for local reviews and a GitHub App for automatic Pull Request analysis.",
+      fullDescription:
+        "Bugless was born from a real challenge: manual code reviews are slow, inconsistent, and miss critical issues when the team is overloaded. In one week at the Borderless Coding hackathon, Team 4 built a complete solution that uses AI to automate this process.\n\nThe tool offers two modes of use: a CLI for local reviews directly in the terminal and a GitHub App that analyzes Pull Requests automatically when opened. In both cases, feedback is delivered via real-time streaming, with project-specific context through customizable presets.",
+      features: [
+        "Review of bugs, security vulnerabilities, and performance issues",
+        "CLI for local reviews without leaving the terminal",
+        "GitHub App for automatic Pull Request analysis",
+        "Real-time streaming of results",
+        "Customizable presets per project",
+        "Built in a 1-week hackathon — Borderless Coding",
+      ],
+      metrics: [
+        { value: "1 week", label: "of development" },
+        { value: "CLI + App", label: "two usage modes" },
+        { value: "Real-time", label: "feedback streaming" },
+      ],
+    },
   },
   {
     slug: "fire-os",
@@ -111,6 +161,28 @@ const featuredProjects: FeaturedProjectData[] = [
       "Timer para controle de tempo de atendimento",
       "Exportação de relatórios em Excel com filtros",
     ],
+    en: {
+      label: "Featured Project",
+      shortDescription:
+        "SaaS platform that modernizes service order management for IT companies serving public institutions. Replaces bureaucratic systems by reducing a 5–6 screen flow to just 2. Validated in production with 47 real service orders in 2 months — 83% reduction in form-filling effort.",
+      fullDescription:
+        "IT companies serving public institutions lose hours every day navigating legacy bureaucratic systems. Fire OS solves this by consolidating the entire service order flow into two screens: one for the field technician (mobile) and one for the manager (web dashboard).\n\nValidated in a real work environment with real data, the system processed 47 service orders over 2 months, with 44 successfully completed. The reduction from 5–6 screens to just 2 represents 66% less complexity and 83% less data entry effort.",
+      features: [
+        "Mobile app for field technicians (React Native + Expo)",
+        "Web dashboard for managers (Next.js)",
+        "JWT authentication with access control",
+        "Digital signatures on service orders",
+        "Integrated geolocation with maps",
+        "Photo upload via Cloudinary",
+        "Timer for service time tracking",
+        "Excel report export with filters",
+      ],
+      metrics: [
+        { value: "47", label: "orders processed" },
+        { value: "83%", label: "less form filling" },
+        { value: "66%", label: "fewer screens" },
+      ],
+    },
   },
   {
     slug: "mestre-comanda",
@@ -142,6 +214,28 @@ const featuredProjects: FeaturedProjectData[] = [
       "Seleção de produtos por categoria no app mobile",
       "Sincronização em tempo real entre web e mobile",
     ],
+    en: {
+      label: "Featured Project",
+      shortDescription:
+        "Fullstack SaaS system for restaurant order management. Real-time synchronization between the waiters' mobile app and the kitchen's web dashboard, with full control of tables, orders, and menu items.",
+      fullDescription:
+        "Mestre da Comanda was created to solve a concrete daily problem in restaurants: communication between the dining area and the kitchen is slow, error-prone, and still relies on paper in many establishments. The solution combines a mobile app for waiters and a web dashboard for the kitchen, synchronized in real time.\n\nThe mobile app allows waiters to open tables, browse the menu by category, add items with quantities, and instantly send orders. The web dashboard displays all open orders, manages products and categories, tracks each table's status, and completes services. All communication goes through a REST API in Node.js with JWT authentication.",
+      features: [
+        "Web dashboard with JWT authentication and route protection",
+        "Full management of menu categories and products",
+        "Table and order creation and management",
+        "Real-time item addition and removal from orders",
+        "Order status sending and tracking",
+        "Mobile app for waiters to open tables and send orders",
+        "Product selection by category in the mobile app",
+        "Real-time synchronization between web and mobile",
+      ],
+      metrics: [
+        { value: "2", label: "integrated platforms" },
+        { value: "Real-time", label: "web-mobile sync" },
+        { value: "REST API", label: "with JWT auth" },
+      ],
+    },
   },
 ];
 
