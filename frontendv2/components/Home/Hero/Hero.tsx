@@ -68,7 +68,7 @@ const Hero = () => {
                 <Typewriter
                   key={lang}
                   options={{
-                    strings: t.typewriter as string[],
+                    strings: [...t.typewriter],
                     autoStart: true,
                     loop: true,
                     delay: 60,
