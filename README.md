@@ -2,7 +2,7 @@
 
 Este projeto é uma solução full-stack desenvolvida para centralizar e exibir dinamicamente todos os meus projetos pessoais. Ele consiste em uma API RESTful robusta que serve como o "cérebro" do meu portfólio, permitindo que o frontend consuma metadados atualizados em tempo real.
 
-🔗 **Link do Projeto:** [https://portifolio-metadata-api-v4.vercel.app/](https://portifolio-metadata-api-v4.vercel.app/)
+🔗 **Link do Projeto:** [pablocruz.vercel.app](https://portifolio-metadata-api-v4.vercel.app/)
 
 <img src="https://github.com/user-attachments/assets/8b3aecee-1a19-43a5-b9fe-935087d74137" width="600">
 
