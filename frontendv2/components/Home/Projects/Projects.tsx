@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { api } from '@/services/api';
+import { useLang } from '@/context/LanguageContext';
+import { translations } from '@/translations';
 
 interface BaseProject {
     id: string;
@@ -20,6 +22,8 @@ const Projects = () => {
     const [landingPages, setLandingPages] = useState<BaseProject[]>([]);
     const [freelancers, setFreelancers] = useState<BaseProject[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+    const { lang } = useLang();
+    const t = translations[lang].projects;
 
     useEffect(() => {
         async function fetchData() {
@@ -44,7 +48,7 @@ const Projects = () => {
     }, []);
 
     if (isLoading) {
-        return <div className="py-16 text-center text-white">Carregando Galeria...</div>;
+        return <div className="py-16 text-center text-white">{t.loading}</div>;
     }
 
     const renderCard = (
@@ -86,7 +90,7 @@ const Projects = () => {
                 href={`/projeto/${type}/${item.id}`}
                 className="inline-block mt-4 text-white font-bold border-b-2 border-cyan-500 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300 pb-1 text-sm"
             >
-                Explorar Projeto →
+                {t.explore}
             </Link>
         </div>
     );
@@ -96,14 +100,14 @@ const Projects = () => {
             <div className="w-[80%] mx-auto">
 
                 <h2 className="mt-24 text-2xl font-bold text-white border-l-4 border-purple-500 pl-4">
-                    Sistemas em Desenvolvimento
+                    {t.systems}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
                     {projects.map((item, index) => renderCard(item, 'detalhes', index * 100))}
                 </div>
 
                 <h2 className="mt-24 text-2xl font-bold text-white border-l-4 border-green-500 pl-4">
-                    Páginas de Venda & Captura
+                    {t.landingPages}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
                     {landingPages.map((item, index) => renderCard(item, 'landingpage', index * 100))}
