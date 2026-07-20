@@ -41,6 +41,12 @@ export const translations = {
       description: "Estou disponível para novos desafios e parcerias. Seja para um sistema complexo ou uma landing page estratégica, vamos conversar sobre como posso ajudar o seu negócio a crescer.",
       location: "Mogi das Cruzes, São Paulo",
     },
+    projects: {
+      loading: "Carregando Galeria...",
+      systems: "Sistemas em Desenvolvimento",
+      landingPages: "Páginas de Venda & Captura",
+      explore: "Explorar Projeto →",
+    },
     footer: {
       text: "Pablo Cruz — Portfólio Pessoal",
     },
@@ -84,6 +90,12 @@ export const translations = {
       titleSpan: "next project?",
       description: "I'm available for new challenges and partnerships. Whether it's a complex system or a strategic landing page, let's talk about how I can help your business grow.",
       location: "Mogi das Cruzes, São Paulo",
+    },
+    projects: {
+      loading: "Loading Gallery...",
+      systems: "Systems in Development",
+      landingPages: "Sales & Capture Pages",
+      explore: "Explore Project →",
     },
     footer: {
       text: "Pablo Cruz — Personal Portfolio",
