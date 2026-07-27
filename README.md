@@ -1,79 +1,122 @@
-# 🚀 Portifólio Central API & Frontend
+# Pablo Cruz — Portfolio & Metadata API
 
-Este projeto é uma solução full-stack desenvolvida para centralizar e exibir dinamicamente todos os meus projetos pessoais. Ele consiste em uma API RESTful robusta que serve como o "cérebro" do meu portfólio, permitindo que o frontend consuma metadados atualizados em tempo real.
+Solução full-stack que centraliza e exibe dinamicamente meus projetos. O backend expõe uma API RESTful que serve metadados dos projetos; o frontend consome essa API e entrega uma experiência moderna com suporte a i18n (PT/EN) e um assistente de IA integrado.
 
-🔗 **Link do Projeto:** [pablocruz.vercel.app](https://portifolio-metadata-api-v4.vercel.app/)
+🔗 **Live:** [pablocruz.vercel.app](https://portifolio-metadata-api-v4.vercel.app/)
 
-<img src="https://github.com/user-attachments/assets/8b3aecee-1a19-43a5-b9fe-935087d74137" width="600">
+![Portfolio screenshot](https://github.com/user-attachments/assets/8b3aecee-1a19-43a5-b9fe-935087d74137)
 
-# 📋 Sobre o Projeto
-A ideia nasceu da necessidade de gerenciar meus projetos de forma centralizada. Em vez de hardcodar as informações no HTML/React, criei um ecossistema onde o backend gerencia títulos, descrições, tecnologias utilizadas, links de repositório e imagens.
+---
 
-Frontend: Uma interface moderna e responsiva que consome a API.
+## Estrutura do repositório
 
-Backend: Uma API escalável que gerencia a persistência dos dados e integração com serviços de nuvem.
+```
+Portifolio-Metadata-API/
+├── backend/          # API RESTful — Node.js + Express + Prisma + PostgreSQL
+├── frontend/         # Versão legada (React + Vite) — deprecated
+└── frontendv2/       # Versão atual — Next.js 16 + TypeScript + Tailwind CSS
+```
 
-# 🛠️ Tecnologias Utilizadas
-Frontend
-React.js (com Vite) para uma experiência de desenvolvimento rápida e performance otimizada.
+---
 
-CSS3 para estilização personalizada e responsividade.
+## Frontend v2 — Next.js 16
 
-Axios para consumo da API.
+Stack principal do portfólio atual.
 
-Backend & Banco de Dados
-Node.js com Express para a construção da arquitetura de rotas.
+**Tecnologias**
 
-Prisma ORM para modelagem de dados e consultas eficientes.
+- Next.js 16.2 (App Router) com TypeScript strict
+- Tailwind CSS 4
+- React Context API para i18n (PT/EN) sem biblioteca externa
+- Vercel AI SDK (`ai` + `@ai-sdk/react` + `@ai-sdk/groq`) para o assistente de IA
+- AOS (Animate On Scroll) para animações de entrada
+- Typewriter Effect no Hero
 
-PostgreSQL como banco de dados relacional.
+**Funcionalidades**
 
-Serviços de Terceiros & Deploy
-Neon DB: Hospedagem do banco de dados PostgreSQL (Serverless).
+- Seletor de idioma PT/EN no header e no drawer mobile — todas as seções traduzem em tempo real
+- Projetos em destaque com página de detalhes e vídeo demonstrativo
+- Galeria dinâmica: conteúdo servido pela Metadata API, sem hardcode no frontend
+- Seção de skills, contato, footer — todos traduzidos via `translations/index.ts`
 
-Cloudinary: Gerenciamento e armazenamento de imagens de forma otimizada.
+### Alfred — Assistente de IA
 
-Vercel: Deploy automatizado do frontend.
+Alfred é um assistente virtual embutido diretamente no portfólio. Ele conhece minha trajetória, projetos e habilidades, e responde perguntas de visitantes em tempo real via streaming.
 
-⚙️ Arquitetura do Sistema
-🚀 Como Executar o Projeto
-Clone o repositório:
+**Como foi construído**
 
-Bash
+- **Vercel AI SDK** (`ai` + `@ai-sdk/react`): gerencia o estado do chat, o streaming de tokens e o protocolo de mensagens entre frontend e backend
+- **`useChat`** hook com `DefaultChatTransport`: conecta o componente React ao route handler sem boilerplate manual de fetch
+- **Groq** como provedor de LLM via `@ai-sdk/groq`: latência muito baixa, ideal para streaming em tempo real
+- **Modelo:** `llama-3.1-8b-instant` — rápido o suficiente para respostas fluidas em produção
+- **Route Handler** em `app/api/AssistentePabloCruz/route.ts`: recebe as mensagens, converte para o formato do modelo com `convertToModelMessages`, chama `streamText` e retorna o stream com `toUIMessageStreamResponse()`
+- **System prompt** injetado diretamente no route handler: descreve quem sou, meus projetos com métricas reais, e como posso ajudar empresas
+- **i18n no chat**: quando o usuário troca de idioma, a mensagem inicial do Alfred e os textos da UI também trocam — o chat reseta com o novo idioma automaticamente
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
-Configure as variáveis de ambiente (.env): Crie um arquivo .env na raiz do backend com as seguintes chaves:
+```
+Fluxo:
+Browser (useChat) → POST /api/AssistentePabloCruz → streamText (Groq / llama-3.1-8b-instant) → stream de volta ao browser
+```
 
-Snippet de código
+**Variável de ambiente necessária**
 
-DATABASE_URL="sua_url_do_neon_db"
-CLOUDINARY_URL="sua_url_do_cloudinary"
-Instale as dependências e inicie:
+```bash
+# .env.local
+GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
 
-Bash
+---
 
-# No diretório do backend
+## Backend — Metadata API
+
+API RESTful que serve os dados dos projetos para o frontend.
+
+**Tecnologias**
+
+- Node.js + Express + TypeScript
+- Prisma ORM
+- PostgreSQL (hospedado no Neon DB — serverless)
+- Cloudinary para upload e entrega de imagens
+
+**Endpoints principais**
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | `/listproject` | Sistemas em desenvolvimento |
+| GET | `/landingpages` | Páginas de venda e captura |
+| GET | `/listfreelancer` | Projetos freelance |
+
+---
+
+## Como executar localmente
+
+```bash
+# Clone
+git clone https://github.com/pablo-cruzbr/Portifolio-Metadata-API.git
+cd Portifolio-Metadata-API
+
+# Backend
+cd backend
 npm install
+cp .env.example .env   # configure DATABASE_URL e CLOUDINARY_URL
 npx prisma generate
 npm run dev
 
-# No diretório do frontend
+# Frontend v2
+cd ../frontendv2
 npm install
+cp .env.local.example .env.local   # configure GROQ_API_KEY
 npm run dev
-# 🖼️ Funcionalidades Principais
-Listagem Dinâmica: O portfólio é atualizado automaticamente ao adicionar um novo projeto no banco de dados.
+```
 
-Gestão de Mídia: Integração direta com Cloudinary para entrega rápida de imagens.
+---
 
-Filtros por Stacks: (Se você implementou isso, é bom mencionar).
+## Autor
 
-Interface Responsiva: Adaptado para dispositivos móveis e desktop.
+**Pablo Cruz** — Desenvolvedor Fullstack  
+TypeScript · React · Next.js · Node.js · PostgreSQL · AI/LLM
 
-# 👨‍💻 Sobre Mim
-Pablo Cruz - Desenvolvedor Full-Stack em busca de oportunidades como Estagiário ou Desenvolvedor Júnior. Atualmente focado no ecossistema JavaScript (TypeScript, React, Node.js) e infraestrutura.
-
-LinkedIn: [Seu LinkedIn Aqui]
-
-Instagram: [@seu.insta]
-
-Email: [seu-email@exemplo.com]
+- GitHub: [github.com/pablo-cruzbr](https://github.com/pablo-cruzbr)
+- LinkedIn: [linkedin.com/in/pablo-cruz-5b937525b](https://www.linkedin.com/in/pablo-cruz-5b937525b/)
+- Instagram: [@pablocruzdev](https://www.instagram.com/pablocruzdev/)
+- Email: pablo.flami@gmail.com
