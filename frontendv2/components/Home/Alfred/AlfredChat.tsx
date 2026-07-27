@@ -3,27 +3,23 @@
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useEffect, useRef, useState } from "react";
+import { useLang } from "@/context/LanguageContext";
+import { translations } from "@/translations";
 
-const SUGGESTED_QUESTIONS = [
-  "Em quais projetos o Pablo trabalha?",
-  "Como o Pablo pode ajudar minha empresa?",
-  "Quais são as principais habilidades dele?",
-];
-
-const INITIAL_MESSAGE = {
-  id: "intro",
-  role: "assistant" as const,
-  parts: [
-    {
-      type: "text" as const,
-      text: "Olá, sou Alfred, o assistente virtual do Pablo. Posso apresentar sua trajetória, projetos, áreas de atuação e explicar como ele pode ajudar seu negócio.",
-    },
-  ],
-};
+function makeInitialMessage(text: string) {
+  return {
+    id: "intro",
+    role: "assistant" as const,
+    parts: [{ type: "text" as const, text }],
+  };
+}
 
 export default function AlfredChat() {
+  const { lang } = useLang();
+  const t = translations[lang].alfred;
+
   const { messages, sendMessage, status, setMessages } = useChat({
-    messages: [INITIAL_MESSAGE],
+    messages: [makeInitialMessage(t.initialMessage)],
     transport: new DefaultChatTransport({
       api: "/api/AssistentePabloCruz",
     }),
@@ -37,8 +33,13 @@ export default function AlfredChat() {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages]);
 
+  useEffect(() => {
+    setMessages([makeInitialMessage(t.initialMessage)]);
+  }, [lang]);
+
   function clearChat() {
-    setMessages([INITIAL_MESSAGE]);
+    setMessages([makeInitialMessage(t.initialMessage)]);
+    setInput("");
   }
 
   function submitText(text: string) {
@@ -59,26 +60,25 @@ export default function AlfredChat() {
         {/* Coluna esquerda */}
         <div data-aos="fade-right">
           <div className="mb-6 flex items-center gap-2 text-[11px] font-mono uppercase tracking-widest text-[#5B8DEF]">
-            <span className="text-base">✧</span> Inteligência Artificial
+            <span className="text-base">✧</span> {t.eyebrow}
           </div>
 
           <h2 className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl">
-            Conheça Pablo <br />
-            através do{" "}
+            {t.heading1} <br />
+            {t.heading2}{" "}
             <span className="text-[#5B8DEF]">Alfred.</span>
           </h2>
 
           <p className="mt-6 max-w-md text-[15px] leading-relaxed text-[#8B90A0]">
-            Um assistente com informações sobre minha trajetória, projetos e
-            áreas de atuação. Pergunte o que quiser.
+            {t.description}
           </p>
 
           <div className="mt-12">
             <p className="mb-3 text-[11px] font-mono uppercase tracking-widest text-[#5B6070]">
-              Experimente perguntar
+              {t.suggestLabel}
             </p>
             <div className="flex flex-col gap-2.5">
-              {SUGGESTED_QUESTIONS.map((q) => (
+              {[...t.questions].map((q) => (
                 <button
                   key={q}
                   onClick={() => submitText(q)}
@@ -104,7 +104,7 @@ export default function AlfredChat() {
                 <p className="text-[13px] font-semibold text-white">Alfred</p>
                 <p className="flex items-center gap-1.5 text-[11px] text-[#8B90A0]">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#5B8DEF]" />
-                  Assistente do Pablo
+                  {t.subtext}
                 </p>
               </div>
             </div>
@@ -112,9 +112,8 @@ export default function AlfredChat() {
               <button
                 onClick={clearChat}
                 className="text-[11px] text-[#5B6070] hover:text-[#8B90A0] transition"
-                title="Limpar conversa"
               >
-                Limpar
+                {t.clear}
               </button>
               <span className="text-[10px] font-mono uppercase tracking-widest text-[#5B6070]">
                 Powered by AI
@@ -164,7 +163,7 @@ export default function AlfredChat() {
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Pergunte algo sobre o Pablo..."
+              placeholder={t.placeholder}
               disabled={isLoading}
               className="flex-1 rounded-md border border-white/10 bg-white/2 px-4 py-2.5 text-[13px] text-white placeholder:text-[#5B6070] outline-none focus:border-[#5B8DEF]/50 focus:ring-1 focus:ring-[#5B8DEF]/30 disabled:opacity-50"
             />
