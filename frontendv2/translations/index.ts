@@ -4,7 +4,7 @@ export const translations = {
   pt: {
     nav: {
       downloadCV: "Download CV",
-      links: ["Home", "Projetos", "Skills", "Contato"],
+      links: ["Home", "Alfred", "Projetos", "Skills", "Contato"],
     },
     hero: {
       comment: "// hello world — disponível para contratação",
@@ -47,6 +47,22 @@ export const translations = {
       landingPages: "Páginas de Venda & Captura",
       explore: "Explorar Projeto →",
     },
+    alfred: {
+      eyebrow: "Inteligência Artificial",
+      heading1: "Conheça Pablo",
+      heading2: "através do",
+      description: "Um assistente com informações sobre minha trajetória, projetos e áreas de atuação. Pergunte o que quiser.",
+      suggestLabel: "Experimente perguntar",
+      questions: [
+        "Em quais projetos o Pablo trabalha?",
+        "Como o Pablo pode ajudar minha empresa?",
+        "Quais são as principais habilidades dele?",
+      ],
+      subtext: "Assistente do Pablo",
+      clear: "Limpar",
+      placeholder: "Pergunte algo sobre o Pablo...",
+      initialMessage: "Olá, sou Alfred, o assistente virtual do Pablo. Posso apresentar sua trajetória, projetos, áreas de atuação e explicar como ele pode ajudar seu negócio.",
+    },
     footer: {
       text: "Pablo Cruz — Portfólio Pessoal",
     },
@@ -54,7 +70,7 @@ export const translations = {
   en: {
     nav: {
       downloadCV: "Download CV",
-      links: ["Home", "Projects", "Skills", "Contact"],
+      links: ["Home", "Alfred", "Projects", "Skills", "Contact"],
     },
     hero: {
       comment: "// hello world — available for hire",
@@ -96,6 +112,22 @@ export const translations = {
       systems: "Systems in Development",
       landingPages: "Sales & Capture Pages",
       explore: "Explore Project →",
+    },
+    alfred: {
+      eyebrow: "Artificial Intelligence",
+      heading1: "Meet Pablo",
+      heading2: "through",
+      description: "An assistant with information about my background, projects and areas of expertise. Ask whatever you want.",
+      suggestLabel: "Try asking",
+      questions: [
+        "What projects has Pablo worked on?",
+        "How can Pablo help my company?",
+        "What are his main skills?",
+      ],
+      subtext: "Pablo's Assistant",
+      clear: "Clear",
+      placeholder: "Ask something about Pablo...",
+      initialMessage: "Hi, I'm Alfred, Pablo's virtual assistant. I can introduce his background, projects, areas of expertise and explain how he can help your business.",
     },
     footer: {
       text: "Pablo Cruz — Personal Portfolio",

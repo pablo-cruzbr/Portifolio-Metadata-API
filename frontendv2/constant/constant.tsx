@@ -6,6 +6,11 @@ export const NavLinks = [
     },
 
     {
+        id: 2,
+        url: "#alfred",
+        label: "Alfred"
+    },
+    {
         id: 4,
         url: "#featured-projects",
         label: "Projetos"
