@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Frontend v2
 
-## Getting Started
+Frontend do portfólio pessoal de Pablo Cruz, construído com Next.js 16 App Router, TypeScript e Tailwind CSS.
 
-First, run the development server:
+🔗 **Live:** [pablocruz.vercel.app](https://portifolio-metadata-api-v4.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Stack
+
+- **Next.js 16.2** — App Router, route handlers, static + dynamic rendering
+- **TypeScript** (strict mode)
+- **Tailwind CSS 4**
+- **Vercel AI SDK** — `ai`, `@ai-sdk/react`, `@ai-sdk/groq`
+- **Groq** — LLM provider (llama-3.1-8b-instant)
+- **React Context API** — i18n PT/EN sem biblioteca externa
+
+---
+
+## Alfred — Assistente de IA
+
+Assistente virtual embutido no portfólio que responde perguntas sobre minha trajetória e projetos.
+
+**Arquitetura**
+
+```
+useChat (browser)
+  └─ POST /api/AssistentePabloCruz
+        └─ streamText → Groq (llama-3.1-8b-instant)
+              └─ toUIMessageStreamResponse() → streaming de volta ao browser
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Implementação**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `app/api/AssistentePabloCruz/route.ts` — route handler com `streamText` e system prompt
+- `components/Home/Alfred/AlfredChat.tsx` — componente React com `useChat` + `DefaultChatTransport`
+- `app/assistentePabloCruz/page.tsx` — página standalone do assistente
+- Suporte a i18n: textos, perguntas sugeridas e mensagem inicial trocam com o idioma; o chat reseta automaticamente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## i18n (PT/EN)
 
-To learn more about Next.js, take a look at the following resources:
+Todas as seções traduzem via `translations/index.ts` + React Context. Nenhuma biblioteca de i18n externa.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Seções traduzidas: nav, hero, services, featured projects, skills, contact, footer, Alfred chat.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Estrutura principal
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+app/
+├── api/AssistentePabloCruz/route.ts   # AI route handler
+├── assistentePabloCruz/page.tsx       # Página standalone do Alfred
+├── projeto/featured/[slug]/page.tsx   # Detalhes de projetos em destaque
+└── page.tsx                           # Home
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+components/Home/
+├── Alfred/AlfredChat.tsx              # Chat widget (embarcado no Home e na página standalone)
+├── Hero/
+├── FeaturedProject/
+├── Projects/
+├── Skills/
+├── Contact/
+└── Nav.tsx/
+
+context/LanguageContext.tsx            # Provider de i18n
+translations/index.ts                  # Strings PT + EN (as const)
+```
+
+---
+
+## Configuração
+
+```bash
+npm install
+cp .env.local.example .env.local
+# Edite .env.local com sua GROQ_API_KEY
+npm run dev
+```
+
+**Variáveis de ambiente**
+
+| Variável | Descrição |
+|----------|-----------|
+| `GROQ_API_KEY` | Chave da API Groq — obtenha em [console.groq.com/keys](https://console.groq.com/keys) |
