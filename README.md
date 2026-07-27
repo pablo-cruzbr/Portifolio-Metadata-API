@@ -4,8 +4,6 @@ Solução full-stack que centraliza e exibe dinamicamente meus projetos. O backe
 
 🔗 **Live:** [pablocruz.vercel.app](https://portifolio-metadata-api-v4.vercel.app/)
 
-![Portfolio screenshot](https://github.com/user-attachments/assets/8b3aecee-1a19-43a5-b9fe-935087d74137)
-
 ---
 
 ## Estrutura do repositório
@@ -40,6 +38,7 @@ Stack principal do portfólio atual.
 - Seção de skills, contato, footer — todos traduzidos via `translations/index.ts`
 
 ### Alfred — Assistente de IA
+<img width="1105" height="520" alt="alfred" src="https://github.com/user-attachments/assets/06220504-62e6-43a9-907b-8743104d3737" />
 
 Alfred é um assistente virtual embutido diretamente no portfólio. Ele conhece minha trajetória, projetos e habilidades, e responde perguntas de visitantes em tempo real via streaming.
 
