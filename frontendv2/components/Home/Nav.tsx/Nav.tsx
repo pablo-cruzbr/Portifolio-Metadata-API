@@ -31,13 +31,19 @@ const Nav = ({ openNav }: Props) => {
             ${navBg ? "bg-[#0C0D1F] shadow-lg" : "bg-transparent"}
             ${!navBg && "backdrop-blur-sm bg-[#0C0D1F]/50"}`}>
       <div className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
-        <Link href="/" className="flex items-center space-x-2 cursor-pointer group">
-          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:bg-cyan-400 transition-colors duration-300">
-            <FaCode className="w-5 h-5 text-black" />
+        <Link href="/" className="flex items-center space-x-3 cursor-pointer group">
+          <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-cyan-400 transition-colors duration-300 shrink-0">
+            <FaCode className="w-6 h-6 text-black" />
           </div>
-          <h1 className="text-xl hidden sm:block md:text-2xl text-white font-bold">
-            Pablo
-          </h1>
+          <div className="hidden sm:flex flex-col leading-none gap-1">
+            <h1 className="text-xl md:text-2xl text-white font-bold leading-none">
+              Pablo
+            </h1>
+            <span className="text-[10px] font-mono tracking-[0.18em] text-cyan-400/70 uppercase flex items-center gap-1">
+              <span className="inline-block w-3 h-px bg-cyan-500/40" />
+              blog
+            </span>
+          </div>
         </Link>
 
         <div className="hidden lg:flex items-center space-x-10">
