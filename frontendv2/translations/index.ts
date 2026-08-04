@@ -4,7 +4,7 @@ export const translations = {
   pt: {
     nav: {
       downloadCV: "Download CV",
-      links: ["Home", "Alfred", "Projetos", "Skills", "Contato"],
+      links: ["Home", "Alfred", "Projetos", "Skills", "Contato", "Planos"],
     },
     hero: {
       comment: "// hello world — disponível para contratação",
@@ -70,7 +70,7 @@ export const translations = {
   en: {
     nav: {
       downloadCV: "Download CV",
-      links: ["Home", "Alfred", "Projects", "Skills", "Contact"],
+      links: ["Home", "Alfred", "Projects", "Skills", "Contact", "Plans"],
     },
     hero: {
       comment: "// hello world — available for hire",
