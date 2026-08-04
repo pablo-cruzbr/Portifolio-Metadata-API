@@ -34,7 +34,7 @@ const plans = [
     subtitle: "Gestão e Evolução",
     setup: "R$ 400",
     setupLabel: "taxa de criação facilitada",
-    monthly: "R$ 250",
+    monthly: "R$ 300",
     monthlyLabel: "/mês",
     highlight: false,
     features: [
