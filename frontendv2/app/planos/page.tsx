@@ -11,14 +11,14 @@ const plans = [
   {
     id: "premium",
     emoji: "🔥",
-    badge: "Mais Vantajoso",
+    badge: null,
     name: "Plano Premium",
     subtitle: "Criação + Suporte Mensal",
     setup: "R$ 600",
     setupLabel: "taxa de criação",
     monthly: "R$ 250",
     monthlyLabel: "/mês",
-    highlight: true,
+    highlight: false,
     features: [
       { label: "Criação da Landing Page", value: "Inclusa" },
       { label: "Hospedagem", value: "Inclusa — servidor profissional sem renovação manual" },
@@ -47,14 +47,14 @@ const plans = [
   {
     id: "scale",
     emoji: "💎",
-    badge: null,
+    badge: "Mais Vantajoso",
     name: "Plano Scale",
     subtitle: "Página + Sistema de Gestão",
     setup: "R$ 300",
     setupLabel: "taxa de criação reduzida",
     monthly: "R$ 450",
     monthlyLabel: "/mês",
-    highlight: false,
+    highlight: true,
     features: [
       { label: "Criação da Landing Page", value: "Inclusa" },
       { label: "Integração Total", value: "Conexão direta com o Software de Gestão" },
