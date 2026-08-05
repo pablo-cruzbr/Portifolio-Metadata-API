@@ -90,22 +90,13 @@ const Hero = () => {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-3 mt-8">
-              <button
-                onClick={scrollToProjects}
-                className="px-6 py-3 bg-gradient-to-r from-blue-700 to-cyan-600 hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 cursor-pointer rounded-full text-base font-semibold flex items-center group text-white outline-none shadow-lg shadow-cyan-900/30 hover:shadow-cyan-700/40"
-              >
-                <span>{t.cta}</span>
-                <BsArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-
-              <a
-                href="/planos"
-                className="px-6 py-3 rounded-full text-base font-semibold flex items-center gap-2 text-white border border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-500/10 transition-all duration-300"
-              >
-                {lang === 'pt' ? 'Ver Planos' : 'See Plans'}
-              </a>
-            </div>
+            <button
+              onClick={scrollToProjects}
+              className="mt-8 px-6 py-3 bg-gradient-to-r from-blue-700 to-cyan-600 hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 cursor-pointer rounded-full text-base font-semibold flex items-center group text-white outline-none shadow-lg shadow-cyan-900/30 hover:shadow-cyan-700/40"
+            >
+              <span>{t.cta}</span>
+              <BsArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
 
         </div>
