@@ -35,15 +35,9 @@ const Nav = ({ openNav }: Props) => {
           <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-cyan-400 transition-colors duration-300 shrink-0">
             <FaCode className="w-6 h-6 text-black" />
           </div>
-          <div className="hidden sm:flex flex-col leading-none gap-1">
-            <h1 className="text-xl md:text-2xl text-white font-bold leading-none">
-              Pablo
-            </h1>
-            <span className="text-[10px] font-mono tracking-[0.18em] text-cyan-400/70 uppercase flex items-center gap-1">
-              <span className="inline-block w-3 h-px bg-cyan-500/40" />
-              blog
-            </span>
-          </div>
+          <h1 className="text-xl hidden sm:block md:text-2xl text-white font-bold">
+            Pablo
+          </h1>
         </Link>
 
         <div className="hidden lg:flex items-center space-x-10">
