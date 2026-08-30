@@ -9,7 +9,7 @@ export const translations = {
     hero: {
       comment: "// hello world — disponível para contratação",
       headline1: "Transformando Visões em",
-      headline2: "produtos web de alta performance.",
+      headline2: "produtos web de alta performance.",
       cta: "Veja meus Projetos",
       typewriter: ["Fullstack Developer", "Typescript & Node.js", "SaaS Builder", "AI & LLM Developer"],
     },
