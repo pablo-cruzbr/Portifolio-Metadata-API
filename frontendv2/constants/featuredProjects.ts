@@ -41,7 +41,7 @@ const featuredProjects: FeaturedProjectData[] = [
     video: { src: "/videos/hone-demo.mp4", type: "video/mp4" },
     accentColor: "purple",
     links: [
-      { label: "Live Demo", href: "https://frontend-five-virid-83.vercel.app/", primary: true },
+      { label: "Live Demo", href: "https://labs.borderlesscoding.com/ai-mock-interview", primary: true },
       { label: "GitHub", href: "https://github.com/ProgramadoresSemPatria/HB01-2026-ai-mock-interview" },
     ],
     metrics: [
