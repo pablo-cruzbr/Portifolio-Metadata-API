@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt, FaCheckCircle, FaUsers } from "react-icons/fa";
 import { IoArrowBack } from "react-icons/io5";
 import featuredProjects from "@/constants/featuredProjects";
+import UsFlag from "@/components/Helper/UsFlag";
 import { notFound } from "next/navigation";
 import { useLang } from "@/context/LanguageContext";
 
@@ -181,6 +182,7 @@ export default function FeaturedProjectDetail({ params }: { params: Promise<{ sl
               <div className="space-y-4">
                 {metrics.map((m) => (
                   <div key={m.label} className={`rounded-xl p-4 border ${accent.metric} text-center`}>
+                    {m.flag === "us" && <UsFlag className="w-12 h-auto mx-auto mb-3 rounded-sm shadow" />}
                     <p className={`text-3xl font-bold ${accent.text}`}>{m.value}</p>
                     <p className="text-gray-400 text-xs mt-1">{m.label}</p>
                   </div>

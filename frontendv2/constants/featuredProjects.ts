@@ -4,12 +4,18 @@ export interface FeaturedLink {
   primary?: boolean;
 }
 
+export interface FeaturedMetric {
+  label: string;
+  value: string;
+  flag?: "us";
+}
+
 export interface ProjectLocale {
   label?: string;
   shortDescription?: string;
   fullDescription?: string;
   features?: string[];
-  metrics?: { label: string; value: string }[];
+  metrics?: FeaturedMetric[];
 }
 
 export interface FeaturedProjectData {
@@ -22,7 +28,7 @@ export interface FeaturedProjectData {
   video: { src: string; type: string };
   accentColor: string;
   links: FeaturedLink[];
-  metrics: { label: string; value: string }[];
+  metrics: FeaturedMetric[];
   features: string[];
   team?: string[];
   en?: ProjectLocale;
