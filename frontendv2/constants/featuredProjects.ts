@@ -31,8 +31,8 @@ export interface FeaturedProjectData {
 const featuredProjects: FeaturedProjectData[] = [
   {
     slug: "hone",
-    label: "🥈 2º Lugar — Hackathon",
-    title: "Hone AI",
+    label: "Co-founder · 🥈 2º Lugar — Hackathon HB01-2026",
+    title: "Hone AI Mock Interview",
     shortDescription:
       "Plataforma de entrevistas técnicas simuladas com IA, desenvolvida em hackathon com o programa Borderless Coding. O candidato faz upload do currículo e a IA conduz uma entrevista personalizada com base na sua experiência real, gerando feedback automático ao final da sessão.",
     fullDescription:
@@ -60,7 +60,7 @@ const featuredProjects: FeaturedProjectData[] = [
     ],
     team: ["Pablo Cruz", "Nathan Vinicius", "Guilherme Resende"],
     en: {
-      label: "🥈 2nd Place — Hackathon",
+      label: "Co-founder · 🥈 2nd Place — Hackathon HB01-2026",
       shortDescription:
         "AI-powered mock technical interview platform built at a hackathon with the Borderless Coding program. The candidate uploads their resume and the AI conducts a personalized interview based on their real experience, generating automatic feedback at the end of each session.",
       fullDescription:
