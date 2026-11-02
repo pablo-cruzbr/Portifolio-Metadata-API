@@ -52,6 +52,7 @@ const featuredProjects: FeaturedProjectData[] = [
     ],
     metrics: [
       { value: "🥈 2nd", label: "place at the hackathon" },
+      { value: "Borderless Labs", label: "virou um dos produtos da Borderless Labs LLC, sediada nos Estados Unidos", flag: "us" },
       { value: "3 levels", label: "of difficulty" },
       { value: "Real-time", label: "SSE streaming" },
     ],
@@ -82,6 +83,7 @@ const featuredProjects: FeaturedProjectData[] = [
       ],
       metrics: [
         { value: "🥈 2nd", label: "place at the hackathon" },
+        { value: "Borderless Labs", label: "became one of the products of Borderless Labs LLC, headquartered in the USA", flag: "us" },
         { value: "3 levels", label: "of difficulty" },
         { value: "Real-time", label: "SSE streaming" },
       ],
