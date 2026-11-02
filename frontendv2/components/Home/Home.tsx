@@ -2,16 +2,12 @@
 import React, { useEffect } from 'react'
 import Hero from './Hero/Hero'
 import Services from './Service/Services'
-import Resume from './Resume/Resume'
 import FeaturedProject from './FeaturedProject/FeaturedProject'
 import AlfredChat from './Alfred/AlfredChat'
 import GitHubStats from './GitHubStats/GitHubStats'
 import Projects from './Projects/Projects'
 import Skills from './Skills/Skills'
-import ClientReview from './ClientRaview/ClientReview'
-import Blog from './Blog/Blog'
 import Contact from './Contact/Contact'
-import Footer from './Contact/Footer/Footer'
 import "aos/dist/aos.css"
 
 const Home = () => {
