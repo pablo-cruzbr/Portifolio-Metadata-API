@@ -15,7 +15,7 @@ const Blog = ({ posts }: { posts: PostSummary[] }) => {
   if (latest.length === 0) return null
 
   return (
-    <section id="blog" className='pt-24 pb-24'>
+    <section id="blog" className='bg-[#0C0D1F] pt-24 pb-24'>
       <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white">
         {t.title} <span className="text-cyan-300">{t.highlight}</span>
       </h2>

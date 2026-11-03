@@ -59,4 +59,14 @@ No total, foram 102 commits e 6 PRs mergeados.
 
 **Ser preciso sobre a própria parte é uma vantagem.** Num projeto em equipe, dizer "eu fiz tudo" é fácil e frágil. Saber apontar o commit e explicar a decisão é o que sustenta a conversa numa entrevista.
 
+## O próximo passo: vender
+
+Chegou a hora do próximo passo. O Borderless Labs vai começar a **comercializar os seus apps**, e o Hone entra nessa leva:
+
+- **checkout** dentro do produto;
+- **venda para quem está fora da comunidade** Borderless, não só para quem já faz parte dela;
+- o Hone **entrando no funil da Borderless**, junto com o resto do ecossistema.
+
+Para mim, é a parte mais nova da história. Até aqui, o desafio era fazer o produto funcionar e aguentar uso real. Agora o desafio é outro: fazer alguém que não nos conhece pagar por ele. Conto aqui no blog o que aprender nessa fase.
+
 Se quiser testar, o Hone está no ar: [labs.borderlesscoding.com/ai-mock-interview](https://labs.borderlesscoding.com/ai-mock-interview).

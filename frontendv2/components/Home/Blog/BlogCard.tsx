@@ -2,9 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import PostMeta from '@/components/Blog/PostMeta'
-import type { PostSummary } from '@/lib/postFormat'
+import { localize, type PostSummary } from '@/lib/postFormat'
+import { useLang } from '@/context/LanguageContext'
 
 const BlogCard = ({ post }: { post: PostSummary }) => {
+  const { lang } = useLang()
+  const text = localize(post, lang)
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -26,9 +29,9 @@ const BlogCard = ({ post }: { post: PostSummary }) => {
       <div className="flex flex-1 flex-col gap-4 p-6">
         <PostMeta post={post} />
         <h3 className="text-lg sm:text-xl font-bold leading-snug text-white transition-colors group-hover:text-cyan-300">
-          {post.title}
+          {text.title}
         </h3>
-        <p className="text-sm leading-relaxed text-gray-400">{post.description}</p>
+        <p className="text-sm leading-relaxed text-gray-400">{text.description}</p>
       </div>
     </Link>
   )

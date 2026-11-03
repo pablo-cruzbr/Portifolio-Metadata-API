@@ -146,7 +146,7 @@ const featuredProjects: FeaturedProjectData[] = [
     shortDescription:
       "Plataforma SaaS que moderniza o gerenciamento de ordens de serviço para empresas de TI que atendem instituições públicas. Substitui sistemas burocráticos reduzindo um fluxo de 5 a 6 telas para apenas 2. Validado em produção com 47 ordens de serviço reais em 2 meses — 83% de redução no esforço de preenchimento.",
     fullDescription:
-      "Empresas de TI que atendem instituições públicas perdem horas por dia navegando em sistemas legados burocráticos. O Fire OS resolve isso consolidando todo o fluxo de ordens de serviço em duas telas: uma para o técnico em campo (mobile) e outra para o gestor (dashboard web).\n\nValidado em ambiente real de trabalho com dados reais, o sistema processou 47 ordens de serviço ao longo de 2 meses, com 44 concluídas com sucesso. A redução de 5-6 telas para apenas 2 representa 66% menos complexidade e 83% menos esforço de preenchimento de dados.",
+      "Empresas de TI que atendem instituições públicas perdem horas por dia navegando em sistemas legados burocráticos. O Fire OS resolve isso consolidando todo o fluxo de ordens de serviço em duas telas: uma para o técnico em campo (mobile) e outra para o gestor (dashboard web).\n\nValidado em ambiente real de trabalho com dados reais, o sistema processou 47 ordens de serviço ao longo de 2 meses, com 44 concluídas com sucesso. A redução de 5-6 telas para apenas 2 representa 66% menos complexidade e 83% menos esforço de preenchimento de dados.\n\nEm construção: a Agnis, um agente de IA para o gestor. O código detecta o que precisa de decisão (OS fora do prazo, técnico sobrecarregado), a IA explica e sugere a ação, e o gestor aprova com um clique, com auditoria. É o projeto com que estou me preparando para atuar como AI Engineer.",
     techs: ["Next.js", "React Native", "Expo", "Node.js", "TypeScript", "PostgreSQL", "Prisma", "Cloudinary"],
     video: { src: "/videos/fire-os-demo.mp4", type: "video/mp4" },
     accentColor: "orange",
@@ -168,13 +168,14 @@ const featuredProjects: FeaturedProjectData[] = [
       "Upload de fotos via Cloudinary",
       "Timer para controle de tempo de atendimento",
       "Exportação de relatórios em Excel com filtros",
+      "Em construção: Agnis, agente de IA com aprovação humana",
     ],
     en: {
       label: "Featured Project",
       shortDescription:
         "SaaS platform that modernizes service order management for IT companies serving public institutions. Replaces bureaucratic systems by reducing a 5–6 screen flow to just 2. Validated in production with 47 real service orders in 2 months — 83% reduction in form-filling effort.",
       fullDescription:
-        "IT companies serving public institutions lose hours every day navigating legacy bureaucratic systems. Fire OS solves this by consolidating the entire service order flow into two screens: one for the field technician (mobile) and one for the manager (web dashboard).\n\nValidated in a real work environment with real data, the system processed 47 service orders over 2 months, with 44 successfully completed. The reduction from 5–6 screens to just 2 represents 66% less complexity and 83% less data entry effort.",
+        "IT companies serving public institutions lose hours every day navigating legacy bureaucratic systems. Fire OS solves this by consolidating the entire service order flow into two screens: one for the field technician (mobile) and one for the manager (web dashboard).\n\nValidated in a real work environment with real data, the system processed 47 service orders over 2 months, with 44 successfully completed. The reduction from 5–6 screens to just 2 represents 66% less complexity and 83% less data entry effort.\n\nIn progress: Agnis, an AI agent for the manager. The code detects what needs a decision (overdue orders, overloaded technicians), the AI explains it and suggests the action, and the manager approves with one click, with an audit log. It's the project I'm using to prepare to work as an AI Engineer.",
       features: [
         "Mobile app for field technicians (React Native + Expo)",
         "Web dashboard for managers (Next.js)",
@@ -184,6 +185,7 @@ const featuredProjects: FeaturedProjectData[] = [
         "Photo upload via Cloudinary",
         "Timer for service time tracking",
         "Excel report export with filters",
+        "In progress: Agnis, an AI agent with human approval",
       ],
       metrics: [
         { value: "47", label: "orders processed" },
