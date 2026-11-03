@@ -7,6 +7,7 @@ import AlfredChat from './Alfred/AlfredChat'
 import GitHubStats from './GitHubStats/GitHubStats'
 import Projects from './Projects/Projects'
 import Skills from './Skills/Skills'
+import About from './About/About'
 import Blog from './Blog/Blog'
 import Contact from './Contact/Contact'
 import "aos/dist/aos.css"
@@ -40,6 +41,7 @@ const Home = ({ posts }: { posts: PostSummary[] }) => {
       <Projects/>
       <GitHubStats/>
       <Skills/>
+      <About/>
       <Blog posts={posts}/>
       <Contact/>
     </div>

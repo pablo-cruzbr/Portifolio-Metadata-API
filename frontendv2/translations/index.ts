@@ -79,6 +79,18 @@ export const translations = {
       placeholder: "Pergunte algo sobre o Pablo...",
       initialMessage: "Olá, sou Alfred, o assistente virtual do Pablo. Posso apresentar sua trajetória, projetos, áreas de atuação e explicar como ele pode ajudar seu negócio.",
     },
+    about: {
+      title: "Um pouco sobre",
+      highlight: "mim",
+      paragraphs: [
+        "Sou de Mogi das Cruzes, SP. Comecei na TI no suporte, cuidando de servidor, rede e telefonia, e foi ali que descobri do que eu gosto de verdade: ver um problema de perto e transformá-lo em sistema.",
+        "Hoje divido o meu tempo entre a Aços Vital, o Hone e a Agnis. No Instagram eu mostro um pouco dos bastidores: eventos como a Borderless Conference, a rotina de dev e o caminho até aqui.",
+      ],
+      quote: "A sua programação pode criar a sua realidade.",
+      quoteSource: "— a bio do meu Instagram",
+      follow: "Seguir",
+      alt: "Print do perfil @pablocruzdev no Instagram",
+    },
     blog: {
       title: "Últimos posts do",
       highlight: "Blog",
@@ -198,6 +210,18 @@ export const translations = {
       clear: "Clear",
       placeholder: "Ask something about Pablo...",
       initialMessage: "Hi, I'm Alfred, Pablo's virtual assistant. I can introduce his background, projects, areas of expertise and explain how he can help your business.",
+    },
+    about: {
+      title: "A little about",
+      highlight: "me",
+      paragraphs: [
+        "I'm from Mogi das Cruzes, Brazil. I started in IT support, taking care of servers, networks and phones, and that's where I found what I really enjoy: seeing a problem up close and turning it into a system.",
+        "Today I split my time between Aços Vital, Hone and Agnis. On Instagram I share a bit of the behind the scenes: events like the Borderless Conference, my dev routine and the road so far.",
+      ],
+      quote: "Your code can create your reality.",
+      quoteSource: "— my Instagram bio",
+      follow: "Follow",
+      alt: "Screenshot of the @pablocruzdev Instagram profile",
     },
     blog: {
       title: "Latest posts on the",
