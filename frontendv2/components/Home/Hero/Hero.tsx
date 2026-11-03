@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsArrowRight } from 'react-icons/bs';
-import { FiAward, FiBriefcase, FiCheckCircle, FiCode, FiDatabase, FiFolder, FiMapPin, FiZap } from 'react-icons/fi';
+import { FiAward, FiBriefcase, FiCheckCircle, FiCode, FiDatabase, FiFolder, FiMapPin, FiUser, FiZap } from 'react-icons/fi';
 import ParticlesHero from './ParticleBackground';
 import UsFlag from '@/components/Helper/UsFlag';
 import { useLang } from '@/context/LanguageContext';
@@ -79,6 +79,14 @@ const Hero = () => {
               >
                 <FiCode className="w-4 h-4" />
                 {t.blog}
+                <BsArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/#about"
+                className="group inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10"
+              >
+                <FiUser className="w-4 h-4" />
+                {t.about}
                 <BsArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

@@ -11,7 +11,7 @@ const About = () => {
   const t = translations[lang].about
 
   return (
-    <section id="about" className="bg-[#0C0D1F] py-24">
+    <section id="about" className="scroll-mt-[12vh] bg-[#0C0D1F] py-24">
       <div className="w-[90%] xl:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
 
         <div data-aos="fade-right">
@@ -49,7 +49,7 @@ const About = () => {
           aria-label={`${t.follow} @pablocruzdev`}
           data-aos="fade-left"
           data-aos-delay="150"
-          className="group mx-auto block w-full max-w-sm"
+          className="group mx-auto block w-full max-w-md"
         >
           {/* Phone-like frame around the profile print */}
           <div className="rounded-[2.5rem] border border-white/10 bg-gradient-to-b from-white/10 to-white/[0.02] p-3 shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:-translate-y-1">
@@ -59,11 +59,11 @@ const About = () => {
                 Instagram
               </div>
               <Image
-                src="/images/instagram-pablocruzdev.jpg"
+                src="/images/instagram-pablocruzdev-perfil.jpg"
                 alt={t.alt}
-                width={1170}
-                height={1746}
-                sizes="(min-width: 1024px) 24rem, 90vw"
+                width={1520}
+                height={2550}
+                sizes="(min-width: 1024px) 28rem, 90vw"
                 className="h-auto w-full"
               />
             </div>
