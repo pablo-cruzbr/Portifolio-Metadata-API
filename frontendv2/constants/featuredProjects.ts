@@ -151,7 +151,7 @@ const featuredProjects: FeaturedProjectData[] = [
     video: { src: "/videos/fire-os-demo.mp4", type: "video/mp4" },
     accentColor: "orange",
     links: [
-      { label: "Live Demo", href: "https://landing-page-fire-os.vercel.app/", primary: true },
+      { label: "Live Demo", href: "https://fire-os-saas.vercel.app/", primary: true },
       { label: "GitHub", href: "https://github.com/pablo-cruzbr/Fire-OS-Service-Order-SaaS" },
     ],
     metrics: [

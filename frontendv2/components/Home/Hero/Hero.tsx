@@ -12,7 +12,7 @@ const STAT_ICONS = [FiDatabase, FiCheckCircle, FiZap, FiAward];
 
 const LIVE = [
   { label: "Hone AI", href: "https://labs.borderlesscoding.com/ai-mock-interview" },
-  { label: "Fire OS", href: "https://landing-page-fire-os.vercel.app/" },
+  { label: "Fire OS", href: "https://fire-os-saas.vercel.app/" },
 ];
 
 const Hero = () => {
