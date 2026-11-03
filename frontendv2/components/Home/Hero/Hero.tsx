@@ -107,16 +107,16 @@ const Hero = () => {
           <div data-aos="fade-left" data-aos-delay="200" className="mx-auto w-full max-w-md lg:max-w-none">
             <div className="relative">
             <div
-              className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 bg-white/5"
+              className="relative aspect-square lg:aspect-[5/4] overflow-hidden rounded-3xl border border-white/10 bg-white/5"
               style={{ boxShadow: "0 0 80px rgba(34,211,238,0.12)" }}
             >
               <Image
-                src="/images/blog/pablo-borderless-conference.jpg"
-                alt="Pablo Cruz na Borderless Conference"
+                src="/img/2.svg"
+                alt="Pablo Cruz"
                 fill
                 priority
                 sizes="(min-width: 1024px) 40vw, 90vw"
-                className="object-cover object-[90%_30%]"
+                className="object-cover object-[center_30%]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0C0D1F]/50 via-transparent to-transparent" />
             </div>
