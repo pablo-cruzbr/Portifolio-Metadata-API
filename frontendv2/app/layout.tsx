@@ -4,6 +4,7 @@ import ResponsiveNav from "@/components/Home/Nav.tsx/ResponsiveNav";
 import "./globals.css";
 import Footer from "@/components/Home/Contact/Footer/Footer";
 import ScrollToTop from "@/components/Helper/ScrollToTop";
+import LoadingScreen from "@/components/Helper/LoadingScreen";
 import { LanguageProvider } from "@/context/LanguageContext";
 
 const font = Inter({
@@ -26,6 +27,7 @@ export default function RootLayout({
       
       <body
         className={`${font.className} antialiased bg-[#0C0D1F]`}>
+          <LoadingScreen/>
           <LanguageProvider>
             <ResponsiveNav/>
             {children}

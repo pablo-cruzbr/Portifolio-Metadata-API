@@ -20,8 +20,28 @@ html {
   animation: hero-float 6s ease-in-out infinite;
 }
 
+/* Loading screen: the logo breathes while the page loads. */
+@keyframes loading-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.loading-pulse {
+  animation: loading-pulse 1.6s ease-in-out infinite;
+}
+
+/* Without JavaScript the overlay would never leave: hide it after 8 s with CSS alone. */
+@keyframes loading-fallback {
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+.loading-fallback {
+  animation: loading-fallback 0.4s ease 8s forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-float {
+  .hero-float,
+  .loading-pulse {
     animation: none;
   }
 }
