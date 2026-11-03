@@ -1,28 +1,34 @@
+// The "/" prefix keeps the section links working from other pages, like /blog.
 export const NavLinks = [
     {
         id: 1,
-        url: "#home",
+        url: "/#home",
         label: "Home"
     },
 
     {
         id: 2,
-        url: "#alfred",
+        url: "/#alfred",
         label: "Alfred"
     },
     {
         id: 4,
-        url: "#featured-projects",
+        url: "/#featured-projects",
         label: "Projetos"
     },
     {
         id: 5,
-        url: "#skills",
+        url: "/#skills",
         label: "Skills"
     },
     {
+        id: 6,
+        url: "/blog",
+        label: "Blog"
+    },
+    {
         id: 7,
-        url: "#contact",
+        url: "/#contact",
         label: "Contato"
     },
 ]

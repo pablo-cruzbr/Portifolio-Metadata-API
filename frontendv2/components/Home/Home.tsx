@@ -7,10 +7,12 @@ import AlfredChat from './Alfred/AlfredChat'
 import GitHubStats from './GitHubStats/GitHubStats'
 import Projects from './Projects/Projects'
 import Skills from './Skills/Skills'
+import Blog from './Blog/Blog'
 import Contact from './Contact/Contact'
 import "aos/dist/aos.css"
+import type { PostSummary } from '@/lib/postFormat'
 
-const Home = () => {
+const Home = ({ posts }: { posts: PostSummary[] }) => {
   useEffect(() => {
     const initAOS = async () => {
     const AOS = (await import("aos")).default;
@@ -38,6 +40,7 @@ const Home = () => {
       <Projects/>
       <GitHubStats/>
       <Skills/>
+      <Blog posts={posts}/>
       <Contact/>
     </div>
   )

@@ -4,7 +4,7 @@ export const translations = {
   pt: {
     nav: {
       downloadCV: "Download CV",
-      links: ["Home", "Alfred", "Projetos", "Skills", "Contato"],
+      links: ["Home", "Alfred", "Projetos", "Skills", "Blog", "Contato"],
     },
     hero: {
       comment: "// hello world — disponível para contratação",
@@ -63,6 +63,12 @@ export const translations = {
       placeholder: "Pergunte algo sobre o Pablo...",
       initialMessage: "Olá, sou Alfred, o assistente virtual do Pablo. Posso apresentar sua trajetória, projetos, áreas de atuação e explicar como ele pode ajudar seu negócio.",
     },
+    blog: {
+      title: "Últimos posts do",
+      highlight: "Blog",
+      subtitle: "Carreira, produto e o que aprendo construindo software.",
+      all: "Ver todos os posts",
+    },
     footer: {
       text: "Pablo Cruz — Portfólio Pessoal",
     },
@@ -70,7 +76,7 @@ export const translations = {
   en: {
     nav: {
       downloadCV: "Download CV",
-      links: ["Home", "Alfred", "Projects", "Skills", "Contact"],
+      links: ["Home", "Alfred", "Projects", "Skills", "Blog", "Contact"],
     },
     hero: {
       comment: "// hello world — available for hire",
@@ -128,6 +134,12 @@ export const translations = {
       clear: "Clear",
       placeholder: "Ask something about Pablo...",
       initialMessage: "Hi, I'm Alfred, Pablo's virtual assistant. I can introduce his background, projects, areas of expertise and explain how he can help your business.",
+    },
+    blog: {
+      title: "Latest posts on the",
+      highlight: "Blog",
+      subtitle: "Career, product and what I learn building software (posts in Portuguese).",
+      all: "See all posts",
     },
     footer: {
       text: "Pablo Cruz — Personal Portfolio",
