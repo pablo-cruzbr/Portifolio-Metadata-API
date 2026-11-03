@@ -15,6 +15,16 @@ const LIVE = [
   { label: "Fire OS", href: "https://fire-os-saas.vercel.app/" },
 ];
 
+// A Link to "/#section" does nothing once the URL already ends in that hash,
+// so scroll to the section on every click instead of relying on the router.
+const scrollToSection = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const section = document.getElementById(id)
+  if (!section) return
+  e.preventDefault()
+  section.scrollIntoView({ behavior: 'smooth' })
+  history.replaceState(null, '', `#${id}`)
+}
+
 const Hero = () => {
   const { lang } = useLang()
   const t = translations[lang].hero
@@ -67,6 +77,7 @@ const Hero = () => {
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 href="/#featured-projects"
+                onClick={scrollToSection('featured-projects')}
                 className="group inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-[#0C0D1F] shadow-lg shadow-cyan-900/20 transition-all hover:bg-cyan-50"
               >
                 <FiFolder className="w-4 h-4" />
@@ -83,6 +94,7 @@ const Hero = () => {
               </Link>
               <Link
                 href="/#about"
+                onClick={scrollToSection('about')}
                 className="group inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10"
               >
                 <FiUser className="w-4 h-4" />

@@ -49,7 +49,10 @@ const About = () => {
           aria-label={`${t.follow} @pablocruzdev`}
           data-aos="fade-left"
           data-aos-delay="150"
-          className="group mx-auto block w-full max-w-md"
+          className="group mx-auto block w-full"
+          // The print is tall: size it by the window height so the whole frame fits on screen.
+          // 0.596 is the print's width/height ratio; 90px covers the frame padding and the title bar.
+          style={{ maxWidth: "min(28rem, calc((85vh - 90px) * 0.596))" }}
         >
           {/* Phone-like frame around the profile print */}
           <div className="rounded-[2.5rem] border border-white/10 bg-gradient-to-b from-white/10 to-white/[0.02] p-3 shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:-translate-y-1">
@@ -59,7 +62,7 @@ const About = () => {
                 Instagram
               </div>
               <Image
-                src="/images/instagram-pablocruzdev-perfil.jpg"
+                src="/images/instagram-pablocruzdev-destaques5.jpg"
                 alt={t.alt}
                 width={1520}
                 height={2550}
