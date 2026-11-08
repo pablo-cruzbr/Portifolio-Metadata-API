@@ -97,7 +97,7 @@ const career: CareerStep[] = [
     current: true,
     tags: ["LangGraph", "BullMQ", "Redis", "SSE"],
     pt: {
-      role: "Co-founder",
+      role: "Software Engineer e Co-founder",
       org: "Hone AI Mock Interview · Borderless Labs (EUA) · Remoto",
       period: "06/2026 – Atual",
       highlights: [
@@ -106,7 +106,7 @@ const career: CareerStep[] = [
       ],
     },
     en: {
-      role: "Co-founder",
+      role: "Software Engineer & Co-founder",
       org: "Hone AI Mock Interview · Borderless Labs (USA) · Remote",
       period: "Jun 2026 – Present",
       highlights: [
