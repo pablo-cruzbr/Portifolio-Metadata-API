@@ -1,3 +1,6 @@
+// The "Download CV" button stays hidden until there is a CV file to link to.
+export const SHOW_CV_DOWNLOAD = false
+
 // The "/" prefix keeps the section links working from other pages, like /blog.
 export const NavLinks = [
     {

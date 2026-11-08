@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { NavLinks } from '@/constant/constant'
+import { NavLinks, SHOW_CV_DOWNLOAD } from '@/constant/constant'
 import Link from 'next/link'
 import { CgClose } from 'react-icons/cg'
 import { HiLanguage } from 'react-icons/hi2'
@@ -97,10 +97,12 @@ const MobileNav = ({ closeNav, showNav }: Props) => {
           </button>
 
           {/* CV button */}
-          <button className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#01A7C0] hover:bg-[#019ab1] transition-all text-white font-semibold text-sm">
-            <BiCloudDownload className="w-5 h-5" />
-            {t.downloadCV}
-          </button>
+          {SHOW_CV_DOWNLOAD && (
+            <button className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#01A7C0] hover:bg-[#019ab1] transition-all text-white font-semibold text-sm">
+              <BiCloudDownload className="w-5 h-5" />
+              {t.downloadCV}
+            </button>
+          )}
 
           {/* Social links */}
           <div className="flex items-center justify-center gap-3 pt-2">

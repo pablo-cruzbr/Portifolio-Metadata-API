@@ -1,5 +1,5 @@
 "use client"
-import { NavLinks } from '@/constant/constant'
+import { NavLinks, SHOW_CV_DOWNLOAD } from '@/constant/constant'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { BiCloudDownload } from 'react-icons/bi'
@@ -72,10 +72,12 @@ const Nav = ({ openNav }: Props) => {
             <span className={lang === 'en' ? 'text-white' : 'text-white/35'}>EN</span>
           </button>
 
-          <button className="px-6 py-2.5 text-sm cursor-pointer rounded-lg bg-[#01A7C0] hover:bg-[#019ab1] transition-all duration-300 text-white flex items-center space-x-2">
-            <BiCloudDownload className="w-5 h-5" />
-            <span className="font-semibold">{t.downloadCV}</span>
-          </button>
+          {SHOW_CV_DOWNLOAD && (
+            <button className="px-6 py-2.5 text-sm cursor-pointer rounded-lg bg-[#01A7C0] hover:bg-[#019ab1] transition-all duration-300 text-white flex items-center space-x-2">
+              <BiCloudDownload className="w-5 h-5" />
+              <span className="font-semibold">{t.downloadCV}</span>
+            </button>
+          )}
 
           <HiBars3BottomRight onClick={openNav} className="w-8 h-8 cursor-pointer text-white lg:hidden" />
         </div>
