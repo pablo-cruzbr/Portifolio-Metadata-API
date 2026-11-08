@@ -38,10 +38,10 @@ const Home = ({ posts }: { posts: PostSummary[] }) => {
       <AlfredChat/>
       <Services/>
       <FeaturedProject/>
+      <Career/>
       <GitHubStats/>
       <Skills/>
       <About/>
-      <Career/>
       <Blog posts={posts}/>
       <Contact/>
     </div>
