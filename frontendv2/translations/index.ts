@@ -97,6 +97,9 @@ export const translations = {
       highlight: "trajetória",
       subtitle: "Do suporte de TI ao back-end e à IA: os passos até aqui.",
       current: "Atual",
+      previous: "Etapa anterior",
+      next: "Próxima etapa",
+      trackLabel: "Linha do tempo da carreira, role para o lado para ver todas as etapas",
     },
     blog: {
       title: "Últimos posts do",
@@ -236,6 +239,9 @@ export const translations = {
       highlight: "journey",
       subtitle: "From IT support to back-end and AI: the steps so far.",
       current: "Current",
+      previous: "Previous step",
+      next: "Next step",
+      trackLabel: "Career timeline, scroll sideways to see every step",
     },
     blog: {
       title: "Latest posts on the",

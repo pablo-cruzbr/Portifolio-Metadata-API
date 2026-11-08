@@ -9,6 +9,8 @@ export interface CareerText {
 
 export interface CareerStep {
   start: string;
+  /** Which icon marks the step on the rail. */
+  icon: "infra" | "freelance" | "rollout" | "ai" | "industry";
   /** Still in this role: shown with a live marker. */
   current: boolean;
   tags: string[];
@@ -19,6 +21,7 @@ export interface CareerStep {
 const career: CareerStep[] = [
   {
     start: "2023-06",
+    icon: "infra",
     current: false,
     tags: ["Active Directory", "Redes", "Telefonia IP 3CX"],
     pt: {
@@ -42,6 +45,7 @@ const career: CareerStep[] = [
   },
   {
     start: "2025-04",
+    icon: "freelance",
     current: false,
     tags: ["Node.js", "Next.js", "React Native", "PostgreSQL"],
     pt: {
@@ -65,6 +69,7 @@ const career: CareerStep[] = [
   },
   {
     start: "2026-01",
+    icon: "rollout",
     current: false,
     tags: ["TypeScript", "Prisma", "React Native"],
     pt: {
@@ -88,6 +93,7 @@ const career: CareerStep[] = [
   },
   {
     start: "2026-06",
+    icon: "ai",
     current: true,
     tags: ["LangGraph", "BullMQ", "Redis", "SSE"],
     pt: {
@@ -111,6 +117,7 @@ const career: CareerStep[] = [
   },
   {
     start: "2026-08",
+    icon: "industry",
     current: true,
     tags: ["Express", "PostgreSQL", "Playwright", "GitHub Actions"],
     pt: {
