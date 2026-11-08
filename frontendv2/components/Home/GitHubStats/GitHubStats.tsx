@@ -30,7 +30,7 @@ const GitHubStats = () => {
           <div
             data-aos="fade-up"
             data-aos-delay="100"
-            className="bg-[#0a0f1a] rounded-xl border border-white/[0.06] p-4 overflow-x-auto"
+            className="bg-[#0a0f1a] rounded-xl border border-white/[0.06] p-4 overflow-x-auto [scrollbar-width:thin] [scrollbar-color:#1e293b_transparent]"
           >
             <GitHubCalendar
               username={USERNAME}
