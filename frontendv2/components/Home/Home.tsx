@@ -5,7 +5,6 @@ import Services from './Service/Services'
 import FeaturedProject from './FeaturedProject/FeaturedProject'
 import AlfredChat from './Alfred/AlfredChat'
 import GitHubStats from './GitHubStats/GitHubStats'
-import Projects from './Projects/Projects'
 import Skills from './Skills/Skills'
 import About from './About/About'
 import Blog from './Blog/Blog'
@@ -38,7 +37,6 @@ const Home = ({ posts }: { posts: PostSummary[] }) => {
       <AlfredChat/>
       <Services/>
       <FeaturedProject/>
-      <Projects/>
       <GitHubStats/>
       <Skills/>
       <About/>
