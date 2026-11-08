@@ -41,8 +41,8 @@ const Home = ({ posts }: { posts: PostSummary[] }) => {
       <Career/>
       <GitHubStats/>
       <Skills/>
-      <About/>
       <Blog posts={posts}/>
+      <About/>
       <Contact/>
     </div>
   )
