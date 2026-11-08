@@ -24,7 +24,15 @@ Hone does that. It reads the resume against the role, runs the interview with fo
 
 ## From the hackathon to Borderless Labs
 
+HB01-2026 was the internal hackathon of Borderless Coding Labs: **6 teams competed in front of a technical jury of 3**. Two products came out of it: Socratic.dev, in 1st place (score 9.10), and Hone, in 2nd (8.65).
+
+![Call from the Borderless Coding Labs internal hackathon (image: Borderless Coding post on Instagram)](/images/blog/hone-hackathon-apresentacao.webp)
+
 After the hackathon, Hone was incubated at **Borderless Labs**, the incubation arm of Borderless Coding (USA). The Labs is where community engineers launch AI products born in hackathons, and today Hone is one of its 3 products.
+
+As Borderless itself [shared on Instagram](https://www.instagram.com/p/Dcl745QIEIx/), in 30 days Hone went **from a hackathon project to a product with billing running and a real funnel**, with a real audience and real students.
+
+![Hone's landing page, with the "Backed by Borderless" badge](/images/blog/hone-landing-page.webp)
 
 That changed the kind of work. At a hackathon, the rule is to make it work by Sunday. In a live product, the rule is **don't break it for the people already using it**.
 

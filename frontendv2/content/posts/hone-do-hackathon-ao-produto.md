@@ -28,7 +28,15 @@ O Hone faz isso. Ele lê o currículo contra a vaga, conduz a entrevista com per
 
 ## Do hackathon ao Borderless Labs
 
+O HB01-2026 foi a hackathon interna da Borderless Coding Labs: **6 times competiram diante de um júri técnico de 3 pessoas**. Do desafio saíram dois produtos: o Socratic.dev, em 1º lugar (nota 9,10), e o Hone, em 2º (8,65).
+
+![Chamada do hackathon interno da Borderless Coding Labs (imagem: post da Borderless Coding no Instagram)](/images/blog/hone-hackathon-apresentacao.webp)
+
 Depois do hackathon, o Hone foi incubado no **Borderless Labs**, o braço de incubação da Borderless Coding (EUA). O Labs é onde engenheiros da comunidade lançam produtos de IA que nasceram em hackathons, e hoje o Hone é um dos 3 produtos de lá.
+
+Como a própria Borderless [contou no Instagram](https://www.instagram.com/p/Dcl745QIEIx/), em 30 dias o Hone foi **de projeto de hackathon a produto com billing rodando e funil real**, com audiência e alunos de verdade.
+
+![Landing page do Hone, com o selo "Backed by Borderless"](/images/blog/hone-landing-page.webp)
 
 Isso mudou o tipo de trabalho. No hackathon, a regra é fazer funcionar até domingo. Num produto no ar, a regra é **não quebrar para quem já está usando**.
 
