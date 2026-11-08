@@ -9,6 +9,7 @@ import { localize, type PostSummary } from "@/lib/postFormat";
 import { translations } from "@/translations";
 
 const HONE_LIVE = "https://labs.borderlesscoding.com/ai-mock-interview";
+const HONE_IMAGE = "/images/blog/hone-landing-page.webp";
 const AGNIS_SLUG = "construindo-a-agnis";
 
 const chip = (selected: boolean) =>
@@ -40,13 +41,14 @@ export default function BlogIndex({ all, active }: { all: PostSummary[]; active:
       {honePost && hone && (
         <section className="relative mt-12 overflow-hidden rounded-2xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 to-blue-500/10">
           <div className="grid md:grid-cols-[1fr_1.1fr]">
-            <div className="relative min-h-56">
+            {/* The landing page is a wide screenshot: contain it on its own light background instead of cropping. */}
+            <div className="relative min-h-56 bg-[#eef9f5]">
               <Image
-                src="/images/blog/pablo-borderless-conference.jpg"
-                alt="Pablo Cruz, Borderless Conference"
+                src={HONE_IMAGE}
+                alt="Landing page do Hone: Practice the interview that decides your career"
                 fill
                 sizes="(min-width: 768px) 40vw, 90vw"
-                className="object-cover object-[92%_center]"
+                className="object-contain"
                 priority
               />
             </div>
