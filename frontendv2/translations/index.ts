@@ -92,6 +92,12 @@ export const translations = {
       follow: "Seguir",
       alt: "Print do perfil @pablocruzdev no Instagram",
     },
+    career: {
+      title: "Minha",
+      highlight: "trajetória",
+      subtitle: "Do suporte de TI ao back-end e à IA: os passos até aqui.",
+      current: "Atual",
+    },
     blog: {
       title: "Últimos posts do",
       highlight: "Blog",
@@ -224,6 +230,12 @@ export const translations = {
       quoteSource: "— my Instagram bio",
       follow: "Follow",
       alt: "Screenshot of the @pablocruzdev Instagram profile",
+    },
+    career: {
+      title: "My",
+      highlight: "journey",
+      subtitle: "From IT support to back-end and AI: the steps so far.",
+      current: "Current",
     },
     blog: {
       title: "Latest posts on the",
