@@ -3,8 +3,11 @@ title: "Construindo a Agnis: o agente de IA do Fire OS e o meu caminho para AI E
 description: "Por que a primeira versão da Agnis não vai ser um chat, onde ela está hoje e o plano para transformar um protótipo num agente que age com aprovação humana."
 date: "2026-11-03"
 category: "IA"
+cover: "/images/blog/agnis-prototipo.webp"
 draft: true
 ---
+
+![Protótipo da Agnis no Fire OS: perguntas sugeridas sobre chamados, técnicos, clientes e equipamentos](/images/blog/agnis-prototipo.webp)
 
 A minha meta é virar **AI Engineer**. Não no sentido de saber chamar uma API de LLM, mas de colocar IA em produção do jeito certo: com dados reais, permissões, testes, fallback e métricas que provam que ela ajuda.
 

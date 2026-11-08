@@ -4,6 +4,8 @@ description: "Why the first version of Agnis won't be a chat, where it stands to
 category: "AI"
 ---
 
+![Agnis prototype in Fire OS: suggested questions about tickets, technicians, clients and equipment](/images/blog/agnis-prototipo.webp)
+
 My goal is to become an **AI Engineer**. Not in the sense of knowing how to call an LLM API, but of putting AI into production the right way: with real data, permissions, tests, fallbacks and metrics that prove it helps.
 
 To get there, I'm building **Agnis**, an AI agent inside [Fire OS](https://fire-os-saas.vercel.app/), the service order system I created and that ran for 2 months at an IT company.
