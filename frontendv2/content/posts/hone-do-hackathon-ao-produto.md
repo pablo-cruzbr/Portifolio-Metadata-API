@@ -4,9 +4,11 @@ description: "Como um projeto de fim de semana virou um dos produtos do Borderle
 date: "2026-11-03"
 category: "Hone"
 featured: true
-cover: "/images/blog/borderless-conference-grupo.webp"
+cover: "/images/blog/hone-landing-page.webp"
 draft: true
 ---
+
+![Landing page do Hone, com o selo "Backed by Borderless"](/images/blog/hone-landing-page.webp)
 
 Em maio de 2026, entrei no Hackathon HB01-2026 com o Guilherme Resende e o Vinícius Nathan. A ideia era simples de explicar e difícil de fazer bem: **uma IA que entrevista você para a vaga que você quer**, a partir do seu currículo, para você treinar antes da entrevista de verdade.
 
@@ -35,8 +37,6 @@ O HB01-2026 foi a hackathon interna da Borderless Coding Labs: **6 times competi
 Depois do hackathon, o Hone foi incubado no **Borderless Labs**, o braço de incubação da Borderless Coding (EUA). O Labs é onde engenheiros da comunidade lançam produtos de IA que nasceram em hackathons, e hoje o Hone é um dos 3 produtos de lá.
 
 Como a própria Borderless [contou no Instagram](https://www.instagram.com/p/Dcl745QIEIx/), em 30 dias o Hone foi **de projeto de hackathon a produto com billing rodando e funil real**, com audiência e alunos de verdade.
-
-![Landing page do Hone, com o selo "Backed by Borderless"](/images/blog/hone-landing-page.webp)
 
 Isso mudou o tipo de trabalho. No hackathon, a regra é fazer funcionar até domingo. Num produto no ar, a regra é **não quebrar para quem já está usando**.
 

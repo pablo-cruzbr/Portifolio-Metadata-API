@@ -4,6 +4,8 @@ description: "How a weekend project became one of the Borderless Labs products, 
 category: "Hone"
 ---
 
+![Hone's landing page, with the "Backed by Borderless" badge](/images/blog/hone-landing-page.webp)
+
 In May 2026, I joined the HB01-2026 Hackathon with Guilherme Resende and Vinícius Nathan. The idea was simple to explain and hard to do well: **an AI that interviews you for the job you want**, based on your resume, so you can practice before the real interview.
 
 We took 2nd place. And, unlike most hackathon projects, Hone didn't die the following Monday.
@@ -31,8 +33,6 @@ HB01-2026 was the internal hackathon of Borderless Coding Labs: **6 teams compet
 After the hackathon, Hone was incubated at **Borderless Labs**, the incubation arm of Borderless Coding (USA). The Labs is where community engineers launch AI products born in hackathons, and today Hone is one of its 3 products.
 
 As Borderless itself [shared on Instagram](https://www.instagram.com/p/Dcl745QIEIx/), in 30 days Hone went **from a hackathon project to a product with billing running and a real funnel**, with a real audience and real students.
-
-![Hone's landing page, with the "Backed by Borderless" badge](/images/blog/hone-landing-page.webp)
 
 That changed the kind of work. At a hackathon, the rule is to make it work by Sunday. In a live product, the rule is **don't break it for the people already using it**.
 
