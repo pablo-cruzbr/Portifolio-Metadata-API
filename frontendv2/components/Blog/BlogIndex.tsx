@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import BorderlessLabsBadge from "@/components/Blog/BorderlessLabsBadge";
+import PostCover from "@/components/Blog/PostCover";
 import PostMeta from "@/components/Blog/PostMeta";
 import { useLang } from "@/context/LanguageContext";
 import { localize, type PostSummary } from "@/lib/postFormat";
@@ -136,15 +137,20 @@ export default function BlogIndex({ all, active }: { all: PostSummary[]; active:
           const text = localize(post, lang);
           return (
             <li key={post.slug}>
-              <Link href={`/blog/${post.slug}`} className="group block space-y-3 py-8">
-                <PostMeta post={post} />
-                <h2 className="text-xl md:text-2xl font-bold text-white transition-colors group-hover:text-cyan-300">
-                  {text.title}
-                </h2>
-                <p className="leading-relaxed text-gray-400">{text.description}</p>
-                <span className="inline-block text-sm font-semibold text-cyan-300 opacity-70 transition-all group-hover:translate-x-1 group-hover:opacity-100">
-                  {t.read}
-                </span>
+              <Link href={`/blog/${post.slug}`} className="group flex flex-col gap-5 py-8 sm:flex-row sm:items-center sm:gap-7">
+                <div className="relative aspect-16/10 w-full shrink-0 overflow-hidden rounded-xl border border-white/10 sm:w-64">
+                  <PostCover cover={post.cover} category={text.category} sizes="(min-width: 640px) 256px, 90vw" />
+                </div>
+                <div className="flex-1 space-y-3">
+                  <PostMeta post={post} />
+                  <h2 className="text-xl md:text-2xl font-bold text-white transition-colors group-hover:text-cyan-300">
+                    {text.title}
+                  </h2>
+                  <p className="line-clamp-3 leading-relaxed text-gray-400">{text.description}</p>
+                  <span className="inline-block text-sm font-semibold text-cyan-300 opacity-70 transition-all group-hover:translate-x-1 group-hover:opacity-100">
+                    {t.read}
+                  </span>
+                </div>
               </Link>
             </li>
           );
