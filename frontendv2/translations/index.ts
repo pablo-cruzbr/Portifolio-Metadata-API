@@ -92,6 +92,14 @@ export const translations = {
       follow: "Seguir",
       alt: "Print do perfil @pablocruzdev no Instagram",
     },
+    githubStats: {
+      repos: "repositórios",
+      followers: "seguidores",
+      years: "anos no GitHub",
+      lastPush: "último push",
+      recent: "Push recente",
+      follow: "Seguir no GitHub",
+    },
     career: {
       title: "Minha",
       highlight: "trajetória",
@@ -233,6 +241,14 @@ export const translations = {
       quoteSource: "— my Instagram bio",
       follow: "Follow",
       alt: "Screenshot of the @pablocruzdev Instagram profile",
+    },
+    githubStats: {
+      repos: "repositories",
+      followers: "followers",
+      years: "years on GitHub",
+      lastPush: "last push",
+      recent: "Recently pushed",
+      follow: "Follow on GitHub",
     },
     career: {
       title: "My",

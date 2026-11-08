@@ -3,6 +3,7 @@
 import React from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import { FaGithub } from "react-icons/fa";
+import GitHubHeader from "./GitHubHeader";
 
 const USERNAME = "pablo-cruzbr";
 
@@ -20,17 +21,11 @@ const GitHubStats = () => {
         <div data-aos="fade-up" className="flex items-center gap-2 mb-6">
           <FaGithub className="w-4 h-4 text-gray-400" />
           <span className="text-sm font-semibold text-white">GitHub Stats</span>
-          <a
-            href={`https://github.com/${USERNAME}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-gray-600 hover:text-cyan-400 transition font-mono"
-          >
-            @{USERNAME}
-          </a>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-3 items-center">
+        <GitHubHeader username={USERNAME} />
+
+        <div className="mt-3 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-3 items-center">
           {/* Contribution Calendar */}
           <div
             data-aos="fade-up"
