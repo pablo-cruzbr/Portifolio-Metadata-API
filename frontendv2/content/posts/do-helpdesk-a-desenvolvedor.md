@@ -3,8 +3,11 @@ title: "Do helpdesk a desenvolvedor: o sistema que ninguém me pediu"
 description: "Eu era técnico de helpdesk, vi um problema que atrasava todo mundo e fiz um protótipo. Ele virou o Fire OS e me levou a desenvolvedor."
 date: "2026-11-01"
 category: "Carreira"
+cover: "/images/blog/do-helpdesk-a-desenvolvedor.webp"
 draft: true
 ---
+
+![Antes, 5 a 6 telas no sistema antigo para abrir uma ordem de serviço; depois, o Fire OS no celular do técnico](/images/blog/do-helpdesk-a-desenvolvedor.webp)
 
 Comecei na TI como técnico de helpdesk na Allti Service, em 2023. Cuidava de servidores, rede, telefonia e suporte. Nada de código no meu cargo.
 

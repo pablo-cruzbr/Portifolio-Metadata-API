@@ -4,6 +4,8 @@ description: "I was a help desk technician, saw a problem that slowed everyone d
 category: "Career"
 ---
 
+![Before, 5 to 6 screens in the old system to open a service order; after, Fire OS on the technician's phone](/images/blog/do-helpdesk-a-desenvolvedor.webp)
+
 I started in IT as a help desk technician at Allti Service, in 2023. I took care of servers, networking, phones and support. No code in my job description.
 
 But one thing bothered me every day: **opening a service order in the old system was slow and full of steps**. Technicians lost time on the screen instead of solving the customer's problem.
