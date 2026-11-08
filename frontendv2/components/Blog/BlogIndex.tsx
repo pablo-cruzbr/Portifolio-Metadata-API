@@ -101,6 +101,11 @@ export default function BlogIndex({ all, active }: { all: PostSummary[]; active:
           href={`/blog/${agnisPost.slug}`}
           className="group mt-4 flex flex-col gap-3 rounded-2xl border border-orange-400/20 bg-orange-400/[0.06] p-5 transition-all hover:bg-orange-400/10 sm:flex-row sm:items-center sm:gap-5"
         >
+          {agnisPost.cover && (
+            <span className="relative aspect-[16/9] w-full shrink-0 overflow-hidden rounded-lg border border-white/10 sm:w-40">
+              <Image src={agnisPost.cover} alt="" fill sizes="(min-width: 640px) 160px, 90vw" className="object-cover object-center" />
+            </span>
+          )}
           <span className="w-fit shrink-0 rounded-full border border-orange-400/30 bg-orange-400/10 px-3 py-1 text-xs font-bold text-orange-300">
             {t.agnisBadge}
           </span>
